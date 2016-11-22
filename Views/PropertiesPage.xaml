@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="School.OnlineBookingSystem.Views.PropertiesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
+    xmlns:models="using:School.OnlineBookingSystem.Models"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:PropertiesPageVm x:Name="Vm"></viewModels:PropertiesPageVm>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left"
+              Grid.RowSpan="2">
+            <ListView
+                  ItemsSource="{x:Bind Vm.PropertyCatalog.Properties, Mode=OneWay}"
+                  x:Name="ListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Property">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}"
+                               Height="70"
+                               Width="70"
+                               Grid.RowSpan="2"
+                               Stretch="Fill"
+                               Margin="10"></Image>
+                            <TextBlock Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="Name:"
+                                   Margin="10"></TextBlock>
+                            <TextBlock Grid.Row="0"
+                                   Grid.Column="2"
+                                   Text="{x:Bind Name}"
+                                   Margin="10"></TextBlock>
+                            <TextBlock Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="Price per night:"
+                                   Margin="10"></TextBlock>
+                            <TextBlock Grid.Row="1"
+                                   Grid.Column="2"
+                                   Text="{x:Bind PricePerNight}"
+                                   Margin="10"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Row="0" 
+              Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>
+    </Grid>
+</Page>
