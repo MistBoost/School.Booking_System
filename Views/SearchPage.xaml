@@ -24,7 +24,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="../Assets/france.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="../Images/france.jpg"/>
         </Grid.Background>
         <AutoSuggestBox HorizontalAlignment="Left" 
                         Margin="222,141,0,0" 

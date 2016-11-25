@@ -20,7 +20,7 @@ namespace School.OnlineBookingSystem.ViewModels
         public AccountCatalog AccountCatalog { get; set; }
         public UserSingleton UserSingleton { get; set; }
         public DelegateCommand SkipToMainPage { get; set; }
-
+        public DelegateCommand KeyDown { get; set; }
         public string StatusMessages
         {
             get { return _statusMessages; }
@@ -36,12 +36,16 @@ namespace School.OnlineBookingSystem.ViewModels
             AccountCatalog = new AccountCatalog();
             RawPassword = string.Empty;
             RawUsername = string.Empty;
-            LoginCommand = new DelegateCommand(LoginCommandM);
             UserSingleton = UserSingleton.Instance;
             StatusMessages = string.Empty;
+            LoginCommand = new DelegateCommand(LoginCommandM);
             SkipToMainPage = new DelegateCommand(SkipToMainPageM);
         }
 
+        private void KeyDownM(object sender)
+        {
+            
+        }
         private void LoginCommandM(object sender)
         {
             foreach (var account in AccountCatalog.Accounts)

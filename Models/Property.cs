@@ -45,7 +45,14 @@ namespace School.OnlineBookingSystem.Models
             Name = "name";
             Information = "information";
             PricePerNight = 10;
-            ImagePaths = new List<string>() {"../Assets/france.jpg"};
+            ImagePaths = new List<string>()
+            {
+                "../Images/france.jpg"
+                
+
+
+
+            };
             Location = "seasoninfo";
         }
     }
