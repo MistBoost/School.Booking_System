@@ -10,7 +10,7 @@ namespace School.OnlineBookingSystem.Models
 {
     public class PropertyCatalog
     {
-        private readonly string prefix = "../Assets/";
+        private readonly string prefix = "../Images/";
         public ObservableCollection<Property> Properties { get; set; }
 
         public PropertyCatalog()
