@@ -17,14 +17,14 @@ namespace School.OnlineBookingSystem.Models
         {
             Properties = new ObservableCollection<Property>
             {
+                new Property("name", "info", 50, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "paris"),
+                new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "lourds"),
                 new Property("name", "info", 50, new List<string>() {prefix + "france.jpg"}, "paris"),
-                new Property("not name", "not info", 20, new List<string>() {prefix + "england.jpg"}, "lourds"),
-                new Property("name", "info", 50, new List<string>() {prefix + "france.jpg"}, "paris"),
-                new Property("not name", "not info", 20, new List<string>() {prefix + "england.jpg"}, "london"),
+                new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "london"),
                 new Property("name", "info", 50, new List<string>() {prefix + "france.jpg"}, "secovce"),
-                new Property("not name", "not info", 20, new List<string>() {prefix + "england.jpg"}, "habes"),
+                new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "habes"),
                 new Property("name", "info", 50, new List<string>() {prefix + "france.jpg"}, "tatry"),
-                new Property("not name", "not info", 20, new List<string>() {prefix + "england.jpg"}, "bardejov")
+                new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "bardejov")
             };
         }
     }

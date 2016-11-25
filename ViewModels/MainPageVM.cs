@@ -45,7 +45,6 @@ namespace School.OnlineBookingSystem.ViewModels
                     MainFrame.SourcePageType = typeof(PropertiesPage);
                     break;
             }
-            
         }
 
         private void GoBackCommandM(object sender)
