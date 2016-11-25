@@ -20,7 +20,10 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Assets/england.jpg"></ImageBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -53,22 +56,25 @@
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}"
-                               Height="70"
-                               Width="70"
-                               Grid.RowSpan="2"
+                               Height="100"
+                               Width="100"
+                               Grid.RowSpan="3"
                                Stretch="Fill"
                                Margin="10"></Image>
                             <TextBlock Grid.Row="0"
+                                       VerticalAlignment="Center"
                                    Grid.Column="1"
                                    Text="Name:"
                                    Margin="10"></TextBlock>
                             <TextBlock Grid.Row="0"
                                    Grid.Column="2"
-                                   Text="{x:Bind Name}"
+                                   Text="{x:Bind Name, Mode=OneWay}"
                                    Margin="10"></TextBlock>
                             <TextBlock Grid.Row="1"
                                    Grid.Column="1"
@@ -76,7 +82,15 @@
                                    Margin="10"></TextBlock>
                             <TextBlock Grid.Row="1"
                                    Grid.Column="2"
-                                   Text="{x:Bind PricePerNight}"
+                                   Text="{x:Bind PricePerNight, Mode=OneWay}"
+                                   Margin="10"></TextBlock>
+                            <TextBlock Grid.Row="2"
+                                   Grid.Column="1"
+                                   Text="Location:"
+                                   Margin="10"></TextBlock>
+                            <TextBlock Grid.Row="2"
+                                   Grid.Column="2"
+                                   Text="{x:Bind Location, Mode=OneWay}"
                                    Margin="10"></TextBlock>
                         </Grid>
                     </DataTemplate>
@@ -100,7 +114,7 @@
                        HorizontalAlignment="Center"
                        FontSize="30"
                        Padding="9"></TextBlock>
-            <Grid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
+            <Grid Grid.Row="1" Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
