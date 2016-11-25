@@ -137,10 +137,10 @@
             <Grid Padding="0"
                   Margin="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="48"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button HorizontalAlignment="Left"
+                <ListViewItem HorizontalAlignment="Left"
                              Padding="0">
                     <SymbolIcon Symbol="Back"
                             Width="48"
@@ -155,7 +155,7 @@
                             </Core:EventTriggerBehavior.Actions>
                         </Core:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
-                </Button>
+                </ListViewItem>
                 <TextBlock Grid.Row="0" 
                            Text="Home Page"
                            VerticalAlignment="Center"

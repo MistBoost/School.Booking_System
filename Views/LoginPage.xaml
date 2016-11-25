@@ -5,6 +5,8 @@
     xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
     <Page.DataContext>
         <viewModels:LoginPageVm x:Name="LoginPageVm"></viewModels:LoginPageVm>
@@ -26,9 +28,13 @@
             <TextBox PlaceholderText="Username"
                      Margin="10"
                      Text="{x:Bind LoginPageVm.RawUsername, Mode=TwoWay}"></TextBox>
-            <PasswordBox PlaceholderText="Password"
-                     Margin="10"
-                     Password="{x:Bind LoginPageVm.RawPassword, Mode=TwoWay}"></PasswordBox>
+            <PasswordBox x:Name="passwordBox" PlaceholderText="Password"
+                         Margin="10"
+                         Password="{x:Bind LoginPageVm.RawPassword, Mode=TwoWay}">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="{Binding KeyDownEvent, ElementName=passwordBox, Mode=OneWay}"/>
+                </interactivity:Interaction.Behaviors>
+            </PasswordBox>
             <Button Content="Sign In"
                     Margin="10"
                     HorizontalAlignment="Stretch"
@@ -39,7 +45,12 @@
                              HorizontalAlignment="Center"
                              Command="{x:Bind LoginPageVm.SkipToMainPage}"></HyperlinkButton>
             <TextBlock Text="{x:Bind LoginPageVm.StatusMessages, Mode=TwoWay}"
-                       Padding="5"></TextBlock>
+                       Padding="5"
+                       Foreground="Red"
+                       HorizontalAlignment="Center"></TextBlock>
         </StackPanel>
     </Grid>
 </Page>
+
+
+

@@ -15,7 +15,9 @@ namespace School.OnlineBookingSystem.Models
             Accounts = new ObservableCollection<Account>()
             {
                 new Account("Julius", "pass", AccountTypes.Administrator),
-                new Account("Harman", "pass", AccountTypes.Administrator)
+                new Account("Harman", "pass", AccountTypes.Administrator),
+                new Account("Peter", "pass", AccountTypes.User),
+                new Account("Rushika", "pass", AccountTypes.User)
             };
         }
     }

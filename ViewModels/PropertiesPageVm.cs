@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using School.OnlineBookingSystem.Annotations;
+using School.OnlineBookingSystem.Common;
 using School.OnlineBookingSystem.Models;
 
 namespace School.OnlineBookingSystem.ViewModels
@@ -106,14 +107,5 @@ namespace School.OnlineBookingSystem.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-    }
-
-    public class StringValue
-    {
-        public StringValue(string s)
-        {
-            Value = s;
-        }
-        public string Value { get; set; }
     }
 }
