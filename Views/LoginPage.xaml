@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="School.OnlineBookingSystem.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:LoginPageVm x:Name="LoginPageVm"></viewModels:LoginPageVm>
+    </Page.DataContext>
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <ContinuumNavigationTransitionInfo />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="230">
+            <TextBox PlaceholderText="Username"
+                     Margin="10"
+                     Text="{x:Bind LoginPageVm.RawUsername, Mode=TwoWay}"></TextBox>
+            <PasswordBox PlaceholderText="Password"
+                     Margin="10"
+                     Password="{x:Bind LoginPageVm.RawPassword, Mode=TwoWay}"></PasswordBox>
+            <Button Content="Sign In"
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    Command="{x:Bind LoginPageVm.LoginCommand, Mode=OneWay}"></Button>
+            <HyperlinkButton Content="Create new account"
+                             HorizontalAlignment="Center"></HyperlinkButton>
+            <HyperlinkButton Content="Continue without Logging In"
+                             HorizontalAlignment="Center"
+                             Command="{x:Bind LoginPageVm.SkipToMainPage}"></HyperlinkButton>
+            <TextBlock Text="{x:Bind LoginPageVm.StatusMessages, Mode=TwoWay}"
+                       Padding="5"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
