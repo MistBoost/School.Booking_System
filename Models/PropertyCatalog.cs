@@ -26,6 +26,7 @@ namespace School.OnlineBookingSystem.Models
                 new Property("name", "info", 50, new List<string>() {prefix + "france.jpg"}, "tatry"),
                 new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "bardejov")
             };
+            FileManipulationHandler.SavePropertyToJson(Properties);
         }
     }
 }
