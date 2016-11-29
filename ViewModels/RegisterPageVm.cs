@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
@@ -17,28 +18,32 @@ namespace School.OnlineBookingSystem.ViewModels
 {
     public class RegisterPageVm : INotifyPropertyChanged
     {
-        private ObservableCollection<string> _viewData;
+        private string _fullName;
 
-        public ObservableCollection<string> ViewData
+        public string FullName
         {
-            get { return _viewData; }
+            get { return _fullName; }
             set
             {
-                _viewData = value;
-                OnPropertyChanged(nameof(ViewData));
+                _fullName = value;
+                OnPropertyChanged(nameof(FullName));
             }
         }
+
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
 
         public DelegateCommand Register { get; set; }
         public RegisterPageVm()
         {
             Register = new DelegateCommand(RegisterM);
-            ViewData = new ObservableCollection<string>() {"", "", "", ""};
         }
 
         private void RegisterM(object obj)
         {
-            var tempAcc = new Account(ViewData[0], ViewData[1], ViewData[2], ViewData[3], ViewData[4], AccountTypes.User);        
+            var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);        
             var accCat = new AccountCatalog();
             accCat.Collection.Add(tempAcc);
 
