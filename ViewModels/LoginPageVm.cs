@@ -13,13 +13,15 @@ namespace School.OnlineBookingSystem.ViewModels
 {
     public class LoginPageVm : INotifyPropertyChanged
     {
+        public MainFrameSingleton NavigationControl { get; set; }
         private string _statusMessages;
         public string RawUsername { get; set; }
         public string RawPassword { get; set; }
         public DelegateCommand LoginCommand { get; set; }
-        public AccountCatalog AccountCatalog { get; set; }
-        public UserSingleton UserSingleton { get; set; }
+        public Catalog<Account> AccountCatalog { get; set; }
+        public LoggedUserSingleton UserSingleton { get; set; }
         public DelegateCommand SkipToMainPage { get; set; }
+        public DelegateCommand RegisterAccount { get; set; }
         public DelegateCommand KeyDown { get; set; }
         public string StatusMessages
         {
@@ -33,22 +35,19 @@ namespace School.OnlineBookingSystem.ViewModels
 
         public LoginPageVm()
         {
+            NavigationControl = MainFrameSingleton.Instance;
             AccountCatalog = new AccountCatalog();
             RawPassword = string.Empty;
             RawUsername = string.Empty;
-            UserSingleton = UserSingleton.Instance;
+            UserSingleton = LoggedUserSingleton.Instance;
             StatusMessages = string.Empty;
             LoginCommand = new DelegateCommand(LoginCommandM);
             SkipToMainPage = new DelegateCommand(SkipToMainPageM);
-        }
-
-        private void KeyDownM(object sender)
-        {
-            
+           RegisterAccount = new DelegateCommand(RegisterAccountM);
         }
         private void LoginCommandM(object sender)
         {
-            foreach (var account in AccountCatalog.Accounts)
+            foreach (var account in AccountCatalog.Collection)
             {
                 if (account.Username == RawUsername && account.Password == RawPassword)
                 {
@@ -65,11 +64,16 @@ namespace School.OnlineBookingSystem.ViewModels
                 StatusMessages = "Invalid Username or Password";
             }
         }
-
         private void SkipToMainPageM(object sender)
         {
             var frame = Window.Current.Content as Frame;
             frame?.Navigate(typeof(MainPage));
+        }
+
+        private void RegisterAccountM(object sender)
+        {
+            var frame = Window.Current.Content as Frame;
+            frame?.Navigate(typeof(RegisterPage));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
