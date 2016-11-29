@@ -23,187 +23,448 @@
         </TransitionCollection>
     </Page.Transitions>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <SplitView OpenPaneLength="450"
-                   CompactPaneLength="142"
-                   DisplayMode="CompactOverlay"
-                   IsPaneOpen="{x:Bind Vm.IsPaneOpen, Mode=TwoWay}">
-            <SplitView.Pane>
-                    <ListView ItemsSource="{x:Bind Vm.PropertyCatalog.Collection, Mode=OneWay}"
-                              SelectedIndex="{x:Bind Vm.SelectedIndex, Mode=TwoWay}">
-                        <interactivity:Interaction.Behaviors>
-                            <core:EventTriggerBehavior EventName="Tapped">
-                                <core:EventTriggerBehavior.Actions>
-                                    <core:InvokeCommandAction Command="{x:Bind Vm.OpenPane}"/>
-                                </core:EventTriggerBehavior.Actions>
-                            </core:EventTriggerBehavior>
-                        </interactivity:Interaction.Behaviors>
-                    <ListView.Transitions>
-                            <TransitionCollection>
-                                <NavigationThemeTransition>
-                                    <NavigationThemeTransition.DefaultNavigationTransitionInfo>
-                                        <ContinuumNavigationTransitionInfo />
-                                    </NavigationThemeTransition.DefaultNavigationTransitionInfo>
-                                </NavigationThemeTransition>
-                            </TransitionCollection>
-                        </ListView.Transitions>
-                        <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="models:Property">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}"
-                               Height="100"
-                               Width="100"
-                               Grid.RowSpan="3"
-                               Stretch="Fill"
-                               Margin="10"></Image>
-                                    <TextBlock Grid.Row="0"
-                                       VerticalAlignment="Center"
-                                   Grid.Column="1"
-                                   Text="Name:"
-                                   Margin="10"></TextBlock>
-                                    <TextBlock Grid.Row="0"
-                                   Grid.Column="2"
-                                   Text="{x:Bind Name, Mode=OneWay}"
-                                   Margin="10"></TextBlock>
-                                    <TextBlock Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="Price per night:"
-                                   Margin="10"></TextBlock>
-                                    <TextBlock Grid.Row="1"
-                                   Grid.Column="2"
-                                   Text="{x:Bind PricePerNight, Mode=OneWay}"
-                                   Margin="10"></TextBlock>
-                                    <TextBlock Grid.Row="2"
-                                   Grid.Column="1"
-                                   Text="Location:"
-                                   Margin="10"></TextBlock>
-                                    <TextBlock Grid.Row="2"
-                                   Grid.Column="2"
-                                   Text="{x:Bind Location, Mode=OneWay}"
-                                   Margin="10"></TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-            </SplitView.Pane>
-            <SplitView.Content>
-                
-                <!--accommodation details-->
-                <Grid Grid.Row="0" 
-                      Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="{x:Bind Vm.SelectedProperty.Name, Mode=OneWay}"
-                       Grid.Row="0" Grid.ColumnSpan="2"
-                       HorizontalAlignment="Center"
-                       FontSize="30"
-                       Padding="9"></TextBlock>
-                    <Grid Grid.Row="1" Grid.Column="0"
-                          Grid.RowSpan="2" 
-                          Margin="0,20,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="Location:"
-                       Grid.Row="1" Grid.Column="0"
-                       HorizontalAlignment="Left"
-                       Padding="15"
-                       FontSize="22"></TextBlock>
-                        <TextBlock Text="{x:Bind Vm.SelectedProperty.Location, Mode=OneWay}"
-                       Grid.Row="1" Grid.Column="1"
-                       HorizontalAlignment="Left"
-                       Padding="15"
-                       FontSize="22"></TextBlock>
-                        <TextBlock Text="Price per night:"
-                       Grid.Row="2" Grid.Column="0"
-                       HorizontalAlignment="Left"
-                       Padding="15"
-                       FontSize="22"></TextBlock>
-                        <TextBlock Text="{x:Bind Vm.SelectedProperty.PricePerNight, Mode=OneWay}"
-                       Grid.Row="2" Grid.Column="1"
-                       HorizontalAlignment="Left"
-                       Padding="15"
-                       FontSize="22"></TextBlock>
-                        <TextBlock Text="Informations:"
-                       Grid.Row="3" Grid.Column="0"
-                       HorizontalAlignment="Left"
-                       Padding="15"
-                       FontSize="22"></TextBlock>
-                        <TextBlock Text="{x:Bind Vm.SelectedProperty.Information, Mode=OneWay}"
-                       Grid.Row="3" Grid.Column="1"
-                       HorizontalAlignment="Left"
-                       Padding="15"
-                       TextWrapping="WrapWholeWords"
-                       FontSize="22"></TextBlock>
-                        <Button Content="Book"
-                               Grid.Row="4" Grid.Column="1"
-                               HorizontalAlignment="Right"
-                               Margin="15"
-                               Width="150"
-                               FontSize="22"
-                               Command="{x:Bind Vm.NavigationControl.NavigateToCommand, Mode=OneWay}"
-                               CommandParameter="CreateBookingView">
-                        </Button>
-                    </Grid>
-                    <Grid HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch"
-                  Grid.Row="3" Grid.Column="0"
-                  Grid.ColumnSpan="2"
-                  Height="160">
-                        <GridView ItemsSource="{x:Bind Vm.SelectedStringValues, Mode=OneWay}"
-                                  SelectedIndex="{x:Bind Vm.SelectedImageIndex, Mode=TwoWay}">
-                            <GridView.ItemTemplate>
-                                <DataTemplate x:DataType="common:StringValue">
-                                    <Image Width="150"
-                                           Height="150"
-                                           Source="{x:Bind Value}"> 
-                                    </Image>
-                                </DataTemplate>
-                            </GridView.ItemTemplate>
-                        </GridView>
-                    </Grid>
-                    <Grid Grid.Row="1" Grid.Column="1"
-                  Padding="10">
-                        <Image Stretch="UniformToFill"
-                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}">
-                        </Image>
-                    </Grid>
-                </Grid>
-            </SplitView.Content>
-        </SplitView>
-        
+        <Grid.DataContext>
+            <viewModels:MainPageVm/>
+        </Grid.DataContext>
 
-        
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"></RowDefinition>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <SplitView OpenPaneLength="450"
+
+                   CompactPaneLength="142"
+
+                   DisplayMode="CompactOverlay"
+
+                   IsPaneOpen="True"
+
+                   x:Name="SplitView">
+
+            <SplitView.Pane>
+
+                <ListView ItemsSource="{x:Bind Vm.PropertyCatalog.Properties, Mode=OneWay}"
+
+                      x:Name="ListView"
+
+                      SelectedIndex="{x:Bind Vm.SelectedIndex, Mode=TwoWay}"   >
+
+                    <ListView.Transitions>
+
+                        <TransitionCollection>
+
+                            <NavigationThemeTransition>
+
+                                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+
+                                    <ContinuumNavigationTransitionInfo />
+                                                                                      
+                                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+
+                            </NavigationThemeTransition>
+
+                        </TransitionCollection>
+
+                    </ListView.Transitions>
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate x:DataType="models:Property">
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="Auto"></RowDefinition>
+
+                                    <RowDefinition Height="Auto"></RowDefinition>
+
+                                    <RowDefinition Height="Auto"></RowDefinition>
+
+                                    <RowDefinition Height="Auto"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+
+                                <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}"
+
+                               Height="100"
+
+                               Width="100"
+
+                               Grid.RowSpan="3"
+
+                               Stretch="Fill"
+
+                               Margin="10"></Image>
+
+                                <TextBlock Grid.Row="0"
+
+                                       VerticalAlignment="Center"
+
+                                   Grid.Column="1"
+
+                                   Text="Name:"
+
+                                   Margin="10"></TextBlock>
+
+                                <TextBlock Grid.Row="0"
+
+                                   Grid.Column="2"
+
+                                   Text="{x:Bind Name, Mode=OneWay}"
+
+                                   Margin="10"></TextBlock>
+
+                                <TextBlock Grid.Row="1"
+
+                                   Grid.Column="1"
+
+                                   Text="Price per night:"
+
+                                   Margin="10"></TextBlock>
+
+                                <TextBlock Grid.Row="1"
+
+                                   Grid.Column="2"
+
+                                   Text="{x:Bind PricePerNight, Mode=OneWay}"
+
+                                   Margin="10"></TextBlock>
+
+                                <TextBlock Grid.Row="2"
+
+                                   Grid.Column="1"
+
+                                   Text="Location:"
+
+                                   Margin="10"></TextBlock>
+
+                                <TextBlock Grid.Row="2"
+
+                                   Grid.Column="2"
+
+                                   Text="{x:Bind Location, Mode=OneWay}"
+
+                                   Margin="10"></TextBlock>
+
+                            </Grid>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </SplitView.Pane>
+
+            <SplitView.Content>
+
+
+
+                <!--accommodation details-->
+
+                <Grid Grid.Row="0" 
+
+                      Grid.Column="1">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+
+
+                        <RowDefinition Height="*"></RowDefinition>
+
+                        <RowDefinition Height="*"></RowDefinition>
+
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{x:Bind Vm.SelectedAccommodation.Name, Mode=OneWay}"
+
+                       Grid.Row="0" Grid.ColumnSpan="2"
+
+                       HorizontalAlignment="Center"
+
+                       FontSize="30"
+
+                       Padding="9"></TextBlock>
+
+
+
+
+                    <Grid Grid.Row="1" Grid.Column="0"
+
+                          Grid.RowSpan="2" 
+
+                          Margin="0,20,0.333,5">
+
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="Auto"></RowDefinition>
+
+                            <RowDefinition Height="Auto"></RowDefinition>
+
+                            <RowDefinition Height="Auto" MinHeight="93"></RowDefinition>
+
+                            <RowDefinition/>
+
+                            <RowDefinition Height="Auto"></RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Location:"
+
+                       Grid.Row="1" Grid.Column="0"
+
+                       HorizontalAlignment="Left"
+
+                       Padding="15"
+
+                       FontSize="22" Margin="0,0,0,0.333" Width="117"></TextBlock>
+
+                        <TextBlock Text="{x:Bind Vm.SelectedAccommodation.Location, Mode=OneWay}"
+
+                       Grid.Row="1" Grid.Column="1"
+
+                       HorizontalAlignment="Left"
+
+                       Padding="15"
+
+                       FontSize="22" Margin="50,0,0,0.333" Width="347"></TextBlock>
+
+
+
+                        <TextBlock Text="Price per night:"
+
+                       Grid.Row="2" Grid.Column="0"
+
+                       HorizontalAlignment="Left"
+
+                       Padding="15"
+
+                       FontSize="22" Margin="0,0.667,0,57.333" Width="203" Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="{x:Bind Vm.SelectedAccommodation.PricePerNight, Mode=OneWay}"
+
+                       Grid.Row="2" Grid.Column="1"
+
+                       HorizontalAlignment="Left"
+
+                       Padding="15"
+
+                       FontSize="22" Margin="50,0.667,0,57.333" Width="396"></TextBlock>
+
+                        <StackPanel Orientation="Horizontal" 
+                     HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                     Padding="15"
+                      Grid.Row="2" Margin="51,65.667,0,0" Height="52" Width="135" Grid.Column="1" Grid.RowSpan="2" >
+                            <SymbolIcon Symbol="Favorite"
+                    Foreground="White"></SymbolIcon>
+                            <SymbolIcon Symbol="Favorite"
+                    Foreground="Yellow"></SymbolIcon>
+                            <SymbolIcon Symbol="Favorite"
+                    Foreground="Yellow"></SymbolIcon>
+                            <SymbolIcon Symbol="Favorite"
+                    Foreground="Yellow"></SymbolIcon>
+                            <SymbolIcon Symbol="Favorite"
+                    Foreground="Yellow"></SymbolIcon>
+                        </StackPanel>
+
+
+                        <TextBlock Text="{x:Bind Vm.SelectedAccommodation.Information, Mode=OneWay}"
+
+                       Grid.Row="3" Grid.Column="1"
+
+                       HorizontalAlignment="Left"
+
+                       Padding="15"
+
+                       TextWrapping="WrapWholeWords"
+
+                       FontSize="13" Margin="44.667,10.333,0,0" Width="311" Height="470" VerticalAlignment="Top"/>
+
+
+                        <TextBlock  HorizontalAlignment="Left"
+                                    Margin="0,59.667,0,0" Grid.Row="2" 
+                                    TextWrapping="Wrap" 
+                                    Text="Rating:"
+                                    VerticalAlignment="Top" Height="52"
+                                    FontSize="22" Padding="15" Width="203"
+                                    Grid.ColumnSpan="2"/>
+                        <TextBlock  HorizontalAlignment="Left" Margin="0,10.333,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Information:" VerticalAlignment="Top" Width="203" Height="55" FontSize="22" Padding="15" Grid.ColumnSpan="2"/>
+                        <Button Content="Book"
+
+                       Grid.Row="4" Grid.Column="1"
+
+                       HorizontalAlignment="Right"
+
+                       Margin="15"
+
+                       Width="150"
+
+                       FontSize="22"></Button>
+
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Stretch"
+
+                  VerticalAlignment="Stretch"
+
+                  Grid.Row="3" Grid.Column="0"
+
+                  Grid.ColumnSpan="2"
+
+                  Height="160">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="291*"/>
+                            <ColumnDefinition Width="358*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <GridView ItemsSource="{x:Bind Vm.SelectedStringValues, Mode=OneWay}"
+
+                          SelectedIndex="{x:Bind Vm.SelectedImageIndex, Mode=TwoWay}" Grid.ColumnSpan="2">
+
+                            <GridView.ItemTemplate>
+
+                                <DataTemplate x:DataType="common:StringValue">
+
+                                    <Image Width="150"
+
+                               Height="150"
+
+                               Source="{x:Bind Value}">
+
+                                    </Image>
+
+                                </DataTemplate>
+
+                            </GridView.ItemTemplate>
+
+                        </GridView>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="1"
+
+                  Padding="10">
+
+                        <Image Stretch="UniformToFill"
+
+                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}">
+
+                        </Image>
+
+                    </Grid>
+
+                </Grid>
+
+            </SplitView.Content>
+
+        </SplitView>
+
+
+
+
+
+
+
     </Grid>
 </Page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
