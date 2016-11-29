@@ -138,7 +138,8 @@
                   Margin="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="11*"></RowDefinition>
+                    <RowDefinition Height="445*"/>
                 </Grid.RowDefinitions>
                 <ListViewItem HorizontalAlignment="Left"
                              Padding="0">
@@ -159,13 +160,13 @@
                 <TextBlock Grid.Row="0" 
                            Text="Home Page"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"></TextBlock>
+                           HorizontalAlignment="Center" Margin="658,14,657,14"></TextBlock>
                 <Frame Grid.Row="1"
                        x:Name="MainFrame"
-                       SourcePageType="{x:Bind ViewModel.MainFrame.SourcePageType, Mode=OneWay}">
+                       SourcePageType="{x:Bind ViewModel.MainFrame.SourcePageType, Mode=OneWay}" Grid.RowSpan="2">
                 </Frame>
             </Grid>
-            
+
         </SplitView>
 
         <!--Hamburger Menu Button-->

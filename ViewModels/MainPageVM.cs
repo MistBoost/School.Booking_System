@@ -11,6 +11,17 @@ namespace School.OnlineBookingSystem.ViewModels
     public class MainPageVm : INotifyPropertyChanged
     {
         private Frame _mainFrame;
+        private Frame _createbooking;
+
+        public Frame CreateBooking
+        {
+            get { return _createbooking; }
+            set
+            {
+                _createbooking = value;
+                OnPropertyChanged(nameof(CreateBooking));
+            }
+        }
         public Frame MainFrame
         {
             get { return _mainFrame; }
@@ -23,11 +34,13 @@ namespace School.OnlineBookingSystem.ViewModels
 
         public DelegateCommand NavigateToCommand { get; set; }
         public DelegateCommand GoBackCommand { get; set; }
+      
         public MainPageVm()
         {
             MainFrame = new Frame {SourcePageType = typeof(FrontPage)};
             NavigateToCommand = new DelegateCommand(NavigateToCommandM);
             GoBackCommand = new DelegateCommand(GoBackCommandM);
+            CreateBooking = new Frame {SourcePageType = typeof(CreateBookingView)};
         }
 
         private void NavigateToCommandM(object sender)
