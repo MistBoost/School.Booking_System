@@ -16,7 +16,8 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -34,43 +35,60 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DatePicker Grid.Row="1"
-                    Padding="10"
+        <StackPanel HorizontalAlignment="Center">
+            <DatePicker Grid.Row="1"
+                    Margin="10"
                     Header="Check-In Date"></DatePicker>
-        <DatePicker Grid.Row="2" 
+            <DatePicker Grid.Row="2" 
                     Grid.Column="0"
-                    Padding="10"
+                    Margin="10"
                     Header="Check-Out Date"></DatePicker>
-        <TextBox Grid.Row="3"
+            <TextBox Grid.Row="3"
                  Grid.Column="0"
                  Margin="10"
                  Header="Payer's Name"
+                 Width="250"
+                 HorizontalAlignment="Left"
                  PlaceholderText="Full Name"></TextBox>
-        <TextBox Grid.Row="4"
+            <TextBox Grid.Row="4"
                  Grid.Column="0"
                  Margin="10"
+                 Width="250"
+                 HorizontalAlignment="Left"
                  Header="Payer's Email"
                  PlaceholderText="Email"></TextBox>
-        <TextBox Grid.Row="5"
+            <TextBox Grid.Row="5"
                  Grid.Column="0"
                  Margin="10"
+                 Width="250"
+                 HorizontalAlignment="Left"
                  Header="Payer's Phone"
                  PlaceholderText="Phone Number (DK)"></TextBox>
-        <TextBlock Grid.Row="6"
+            <TextBlock Grid.Row="6"
                  Grid.Column="0"
-                 Padding="10"
+                 Margin="10"
+                 Width="250"
+                 HorizontalAlignment="Left"
                  Text="Accommodation: "></TextBlock>
-        <ComboBox Grid.Row="7"
-                 Grid.Column="0"
-                 Padding="10"
-                 PlaceholderText="Number of People: "></ComboBox>
-        <CheckBox Grid.Row="8"
+            <ComboBox Grid.Row="7"
                  Grid.Column="0"
                  Margin="10"
-                 Content="Terms and Conditions"></CheckBox>
-        <Button Grid.Row="9"
+                 Width="250"
+                 HorizontalAlignment="Left"
+                 Header="Number of People: "></ComboBox>
+            <CheckBox Grid.Row="8"
+                      Grid.Column="0"
+                      Margin="10"
+                      Width="250"
+                      Content="Terms and Conditions"
+                      x:Name="CheckBox"></CheckBox>
+            <Button Grid.Row="9"
                  Grid.Column="0"
                  Margin="10"
+                 HorizontalAlignment="Left"
                  Content="Submit"></Button>
+        </StackPanel>
+        
+       
     </Grid>
 </Page>

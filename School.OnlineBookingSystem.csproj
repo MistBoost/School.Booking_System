@@ -97,6 +97,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="Common\CatalogSingleton.cs" />
     <Compile Include="Common\SpecialStrings.cs" />
     <Compile Include="Common\StringValue.cs" />
     <Compile Include="Handlers\FileManipulationHandler.cs" />
@@ -108,10 +109,13 @@
     <Compile Include="Models\PropertyCatalog.cs" />
     <Compile Include="Models\UserSingleton.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\CreateBookingVm.cs" />
     <Compile Include="ViewModels\FrontPageVm.cs" />
     <Compile Include="ViewModels\LoginPageVm.cs" />
+    <Compile Include="ViewModels\MainFrameSingleton.cs" />
     <Compile Include="ViewModels\MainPageVM.cs" />
     <Compile Include="ViewModels\PropertiesPageVm.cs" />
+    <Compile Include="ViewModels\RegisterPageVm.cs" />
     <Compile Include="ViewModels\SearchPageVm.cs" />
     <Compile Include="Views\CreateBookingView.xaml.cs">
       <DependentUpon>CreateBookingView.xaml</DependentUpon>
@@ -126,6 +130,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MyBookings.xaml.cs">
+      <DependentUpon>MyBookings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PropertiesPage.xaml.cs">
       <DependentUpon>PropertiesPage.xaml</DependentUpon>
     </Compile>
@@ -246,6 +253,10 @@
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MyBookings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PropertiesPage.xaml">
       <SubType>Designer</SubType>
