@@ -7,14 +7,25 @@ using School.OnlineBookingSystem.Annotations;
 
 namespace School.OnlineBookingSystem.Models
 {
-    public sealed class UserSingleton
+    public sealed class LoggedUserSingleton
     {
         public Account LoggedAccount { get; set; }
-        private static UserSingleton _instance;
+        private static LoggedUserSingleton _instance;
 
-        public static UserSingleton Instance => _instance ?? new UserSingleton();
+        public static LoggedUserSingleton Instance
+        {
+            get
+            {
+                if (_instance != null)
+                {
+                    return _instance;
+                }
+                _instance = new LoggedUserSingleton();
+                return _instance;
+            }
+        }
 
-        private UserSingleton()
+        private LoggedUserSingleton()
         {
             LoggedAccount = null;
         }

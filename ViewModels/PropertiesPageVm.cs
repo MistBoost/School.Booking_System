@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using School.OnlineBookingSystem.Annotations;
@@ -12,27 +10,55 @@ namespace School.OnlineBookingSystem.ViewModels
 {
     public class PropertiesPageVm : INotifyPropertyChanged
     {
-        private Property _selectedAccommodation;
-        private PropertyCatalog _propertyCatalog;
+        private Catalog<Property> _propertyCatalog;
         private int _selectedIndex;
-        private List<StringValue> _selectedStringValues;
+        private ObservableCollection<StringValue> _selectedStringValues;
         private string _selectedImageString;
         private int _selectedImageIndex;
+        private bool _isPaneOpen;
+        private Property _selectedProperty;
+
+        public Property SelectedProperty
+        {
+            get { return _selectedProperty; }
+            set
+            {
+                _selectedProperty = value;
+                OnPropertyChanged(nameof(SelectedProperty));
+            }
+        }
+        public MainFrameSingleton NavigationControl { get; set; }
+        public bool IsPaneOpen
+        {
+            get { return _isPaneOpen; }
+            set
+            {
+                _isPaneOpen = value;
+                OnPropertyChanged(nameof(IsPaneOpen));
+            }
+        }
 
         public int SelectedImageIndex
         {
             get { return _selectedImageIndex; }
             set
             {
-                _selectedImageIndex = value;
+                if (value > 0 && value < SelectedStringValues.Count)
+                {
+                    _selectedImageIndex = value;
+                }
+                else
+                {
+                    _selectedImageIndex = 0;
+                }
                 OnPropertyChanged(nameof(SelectedImageIndex));
-                OnPropertyChanged(nameof(SelectedImageString));
+                SelectedImageString = SelectedStringValues[_selectedImageIndex].Value;
             }
         }
 
         public string SelectedImageString
         {
-            get { return SelectedStringValues[_selectedImageIndex].Value; }
+            get { return _selectedImageString; }
             set
             {
                 _selectedImageString = value;
@@ -40,7 +66,7 @@ namespace School.OnlineBookingSystem.ViewModels
             }
         }
 
-        public List<StringValue> SelectedStringValues
+        public ObservableCollection<StringValue> SelectedStringValues
         {
             get { return _selectedStringValues; }
             set
@@ -57,33 +83,13 @@ namespace School.OnlineBookingSystem.ViewModels
             {
                 _selectedIndex = value;
                 OnPropertyChanged(nameof(SelectedIndex));
-                OnPropertyChanged(nameof(SelectedAccommodation));
+                SelectedProperty = PropertyCatalog.Collection[_selectedIndex];
+                SelectedStringValues = new ObservableCollection<StringValue>(SelectedProperty.ImagePaths.Select(p => new StringValue(p)).ToList());
                 SelectedImageIndex = 0;
             }
         }
 
-        public Property SelectedAccommodation
-        {
-            get
-            {
-                try
-                {
-                    return PropertyCatalog.Properties[SelectedIndex];
-                }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e.Message);
-                }
-                return new Property();
-            }
-            set
-            {
-                _selectedAccommodation = value;
-                OnPropertyChanged(nameof(SelectedAccommodation));
-            }
-        }
-
-        public PropertyCatalog PropertyCatalog
+        public Catalog<Property> PropertyCatalog
         {
             get { return _propertyCatalog; }
             set
@@ -93,11 +99,25 @@ namespace School.OnlineBookingSystem.ViewModels
             }
         }
 
+        public DelegateCommand OpenPane { get; set; }
         public PropertiesPageVm()
         {
+            IsPaneOpen = true;
             PropertyCatalog = new PropertyCatalog();
             SelectedIndex = 0;
-            SelectedStringValues = SelectedAccommodation.ImagePaths.Select(p => new StringValue(p)).ToList();
+            SelectedImageIndex = 0;
+            SelectedStringValues = new ObservableCollection<StringValue>(PropertyCatalog.Collection[SelectedIndex].ImagePaths.Select(p => new StringValue(p)).ToList());
+            OpenPane = new DelegateCommand(OpenPaneM);
+            NavigationControl = MainFrameSingleton.Instance;
+            SelectedProperty = PropertyCatalog.Collection[0];
+        }
+
+        private void OpenPaneM(object sender)
+        {
+            if (!IsPaneOpen)
+            {
+                IsPaneOpen = true;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

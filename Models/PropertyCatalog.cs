@@ -4,18 +4,19 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using School.OnlineBookingSystem.Common;
 using School.OnlineBookingSystem.Handlers;
 
 namespace School.OnlineBookingSystem.Models
 {
-    public class PropertyCatalog
+    public sealed class PropertyCatalog : Catalog<Property>
     {
+
         private readonly string prefix = "../Images/";
-        public ObservableCollection<Property> Properties { get; set; }
 
         public PropertyCatalog()
         {
-            Properties = new ObservableCollection<Property>
+            Collection = new ObservableCollection<Property>
             {
                 new Property("name", "info", 50, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "paris"),
                 new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "lourds"),
@@ -26,7 +27,6 @@ namespace School.OnlineBookingSystem.Models
                 new Property("name", "info", 50, new List<string>() {prefix + "france.jpg"}, "tatry"),
                 new Property("not name", "not info", 20, new List<string>() {prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg",prefix + "england.jpg", prefix + "france.jpg", prefix + "england.jpg",prefix + "france.jpg",prefix + "england.jpg"}, "bardejov")
             };
-            FileManipulationHandler.SavePropertyToJson(Properties);
         }
     }
 }

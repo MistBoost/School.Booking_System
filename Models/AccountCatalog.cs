@@ -4,21 +4,23 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using School.OnlineBookingSystem.Common;
 
 namespace School.OnlineBookingSystem.Models
 {
-    public class AccountCatalog
+    public class AccountCatalog : Catalog<Account>
     {
-        public ObservableCollection<Account> Accounts { get; set; }
         public AccountCatalog()
         {
-            Accounts = new ObservableCollection<Account>()
+            Collection = new ObservableCollection<Account>()
             {
-                new Account("Julius", "pass", AccountTypes.Administrator),
-                new Account("Harman", "pass", AccountTypes.Administrator),
-                new Account("Peter", "pass", AccountTypes.User),
-                new Account("Rushika", "pass", AccountTypes.User)
+                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
+                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
+                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
+                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
+                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator)
             };
+            SaveCollection();
         }
     }
 }
