@@ -16,9 +16,9 @@ namespace School.OnlineBookingSystem.Models
         private readonly string TownPointePrefix = "../Images/SkiResorts/TownPointe/";
         private readonly string BeaverPrefix = "../Images/SkiResorts/BeaverCreekLodge/";
         private readonly string charterPrefix = "../Images/SkiResorts/CharetatBeaverCreek/";
-        private readonly string harischprefix = "../Images/Skiresorts/HarischHotelWeissesRossl/";
-        private readonly string hayattprefix = "../Images/Skiresorts/ElkhornLodge";
-        private readonly string Pinesprefix = "../Images/Skiresorts/PinesLodgeARockResort";
+        private readonly string harischprefix = "../Images/SkiResorts/HarischHotelWeissesRossl/";
+        private readonly string hayattprefix = "../Images/SkiResorts/ElkhornLodge/";
+        private readonly string Pinesprefix = "../Images/SkiResorts/PinesLodgeARockResort/";
 
         public PropertyCatalog()
         {
@@ -99,6 +99,7 @@ namespace School.OnlineBookingSystem.Models
                     Pinesprefix + "beavercreek_pineslodge9.jpg",
                 }, "MORZINE")
             };
+            SaveCollection();
         }
     }
 }

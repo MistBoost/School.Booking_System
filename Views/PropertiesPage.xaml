@@ -337,7 +337,9 @@
 
                        Width="150"
 
-                       FontSize="22"></Button>
+                       FontSize="22"
+                                Command="{x:Bind Vm.NavigationControl.NavigateToCommand}"
+                                CommandParameter="CreateBookingView"></Button>
 
                     </Grid>
 
