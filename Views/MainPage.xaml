@@ -138,17 +138,20 @@
                   Margin="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"></RowDefinition>
-                    <RowDefinition Height="11*"></RowDefinition>
-                    <RowDefinition Height="445*"/>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <ListViewItem HorizontalAlignment="Left"
-                             Padding="0">
-                    <SymbolIcon Symbol="Back"
+                             Padding="6">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Back"
                             Width="48"
                             Height="30"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center">
-                    </SymbolIcon>
+                        </SymbolIcon>
+                        <TextBlock Text="Back"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Tapped">
                             <Core:EventTriggerBehavior.Actions>

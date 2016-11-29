@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.Advertisement;
+using School.OnlineBookingSystem.Common;
 using School.OnlineBookingSystem.Handlers;
 
 namespace School.OnlineBookingSystem.Models
 {
-    public class PropertyCatalog
+    public class PropertyCatalog : Catalog<Property>
     {
 
         private readonly string TownPointePrefix = "../Images/SkiResorts/TownPointe/";
@@ -19,12 +20,9 @@ namespace School.OnlineBookingSystem.Models
         private readonly string hayattprefix = "../Images/Skiresorts/ElkhornLodge";
         private readonly string Pinesprefix = "../Images/Skiresorts/PinesLodgeARockResort";
 
-
-        public ObservableCollection<Property> Properties { get; set; }
-
         public PropertyCatalog()
         {
-            Properties = new ObservableCollection<Property>
+            Collection = new ObservableCollection<Property>
             {
                 new Property("TOWN POINTE",
                     "Town Pointe Condominiums offer the utmost in location nestled at the base of historic Main Street in Park City Town Pointe also offers style and amenities Conveniently located it is just a short walk from the Town Lift where the guests can catch a chairlift and be on the slopes of Park City Mountain Resort in a matter of minutes. \r\n\r\nDirect access to Main Street and Old Town by way of the pedestrian path",
@@ -100,27 +98,7 @@ namespace School.OnlineBookingSystem.Models
                     Pinesprefix + "beavercreek_pineslodge8.jpg",
                     Pinesprefix + "beavercreek_pineslodge9.jpg",
                 }, "MORZINE")
-
-
-
             };
-         
-
-                FileManipulationHandler.SavePropertyToJson(Properties);
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-
-
         }
+    }
 }
