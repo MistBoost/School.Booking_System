@@ -40,7 +40,8 @@
                     HorizontalAlignment="Stretch"
                     Command="{x:Bind LoginPageVm.LoginCommand, Mode=OneWay}"></Button>
             <HyperlinkButton Content="Create new account"
-                             HorizontalAlignment="Center"></HyperlinkButton>
+                             HorizontalAlignment="Center"
+                             Command="{x:Bind LoginPageVm.RegisterAccount}"></HyperlinkButton>
             <HyperlinkButton Content="Continue without Logging In"
                              HorizontalAlignment="Center"
                              Command="{x:Bind LoginPageVm.SkipToMainPage}"></HyperlinkButton>

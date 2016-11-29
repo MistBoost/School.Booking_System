@@ -61,7 +61,7 @@
                             <Interactivity:Interaction.Behaviors>
                                 <Core:EventTriggerBehavior EventName="Tapped">
                                     <Core:EventTriggerBehavior.Actions>
-                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigateToCommand, Mode=OneWay}"
+                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
                                                                   CommandParameter="FrontPage"/>
                                     </Core:EventTriggerBehavior.Actions>
                                 </Core:EventTriggerBehavior>
@@ -99,7 +99,7 @@
                             <Interactivity:Interaction.Behaviors>
                                 <Core:EventTriggerBehavior EventName="Tapped">
                                     <Core:EventTriggerBehavior.Actions>
-                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigateToCommand, Mode=OneWay}"
+                                                <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
                                                                   CommandParameter="SearchPage"/>
                                     </Core:EventTriggerBehavior.Actions>
                                 </Core:EventTriggerBehavior>
@@ -124,7 +124,7 @@
                             <Interactivity:Interaction.Behaviors>
                                 <Core:EventTriggerBehavior EventName="Tapped">
                                     <Core:EventTriggerBehavior.Actions>
-                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigateToCommand, Mode=OneWay}"
+                                                <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
                                                                   CommandParameter="PropertiesPage"/>
                                     </Core:EventTriggerBehavior.Actions>
                                 </Core:EventTriggerBehavior>
@@ -151,7 +151,7 @@
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Tapped">
                             <Core:EventTriggerBehavior.Actions>
-                                <Core:InvokeCommandAction Command="{x:Bind ViewModel.GoBackCommand}"/>
+                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.GoBackCommand}"/>
                             </Core:EventTriggerBehavior.Actions>
                         </Core:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
@@ -161,8 +161,7 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"></TextBlock>
                 <Frame Grid.Row="1"
-                       x:Name="MainFrame"
-                       SourcePageType="{x:Bind ViewModel.MainFrame.SourcePageType, Mode=OneWay}">
+                       SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=OneWay}">
                 </Frame>
             </Grid>
             

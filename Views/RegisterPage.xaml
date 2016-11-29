@@ -2,23 +2,46 @@
     x:Class="School.OnlineBookingSystem.Views.RegisterPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:School.OnlineBookingSystem.Views"
+    xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:RegisterPageVm x:Name="Vm"></viewModels:RegisterPageVm>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Username:"></TextBlock>
+            <StackPanel Padding="10"
+                        Width="300"
+                        Grid.Column="1">
+                <TextBox Header="Full Name"
+                         Text="{x:Bind Vm.ViewData[0], Mode=TwoWay}"></TextBox>
+                <TextBox Header="Username"
+                         Margin="0,10,0,0"
+                         Text="{x:Bind Vm.ViewData[1], Mode=TwoWay}"></TextBox>
+                <TextBox Header="Password"
+                         Margin="0,10,0,0"
+                         Text="{x:Bind Vm.ViewData[2], Mode=TwoWay}"></TextBox>
+                <TextBox Header="Email Adress"
+                         Margin="0,10,0,0"
+                         Text="{x:Bind Vm.ViewData[3], Mode=TwoWay}"></TextBox>
+                <TextBox Header="Phone Number"
+                         Margin="0,10,0,0"
+                         Text="{x:Bind Vm.ViewData[4], Mode=TwoWay}"></TextBox>
+                <CheckBox Content="Terms and Conditions"
+                          Margin="0,10,0,0"></CheckBox>
+                <Button Content="Register"
+                        HorizontalAlignment="Left"
+                        Margin="0,20,0,0"
+                        Command="{x:Bind Vm.Register, Mode=OneWay}"></Button>
+            </StackPanel>
+            
         </Grid>
     </Grid>
 </Page>

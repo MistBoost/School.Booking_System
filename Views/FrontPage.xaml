@@ -21,18 +21,6 @@
     </Page.Transitions>
 
     <Grid Background="Transparent">
-        <StackPanel Orientation="Horizontal">
-            <SymbolIcon Symbol="Favorite"
-                    Foreground="White"></SymbolIcon>
-            <SymbolIcon Symbol="Favorite"
-                    Foreground="Yellow"></SymbolIcon>
-            <SymbolIcon Symbol="Favorite"
-                    Foreground="Yellow"></SymbolIcon>
-            <SymbolIcon Symbol="Favorite"
-                    Foreground="Yellow"></SymbolIcon>
-        </StackPanel>
-        
-       
         <FlipView ItemsSource="{x:Bind FrontPageVm.Images, Mode=OneWay}">
             <FlipView.ItemTemplate>
                 <DataTemplate x:DataType="common:StringValue">
