@@ -17,8 +17,6 @@
         public static string Pines = "../Images/SKIResorts/PinesLodgeARockResort/";
 
         public static string PropertyFile = "test.json";
-
-
     }
 
 
