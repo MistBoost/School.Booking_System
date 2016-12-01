@@ -43,7 +43,7 @@ namespace School.OnlineBookingSystem.ViewModels
 
         private void RegisterM(object obj)
         {
-            var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);        
+            var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);
             var accCat = new AccountCatalog();
             accCat.Collection.Add(tempAcc);
 

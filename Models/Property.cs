@@ -35,7 +35,7 @@ namespace School.OnlineBookingSystem.Models
         {
             Name = name;
             Information = information;
-            PricePerNight = pricePerNight;
+            PricePerNight =  pricePerNight;
             ImagePaths = imagePaths;
             Location = location;
         }
@@ -47,8 +47,7 @@ namespace School.OnlineBookingSystem.Models
             PricePerNight = 10;
             ImagePaths = new List<string>()
             {
-                "../Images/france.jpg"
-                
+              
 
 
 

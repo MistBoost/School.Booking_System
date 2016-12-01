@@ -99,7 +99,7 @@
                             <Interactivity:Interaction.Behaviors>
                                 <Core:EventTriggerBehavior EventName="Tapped">
                                     <Core:EventTriggerBehavior.Actions>
-                                                <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
+                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
                                                                   CommandParameter="SearchPage"/>
                                     </Core:EventTriggerBehavior.Actions>
                                 </Core:EventTriggerBehavior>
@@ -124,7 +124,7 @@
                             <Interactivity:Interaction.Behaviors>
                                 <Core:EventTriggerBehavior EventName="Tapped">
                                     <Core:EventTriggerBehavior.Actions>
-                                                <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
+                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
                                                                   CommandParameter="PropertiesPage"/>
                                     </Core:EventTriggerBehavior.Actions>
                                 </Core:EventTriggerBehavior>
@@ -141,17 +141,21 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <ListViewItem HorizontalAlignment="Left"
-                             Padding="0">
-                    <SymbolIcon Symbol="Back"
+                             Padding="6">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Back"
                             Width="48"
                             Height="30"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center">
-                    </SymbolIcon>
+                        </SymbolIcon>
+                        <TextBlock Text="Back"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Tapped">
                             <Core:EventTriggerBehavior.Actions>
-                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.GoBackCommand}"/>
+                                <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.GoBackCommand}"/>
                             </Core:EventTriggerBehavior.Actions>
                         </Core:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
@@ -159,12 +163,11 @@
                 <TextBlock Grid.Row="0" 
                            Text="Home Page"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"></TextBlock>
-                <Frame Grid.Row="1"
-                       SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=OneWay}">
+                           HorizontalAlignment="Center" Margin="658,14,657,14"></TextBlock>
+                <Frame SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=TwoWay}" Grid.Row="1">
                 </Frame>
             </Grid>
-            
+
         </SplitView>
 
         <!--Hamburger Menu Button-->
