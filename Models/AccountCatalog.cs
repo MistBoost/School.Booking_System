@@ -12,15 +12,8 @@ namespace School.OnlineBookingSystem.Models
     {
         public AccountCatalog()
         {
-            Collection = new ObservableCollection<Account>()
-            {
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator)
-            };
-            SaveCollection();
+            FilePath = "accounts_data.json";
+            LoadCollection();
         }
     }
 }

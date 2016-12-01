@@ -15,7 +15,6 @@ namespace School.OnlineBookingSystem.ViewModels
         public MainPageVm()
         {
             NavigationControl = MainFrameSingleton.Instance;
-            NavigationControl.MainFrame.SourcePageType = typeof(FrontPage);
         }
 
         

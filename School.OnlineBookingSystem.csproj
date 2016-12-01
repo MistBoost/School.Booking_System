@@ -100,7 +100,6 @@
     <Compile Include="Common\CatalogSingleton.cs" />
     <Compile Include="Common\SpecialStrings.cs" />
     <Compile Include="Common\StringValue.cs" />
-    <Compile Include="Handlers\FileManipulationHandler.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountCatalog.cs" />
     <Compile Include="Models\Booking.cs" />

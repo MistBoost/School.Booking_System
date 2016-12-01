@@ -10,7 +10,7 @@ namespace School.OnlineBookingSystem.Common
 {
     public class Catalog<T>
     {
-
+        protected string FilePath { get; set; }
         public ObservableCollection<T> Collection { get; set; }
         private static Catalog<T> _instance;
 
@@ -30,7 +30,7 @@ namespace School.OnlineBookingSystem.Common
 
         internal Catalog()
         {
-            
+
         }
         public void SaveCollection()
         {
@@ -41,7 +41,7 @@ namespace School.OnlineBookingSystem.Common
             try
             {
                 var folder = ApplicationData.Current.LocalFolder;
-                File.WriteAllText(folder.Path + "\\" + SpecialStrings.PropertyFile, msg);
+                File.WriteAllText(folder.Path + "\\" + FilePath, msg);
             }
             catch (Exception e)
             {
@@ -60,7 +60,7 @@ namespace School.OnlineBookingSystem.Common
             try
             {
                 var folder = ApplicationData.Current.LocalFolder;
-                var file = File.OpenRead(folder.Path + "\\" + SpecialStrings.PropertyFile);
+                var file = File.OpenRead(folder.Path + "\\" + FilePath);
                 if (file != null)
                 {
                     var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
