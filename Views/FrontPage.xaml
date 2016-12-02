@@ -30,7 +30,7 @@
 
                 <NavigationThemeTransition.DefaultNavigationTransitionInfo>
 
-                    <ContinuumNavigationTransitionInfo />
+                    <EntranceNavigationTransitionInfo />
 
                 </NavigationThemeTransition.DefaultNavigationTransitionInfo>
 
