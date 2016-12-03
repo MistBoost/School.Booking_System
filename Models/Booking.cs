@@ -31,7 +31,6 @@ namespace School.OnlineBookingSystem.Models
             CheckOutDate = checkOutDate;
             AdultsCount = adultsCount;
             ChildrensCount = childrensCount;
-            Property = property;
         }
     }
 }

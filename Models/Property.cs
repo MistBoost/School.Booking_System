@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,11 @@ using Windows.Foundation.Diagnostics;
 
 namespace School.OnlineBookingSystem.Models
 {
+
     [DataContract]
     public class Property
     {
+
         #region
 
         [DataMember (EmitDefaultValue = false)]
@@ -25,17 +28,36 @@ namespace School.OnlineBookingSystem.Models
         public string Information { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public int PricePerNight { get; set; }
+        public List<string> ImagePaths { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public List<string> ImagePaths { get; set; }
-        
+        public string Type { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public float PriceOfSmallRoom { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public int NumberOfSmallRooms { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public float PriceOfBigRoom { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public int NumberOfBigRooms { get; set; }
+
+       [DataMember(EmitDefaultValue = false)]
+        public string Code { get; set; } // Admin has to name a company in two letter, for instance - AA (For ID purpose)
+
         #endregion
-        public Property(string name, string information, int pricePerNight, List<string> imagePaths, string location)
+        public Property(string name,string typeOfProperty, string companyCode, string information, List<string> imagePaths, string location, int numberOfSmallRooms, float priceOfSmallRoom, int numberOfBigRooms, float priceOfBigRoom)
         {
             Name = name;
+            Type = typeOfProperty;
+            Code = companyCode;
             Information = information;
-            PricePerNight =  pricePerNight;
             ImagePaths = imagePaths;
             Location = location;
         }
@@ -44,7 +66,6 @@ namespace School.OnlineBookingSystem.Models
         {
             Name = "name";
             Information = "information";
-            PricePerNight = 10;
             ImagePaths = new List<string>()
             {
               
@@ -54,5 +75,6 @@ namespace School.OnlineBookingSystem.Models
             };
             Location = "seasoninfo";
         }
+        }
     }
-}
+
