@@ -62,7 +62,6 @@ namespace School.OnlineBookingSystem.Models
             Location = location;
         }
 
-
         public Property()
         {
             Name = "name";
