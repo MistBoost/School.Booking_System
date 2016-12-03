@@ -107,6 +107,7 @@
     <Compile Include="Models\BookingCatalog.cs" />
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\PropertyCatalog.cs" />
+    <Compile Include="Models\TypeOfApartment.cs" />
     <Compile Include="Models\UserSingleton.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\CreateBookingVm.cs" />

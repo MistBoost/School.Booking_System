@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq.Expressions;
+using Newtonsoft.Json;
 using School.OnlineBookingSystem.Common;
 
 namespace School.OnlineBookingSystem.Models
@@ -15,28 +17,40 @@ namespace School.OnlineBookingSystem.Models
         private readonly string hayattprefix = "../Images/SkiResorts/ElkhornLodge/";
         private readonly string Pinesprefix = "../Images/SkiResorts/PinesLodgeARockResort/";
 
+        public string Id { get; set; }
+
         public PropertyCatalog()
         {
             FilePath = "properties_data.json";
             LoadCollection();
+
             foreach (var prop in Collection)
             {
-                Dictionary<string, Apartment> apartments = new Dictionary<string, Apartment>();
-                // Creating Apartments
-
-                for (int i = 0; i < prop.NumberOfSmallRooms; i++)
+                prop.ApartmentDic = new Dictionary<string, Apartment>();
+                foreach (KeyValuePair<string, TypeOfApartment> typeOfApartment in prop.TypesOfApartments)
                 {
-                    int maxPeople = 5;
-                    prop.Id = CreateID(prop.Type, prop.Code, "SR", i); // SR - Small Room apartment type 
-                    apartments.Add(prop.Id, new Apartment(prop.PriceOfSmallRoom, maxPeople));
+                    for (int i = 0; i < typeOfApartment.Value.NumberOfApartments; i++)
+                    {
+                        Id = CreateID(prop.ResorseTypeCode, prop.PropertyCode, typeOfApartment.Value.Initial, i);
+                        prop.ApartmentDic.Add(Id, new Apartment(typeOfApartment.Value.Price, typeOfApartment.Value.MaxPeople));
+                    }
                 }
-                for (int i = 0; i < prop.NumberOfBigRooms; i++)
-                {
-                    int maxPeople = 5;
-                    prop.Id = CreateID(prop.Type, prop.Code, "BR", i);
-                    apartments.Add(prop.Id, new Apartment(prop.PriceOfBigRoom, maxPeople));
-                }
+                string toJson = JsonConvert.SerializeObject(prop.ApartmentDic);
+                Debug.WriteLine(toJson);
             }
+            //            Dictionary<string, Apartment> ApartmentDic = new Dictionary<string, Apartment>();
+            //for (int j = 0; j<3; j++)
+            //{
+
+            //        for (int i = 0; i < 5; i++)
+            //        {
+            //            Id = CreateID("a","b" ,"c", i);
+            //            ApartmentDic.Add(Id, new Apartment(45f,15));
+            //        }
+
+            //    string toJson = JsonConvert.SerializeObject(ApartmentDic);
+            //    Debug.WriteLine(toJson);
+            //}
         }
         private string CreateID(string _propertyType, string _code, string _apartmentType, int _nr)
         {
@@ -52,7 +66,6 @@ namespace School.OnlineBookingSystem.Models
             else _nrString = _nr.ToString();
 
             string _Id = $"{_propertyType}{_code}_{_apartmentType}{_nrString}";
-            Debug.WriteLine(_Id);
             return _Id;
         }
     }

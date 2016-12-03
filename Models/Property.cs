@@ -31,50 +31,21 @@ namespace School.OnlineBookingSystem.Models
         public List<string> ImagePaths { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public string Type { get; set; }
+        public string ResorseTypeCode { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public string Id { get; set; }
+        public Dictionary<string, TypeOfApartment> TypesOfApartments { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public float PriceOfSmallRoom { get; set; }
+        public Dictionary<string, Apartment> ApartmentDic { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public int NumberOfSmallRooms { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public float PriceOfBigRoom { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public int NumberOfBigRooms { get; set; }
-
-       [DataMember(EmitDefaultValue = false)]
-        public string Code { get; set; } // Admin has to name a company in two letter, for instance - AA (For ID purpose)
+        public string PropertyCode { get; set; } // Has to name a company in some initials, for instance - AA (For ID purpose)
 
         #endregion
-        public Property(string name,string typeOfProperty, string companyCode, string information, List<string> imagePaths, string location, int numberOfSmallRooms, float priceOfSmallRoom, int numberOfBigRooms, float priceOfBigRoom)
-        {
-            Name = name;
-            Type = typeOfProperty;
-            Code = companyCode;
-            Information = information;
-            ImagePaths = imagePaths;
-            Location = location;
-        }
 
-        public Property()
-        {
-            Name = "name";
-            Information = "information";
-            ImagePaths = new List<string>()
-            {
-              
+        
 
-
-
-            };
-            Location = "seasoninfo";
-        }
         }
     }
 
