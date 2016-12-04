@@ -1,8 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq.Expressions;
-using Newtonsoft.Json;
 using School.OnlineBookingSystem.Common;
 
 namespace School.OnlineBookingSystem.Models
