@@ -21,7 +21,8 @@
           "Initial": "LX",
           "MaxPeople": 7,
           "NumberOfApartments": 4,
-          "Price": 105.4
+          "Price": 105.4,
+          "Information": "This property is 11 minutes walk from the beach. These spacious modern villas each have a private outdoor pool and garden with a barbecue area. Located 100 m from Lanzarote’s Rubicon Marina, Villas Puerto Rubicon offer free on-site parking. Featuring tiled floors and a fan, each villa has a living room with satellite TV, sofa, CD and DVD player. The bathroom comes with a hairdryer, and the well-equipped kitchen includes a washing machine and dishwasher. Guests will receive a free welcome pack on arrival including tea, coffee, juice, milk, water, and biscuits. Luggage storage is available at Villas Puerto Rubicon and there is a tour desk. Playa Blanca Beach and Hesperia Playa Dorada Golf Club are a 10-minute walk away. This property is also rated for the best value in Playa Blanca! Guests are getting more for their money when compared to other properties in this city. We speak your language!"
         }
       },
       {
@@ -30,7 +31,8 @@
           "Initial": "BS",
           "MaxPeople": 3,
           "NumberOfApartments": 21,
-          "Price": 125
+          "Price": 999999.99,
+          "Information": "Youll live in a amazing boxroom in basement. IT IS GOOD BECAUSE IT IS CHEAP!!!"
         }
       },
       {
@@ -39,7 +41,8 @@
           "Initial": "SR",
           "MaxPeople": 4,
           "NumberOfApartments": 13,
-          "Price": 727.85
+          "Price": 727.85,
+          "Information" : "Single Room is best for forever aloners to come and enjoy how other couples and families enjoy they vacartion ☺" 
         }
       }
     ]
@@ -58,7 +61,8 @@
           "Initial": "VL",
           "MaxPeople": 20,
           "NumberOfApartments": 2,
-          "Price": 3215.99
+          "Price": 3215.99,
+          "Information": "This property is 8 minutes walk from the beach. Set near the ocean, these luxury villas with private outdoor pools are 5 minutes’ walk from Lanzarote’s Rubicón Marina. Guests have use of facilities at the 5 star Hotel Volcán, 100 m away."
         }
       },
       {
@@ -66,8 +70,8 @@
         "Value": {
           "Initial": "KS",
           "MaxPeople": 7,
-          "NumberOfApartments": 3,
-          "Price": 100
+          "NumberOfApartments,": 54,
+          "Information" :  "Info of king size" 
         }
       },
       {
@@ -76,7 +80,8 @@
           "Initial": "CM",
           "MaxPeople": 3,
           "NumberOfApartments": 5,
-          "Price": 72.85
+          "Price": 72.85,
+          "Information": "There is a hude park in our area where You can place your own tent and park your car next to it. We offer to rent our tents."
         }
       }
     ]
@@ -95,7 +100,8 @@
           "Initial": "BS",
           "MaxPeople": 3,
           "NumberOfApartments": 101,
-          "Price": 20
+          "Price": 20,
+            "Information" : "We have just basement in our properties"  
         }
       }
     ]
@@ -114,7 +120,8 @@
           "Initial": "SR",
           "MaxPeople": 3,
           "NumberOfApartments": 40,
-          "Price": 99.99
+          "Price": 99.99,
+            "Information": "Information about small room"  
         }
       },
       {
@@ -123,7 +130,8 @@
           "Initial": "BR",
           "MaxPeople": 7,
           "NumberOfApartments": 23,
-          "Price": 12
+          "Price": 12,
+          "Information": "Information about big room"
         }
       }
     ]
@@ -142,7 +150,8 @@
                   "Initial": "LX",
                   "MaxPeople": 7,
                   "NumberOfApartments": 4,
-                  "Price": 105.4
+                  "Price": 105.4,
+                  "Information": "Information about luxury room"
                 }
               },
               {
@@ -151,7 +160,8 @@
                   "Initial": "BS",
                   "MaxPeople": 3,
                   "NumberOfApartments": 21,
-                  "Price": 125
+                  "Price": 125,
+                  "Information": "Information about basement"
                 }
               },
               {
@@ -160,7 +170,8 @@
                   "Initial": "SR",
                   "MaxPeople": 4,
                   "NumberOfApartments": 13,
-                  "Price": 727.85
+                  "Price": 727.85,
+                  "Information": "Information about single room"
                 }
               }
             ]
@@ -179,7 +190,8 @@
                   "Initial": "LX",
                   "MaxPeople": 7,
                   "NumberOfApartments": 4,
-                  "Price": 105.4
+                  "Price": 105.4,
+                  "Information": "Information about luxury room"
                 }
               },
               {
@@ -188,7 +200,8 @@
                   "Initial": "BS",
                   "MaxPeople": 3,
                   "NumberOfApartments": 21,
-                  "Price": 125
+                  "Price": 125,
+                  "Information": "Information about basement room"
                 }
               },
               {
@@ -197,7 +210,8 @@
                   "Initial": "SR",
                   "MaxPeople": 4,
                   "NumberOfApartments": 13,
-                  "Price": 727.85
+                  "Price": 727.85,
+                  "Information": "Information about single room"
                 }
               }
             ]

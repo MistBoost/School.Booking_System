@@ -13,7 +13,6 @@ namespace School.OnlineBookingSystem.Models
         {
             FilePath = "properties_data.json";
             LoadCollection();
-
             foreach (var prop in Collection)
             {
                 prop.ApartmentDic = new Dictionary<string, Apartment>();

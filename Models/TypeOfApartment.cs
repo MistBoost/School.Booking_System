@@ -23,6 +23,9 @@ namespace School.OnlineBookingSystem.Models
         [DataMember(EmitDefaultValue = false)]
         public int MaxPeople { get; set; }
 
+        [DataMember(EmitDefaultValue = false)]
+        public string Information { get; set; }
+
     }
 
 }
