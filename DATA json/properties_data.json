@@ -14,57 +14,72 @@
     "Name": "TOWN POINTE",
     "ResorseTypeCode": "SR",
     "PropertyCode": "TP",
-    "TypesOfApartments": {
-      "Luxury": {
-        "Initial": "LX",
-        "NumberOfApartments": 51,
-        "Price": 100.99,
-        "MaxPeople": 3
+    "TypesOfApartments": [
+      {
+        "Key": "Luxury Room",
+        "Value": {
+          "Initial": "LX",
+          "MaxPeople": 7,
+          "NumberOfApartments": 4,
+          "Price": 105.4
+        }
       },
-      "Basement": {
-        "Initial": "BS",
-        "NumberOfApartments": 21,
-        "Price": 34.74,
-        "MaxPeople": 7
+      {
+        "Key": "Basement",
+        "Value": {
+          "Initial": "BS",
+          "MaxPeople": 3,
+          "NumberOfApartments": 21,
+          "Price": 125
+        }
+      },
+      {
+        "Key": "Single Room",
+        "Value": {
+          "Initial": "SR",
+          "MaxPeople": 4,
+          "NumberOfApartments": 13,
+          "Price": 727.85
+        }
       }
-    }
-
-
-
+    ]
   },
   {
     "ImagePaths": [ "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge1.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge6.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge7.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge10.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge2.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge3.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge4.jpg" ],
     "Information": "Beaver Creek’s only all-suite hotel, Beaver Creek Lodge is surrounded by Beaver Creek’s world-class slopes, and just steps away from the Strawberry Park Express Lift and Centennial Express Lift. Guests will enjoy staying in one of the spacious 71 ski in ski out, 1 bedroom suites, which offer upscale touches like pillow-top bedding",
     "Location": "chamonix",
     "Name": "BEAVER CREEK LODGE",
-    "ResorseTypeCode": "SR",
+    "ResorseTypeCode": "FR",
     "PropertyCode": "BC",
-    "TypesOfApartments": {
-      "Single Room": {
-        "Initial": "SR",
-        "NumberOfApartments": 17,
-        "Price": 30,
-        "MaxPeople": 2
+        "TypesOfApartments": [
+      {
+        "Key": "Villa",
+        "Value": {
+          "Initial": "VL",
+          "MaxPeople": 20,
+          "NumberOfApartments": 2,
+          "Price": 3215.99
+        }
       },
-      "Double Room": {
-        "Initial": "DR",
-        "NumberOfApartments": 27,
-        "Price": 56,
-        "MaxPeople": 4
+      {
+        "Key": "King Size",
+        "Value": {
+          "Initial": "KS",
+          "MaxPeople": 7,
+          "NumberOfApartments": 3,
+          "Price": 100
+        }
       },
-      "King Size": {
-        "Initial": "KS",
-        "NumberOfApartments": 7,
-        "Price": 67.89,
-        "MaxPeople": 7
-      },
-      "Camping": {
-        "Initial": "CM",
-        "NumberOfApartments": 7,
-        "Price": 67.89,
-        "MaxPeople": 0
+      {
+        "Key": "Camping",
+        "Value": {
+          "Initial": "CM",
+          "MaxPeople": 3,
+          "NumberOfApartments": 5,
+          "Price": 72.85
+        }
       }
-    }
+    ]
   },
   {
     "ImagePaths": [ "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek1_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek10_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek3_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek5_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek6_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek8_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek9_wynbcvl.jpg" ],
@@ -73,85 +88,118 @@
     "Name": "CHARTER AT BEAVER CREEK",
     "ResorseTypeCode": "SE",
     "PropertyCode": "AC",
-    "TypesOfApartments": {
-      "Luxury": {
-        "Initial": "LX",
-        "NumberOfApartments": 11,
-        "Price": 65,
-        "MaxPeople": 5
-      },
-      "VIlla": {
-        "Initial": "VL",
-        "NumberOfApartments": 21,
-        "Price": 542.45,
-        "MaxPeople": 30
+        "TypesOfApartments": [
+      {
+        "Key": "Basement",
+        "Value": {
+          "Initial": "BS",
+          "MaxPeople": 3,
+          "NumberOfApartments": 101,
+          "Price": 20
+        }
       }
-    }
+    ]
   },
   {
     "ImagePaths": [ "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses1.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses6.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses7.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses8.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisse9.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses2.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses5.jpg" ],
     "Information": " Meeting the high demands of fine dining you will delight in the culinary creations of one of two restaurants For wine enthusiasts the Hotel Weisses Rssl offers a historic wine cellar built in the 15th century",
     "Location": "FLAINE",
     "Name": "HARISCH HOTEL WEISSES ROSSL",
-    "ResorseTypeCode": "SE",
+    "ResorseTypeCode": "SR",
     "PropertyCode": "AD",
-    "TypesOfApartments": {
-      "Luxury": {
-        "Initial": "LX",
-        "NumberOfApartments": 2,
-        "Price": 100.99,
-        "MaxPeople": 5
+       "TypesOfApartments": [
+      {
+        "Key": "Small Room",
+        "Value": {
+          "Initial": "SR",
+          "MaxPeople": 3,
+          "NumberOfApartments": 40,
+          "Price": 99.99
+        }
       },
-      "Basement": {
-        "Initial": "BS",
-        "NumberOfApartments": 1,
-        "Price": 9.99,
-        "MaxPeople": 1
+      {
+        "Key": "Big Room",
+        "Value": {
+          "Initial": "BR",
+          "MaxPeople": 7,
+          "NumberOfApartments": 23,
+          "Price": 12
+        }
       }
-    }
+    ]
   },
-  {
-    "ImagePaths": [ "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge1.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge2.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge3.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge4.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge5.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge6.jpg" ],
-    "Information": "At the Elkhorn Lodge simply walk out your door and catch the Elkhorn Lift Chair 14 for a true ski-in and ski-out experience from mid-December through March",
-    "Location": "LES ARCS",
-    "Name": "Elkhorn Lodge",
-    "ResorseTypeCode": "FR",
-    "PropertyCode": "AE",
-    "TypesOfApartments": {
-      "Luxury": {
-        "Initial": "LX",
-        "NumberOfApartments": 2,
-        "Price": 100.99,
-        "MaxPeople": 5
-      },
-      "Basement": {
-        "Initial": "BS",
-        "NumberOfApartments": 3,
-        "Price": 9.99,
-        "MaxPeople": 2
-      }
-    }
-  },
-  {
-    "ImagePaths": [ "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge1.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge2.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge3.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge4.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge5.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge8.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge9.jpg" ],
-    "Information": "The Pines Lodge A RockResort provides a unique blend of European Alpine charm and modern luxury Guests and their pooches are greeted by relaxation and rejuvenation from the moment they enter A diners delight the AAA Four Diamond Grouse Mountain Grill attracts guests and non-guests alike, and four-legged guests will enjoy noshing on the Pines’ homemade dog treats",
-    "Location": "MORZINE",
-    "Name": "PINES LODGE A ROCKRESORT",
-    "ResorseTypeCode": "SE",
-    "PropertyCode": "AF",
-    "TypesOfApartments": {
-      "Basement": {
-        "Initial": "BS",
-        "NumberOfApartments": 4,
-        "Price": 9.99,
-        "MaxPeople": 1
-      },
-      "Luxury": {
-        "Initial": "LX",
-        "NumberOfApartments": 5,
-        "Price": 100.99,
-        "MaxPeople": 5
-      }
-    }
-  }
+          {
+            "ImagePaths": [ "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge1.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge2.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge3.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge4.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge5.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge6.jpg" ],
+            "Information": "At the Elkhorn Lodge simply walk out your door and catch the Elkhorn Lift Chair 14 for a true ski-in and ski-out experience from mid-December through March",
+            "Location": "LES ARCS",
+            "Name": "Elkhorn Lodge",
+            "ResorseTypeCode": "FR",
+            "PropertyCode": "AE",
+            "TypesOfApartments": [
+              {
+                "Key": "Luxury Room",
+                "Value": {
+                  "Initial": "LX",
+                  "MaxPeople": 7,
+                  "NumberOfApartments": 4,
+                  "Price": 105.4
+                }
+              },
+              {
+                "Key": "Basement",
+                "Value": {
+                  "Initial": "BS",
+                  "MaxPeople": 3,
+                  "NumberOfApartments": 21,
+                  "Price": 125
+                }
+              },
+              {
+                "Key": "Single Room",
+                "Value": {
+                  "Initial": "SR",
+                  "MaxPeople": 4,
+                  "NumberOfApartments": 13,
+                  "Price": 727.85
+                }
+              }
+            ]
+          },
+          {
+            "ImagePaths": [ "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge1.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge2.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge3.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge4.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge5.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge8.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge9.jpg" ],
+            "Information": "The Pines Lodge A RockResort provides a unique blend of European Alpine charm and modern luxury Guests and their pooches are greeted by relaxation and rejuvenation from the moment they enter A diners delight the AAA Four Diamond Grouse Mountain Grill attracts guests and non-guests alike, and four-legged guests will enjoy noshing on the Pines’ homemade dog treats",
+            "Location": "MORZINE",
+            "Name": "PINES LODGE A ROCKRESORT",
+            "ResorseTypeCode": "SE",
+            "PropertyCode": "AF",
+            "TypesOfApartments": [
+              {
+                "Key": "Luxury Room",
+                "Value": {
+                  "Initial": "LX",
+                  "MaxPeople": 7,
+                  "NumberOfApartments": 4,
+                  "Price": 105.4
+                }
+              },
+              {
+                "Key": "Basement",
+                "Value": {
+                  "Initial": "BS",
+                  "MaxPeople": 3,
+                  "NumberOfApartments": 21,
+                  "Price": 125
+                }
+              },
+              {
+                "Key": "Single Room",
+                "Value": {
+                  "Initial": "SR",
+                  "MaxPeople": 4,
+                  "NumberOfApartments": 13,
+                  "Price": 727.85
+                }
+              }
+            ]
+          }
 ]

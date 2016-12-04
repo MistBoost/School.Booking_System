@@ -71,7 +71,7 @@ namespace School.OnlineBookingSystem.Common
             {
                 throw new Exception(e.Message);
             }
-            Debug.WriteLine("Loading done");
+            Debug.WriteLine("Loading done", FilePath);
             Collection = result;
         }
 

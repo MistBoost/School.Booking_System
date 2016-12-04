@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace School.OnlineBookingSystem.Models
 {
-    [DataContract]
     public class Apartment
     {
-        [DataMember(EmitDefaultValue = false)]
-        public float Price { get; set; }
 
-        [DataMember(EmitDefaultValue = false)]
+        public float Price { get; set; }
         public int MaxPeople { get; set; }
 
         public Apartment(float price, int maxPeople)

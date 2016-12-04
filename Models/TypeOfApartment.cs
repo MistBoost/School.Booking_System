@@ -10,18 +10,19 @@ namespace School.OnlineBookingSystem.Models
     [DataContract]
     public class TypeOfApartment
     {
+
+        [DataMember(EmitDefaultValue = false)]
         public string Initial { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
         public int NumberOfApartments { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
         public float Price { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
         public int MaxPeople { get; set; }
 
-        public TypeOfApartment(string initial, int numberOfApartments, float price, int maxPeople)
-        {
-            Initial = initial;
-            NumberOfApartments = numberOfApartments;
-            Price = price;
-            MaxPeople = maxPeople;
-        }
     }
 
 }

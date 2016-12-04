@@ -42,10 +42,9 @@ namespace School.OnlineBookingSystem.Models
         [DataMember(EmitDefaultValue = false)]
         public string PropertyCode { get; set; } // Has to name a company in some initials, for instance - AA (For ID purpose)
 
+        public float MinPrice { get; set; }
         #endregion
 
-        
-
-        }
+    }
     }
 
