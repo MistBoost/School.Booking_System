@@ -252,3 +252,6 @@ paket-files/
 *.sln.iml
 *.json
 DATA json/README.txt
+project.json
+project.json
+School.OnlineBookingSystem.csproj

@@ -18,7 +18,7 @@ namespace School.OnlineBookingSystem.Models
 
         #region
 
-        [DataMember (EmitDefaultValue = false)]
+        [DataMember(EmitDefaultValue = false)]
         public string Name { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
@@ -31,20 +31,24 @@ namespace School.OnlineBookingSystem.Models
         public List<string> ImagePaths { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public string ResorseTypeCode { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
         public Dictionary<string, TypeOfApartment> TypesOfApartments { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public Dictionary<string, Apartment> ApartmentDic { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public string PropertyCode { get; set; } // Has to name a company in some initials, for instance - AA (For ID purpose)
+        public Dictionary<string, string> ApartmentDic { get; set; }
 
         public float MinPrice { get; set; }
+
         #endregion
 
+        public Property(string name, string information, List<string> imagePaths, string location, Dictionary<string, TypeOfApartment> typesOfApartmentsDictionary, Dictionary<string, string> apartmentDictionary  )
+        {
+            Name = name;
+            Information = information;
+            ImagePaths = imagePaths;
+            Location = location;
+            TypesOfApartments = typesOfApartmentsDictionary;
+            ApartmentDic = apartmentDictionary;
+        }
     }
-    }
+}
 

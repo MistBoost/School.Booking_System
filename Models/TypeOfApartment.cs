@@ -24,8 +24,16 @@ namespace School.OnlineBookingSystem.Models
         public int MaxPeople { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public string Information { get; set; }
+        public string InformationAboutApartment { get; set; }
 
+        public TypeOfApartment(string initial, int numberOfApartments, float price, int maxPeople, string informationAboutApartmentAboutApartment)
+        {
+            Initial = initial;
+            NumberOfApartments = numberOfApartments;
+            Price = price;
+            MaxPeople = maxPeople;
+            InformationAboutApartment = informationAboutApartmentAboutApartment;
+        }
     }
 
 }
