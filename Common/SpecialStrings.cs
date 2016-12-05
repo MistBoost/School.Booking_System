@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace School.OnlineBookingSystem.Common
+﻿namespace School.OnlineBookingSystem.Common
 {
     public class SpecialStrings
     {
@@ -23,11 +17,6 @@ namespace School.OnlineBookingSystem.Common
         public static string Pines = "../Images/SKIResorts/PinesLodgeARockResort/";
 
         public static string PropertyFile = "test.json";
-
-        public static string ritz   = "../Images/SKIResorts/RitzCarltonBeaverCreek/";
-
-
-
     }
 
 

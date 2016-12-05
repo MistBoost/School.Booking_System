@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using School.OnlineBookingSystem.Common;
 
 namespace School.OnlineBookingSystem.Models
@@ -12,13 +7,12 @@ namespace School.OnlineBookingSystem.Models
     {
         public AccountCatalog()
         {
+            FilePath = "accounts_data.json";
             Collection = new ObservableCollection<Account>()
             {
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator),
-                new Account("Julius Cizar", "Julius", "pass", "27246461", "julius.cizmar@gmail.com", AccountTypes.Administrator)
+                new Account("Julius Cizmar", "juli714", "pass", "emiasdlfkj", "asdoisajd", AccountTypes.Administrator),
+                new Account("Julius Cizmar", "orange", "pass", "emiasdlfkj", "asdoisajd", AccountTypes.Administrator),
+                new Account("Julius Cizmar", "asd", "pass", "emiasdlfkj", "asdoisajd", AccountTypes.Administrator)
             };
             SaveCollection();
         }

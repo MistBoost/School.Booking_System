@@ -250,3 +250,8 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+*.json
+DATA json/README.txt
+project.json
+project.json
+School.OnlineBookingSystem.csproj

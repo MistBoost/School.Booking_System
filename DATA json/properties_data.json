@@ -1,0 +1,219 @@
+[
+  {
+    "ImagePaths": [
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe1.jpg",
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe2.jpg",
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe3.jpg",
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe4.jpg ",
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe5.jpg",
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe6.jpg",
+      "../Images/SkiResorts/TownPointe/parkcity_townpointe7.jpg"
+    ],
+    "Information": "Town Pointe Condominiums offer the utmost in location nestled at the base of historic Main Street in Park City Town Pointe also offers style and amenities Conveniently located it is just a short walk from the Town Lift where the guests can catch a chairlift and be on the slopes of Park City Mountain Resort in a matter of minutes. \r\n\r\nDirect access to Main Street and Old Town by way of the pedestrian path",
+    "Location": "Alpes d'Huez",
+    "Name": "TOWN POINTE",
+    "ResorseTypeCode": "SR",
+    "PropertyCode": "TP",
+    "TypesOfApartments": [
+      {
+        "Key": "Luxury Room",
+        "Value": {
+          "Initial": "LX",
+          "MaxPeople": 7,
+          "NumberOfApartments": 4,
+          "Price": 105.4,
+          "Information": "This property is 11 minutes walk from the beach. These spacious modern villas each have a private outdoor pool and garden with a barbecue area. Located 100 m from Lanzarote’s Rubicon Marina, Villas Puerto Rubicon offer free on-site parking. Featuring tiled floors and a fan, each villa has a living room with satellite TV, sofa, CD and DVD player. The bathroom comes with a hairdryer, and the well-equipped kitchen includes a washing machine and dishwasher. Guests will receive a free welcome pack on arrival including tea, coffee, juice, milk, water, and biscuits. Luggage storage is available at Villas Puerto Rubicon and there is a tour desk. Playa Blanca Beach and Hesperia Playa Dorada Golf Club are a 10-minute walk away. This property is also rated for the best value in Playa Blanca! Guests are getting more for their money when compared to other properties in this city. We speak your language!"
+        }
+      },
+      {
+        "Key": "Basement",
+        "Value": {
+          "Initial": "BS",
+          "MaxPeople": 3,
+          "NumberOfApartments": 21,
+          "Price": 999999.99,
+          "Information": "Youll live in a amazing boxroom in basement. IT IS GOOD BECAUSE IT IS CHEAP!!!"
+        }
+      },
+      {
+        "Key": "Single Room",
+        "Value": {
+          "Initial": "SR",
+          "MaxPeople": 4,
+          "NumberOfApartments": 13,
+          "Price": 727.85,
+          "Information" : "Single Room is best for forever aloners to come and enjoy how other couples and families enjoy they vacartion ☺" 
+        }
+      }
+    ]
+  },
+  {
+    "ImagePaths": [ "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge1.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge6.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge7.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge10.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge2.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge3.jpg", "../Images/SkiResorts/BeaverCreekLodge/beavercreek_beavercreeklodge4.jpg" ],
+    "Information": "Beaver Creek’s only all-suite hotel, Beaver Creek Lodge is surrounded by Beaver Creek’s world-class slopes, and just steps away from the Strawberry Park Express Lift and Centennial Express Lift. Guests will enjoy staying in one of the spacious 71 ski in ski out, 1 bedroom suites, which offer upscale touches like pillow-top bedding",
+    "Location": "chamonix",
+    "Name": "BEAVER CREEK LODGE",
+    "ResorseTypeCode": "FR",
+    "PropertyCode": "BC",
+        "TypesOfApartments": [
+      {
+        "Key": "Villa",
+        "Value": {
+          "Initial": "VL",
+          "MaxPeople": 20,
+          "NumberOfApartments": 2,
+          "Price": 3215.99,
+          "Information": "This property is 8 minutes walk from the beach. Set near the ocean, these luxury villas with private outdoor pools are 5 minutes’ walk from Lanzarote’s Rubicón Marina. Guests have use of facilities at the 5 star Hotel Volcán, 100 m away."
+        }
+      },
+      {
+        "Key": "King Size",
+        "Value": {
+          "Initial": "KS",
+          "MaxPeople": 7,
+          "NumberOfApartments,": 54,
+          "Information" :  "Info of king size" 
+        }
+      },
+      {
+        "Key": "Camping",
+        "Value": {
+          "Initial": "CM",
+          "MaxPeople": 3,
+          "NumberOfApartments": 5,
+          "Price": 72.85,
+          "Information": "There is a hude park in our area where You can place your own tent and park your car next to it. We offer to rent our tents."
+        }
+      }
+    ]
+  },
+  {
+    "ImagePaths": [ "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek1_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek10_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek3_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek5_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek6_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek8_wynbcvl.jpg", "../Images/SkiResorts/CharetatBeaverCreek/bc_charteratbeavercreek9_wynbcvl.jpg" ],
+    "Information": "\r\nProviding exceptional convenience the Charter offers ski in ski out access and is within walking distance of the Bavarian-style Beaver Creek Village Recognized by Condé Nast as one of the Top 50 Ski Hotels in the US and Canada in 2010 this",
+    "Location": "Avoriaz",
+    "Name": "CHARTER AT BEAVER CREEK",
+    "ResorseTypeCode": "SE",
+    "PropertyCode": "AC",
+        "TypesOfApartments": [
+      {
+        "Key": "Basement",
+        "Value": {
+          "Initial": "BS",
+          "MaxPeople": 3,
+          "NumberOfApartments": 101,
+          "Price": 20,
+            "Information" : "We have just basement in our properties"  
+        }
+      }
+    ]
+  },
+  {
+    "ImagePaths": [ "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses1.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses6.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses7.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses8.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisse9.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses2.jpg", "../Images/SkiResorts/HarischHotelWeissesRossl/kit_hotelweisses5.jpg" ],
+    "Information": " Meeting the high demands of fine dining you will delight in the culinary creations of one of two restaurants For wine enthusiasts the Hotel Weisses Rssl offers a historic wine cellar built in the 15th century",
+    "Location": "FLAINE",
+    "Name": "HARISCH HOTEL WEISSES ROSSL",
+    "ResorseTypeCode": "SR",
+    "PropertyCode": "AD",
+       "TypesOfApartments": [
+      {
+        "Key": "Small Room",
+        "Value": {
+          "Initial": "SR",
+          "MaxPeople": 3,
+          "NumberOfApartments": 40,
+          "Price": 99.99,
+            "Information": "Information about small room"  
+        }
+      },
+      {
+        "Key": "Big Room",
+        "Value": {
+          "Initial": "BR",
+          "MaxPeople": 7,
+          "NumberOfApartments": 23,
+          "Price": 12,
+          "Information": "Information about big room"
+        }
+      }
+    ]
+  },
+          {
+            "ImagePaths": [ "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge1.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge2.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge3.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge4.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge5.jpg", "../Images/SkiResorts/ElkhornLodge/beavercreek_elkhornlodge6.jpg" ],
+            "Information": "At the Elkhorn Lodge simply walk out your door and catch the Elkhorn Lift Chair 14 for a true ski-in and ski-out experience from mid-December through March",
+            "Location": "LES ARCS",
+            "Name": "Elkhorn Lodge",
+            "ResorseTypeCode": "FR",
+            "PropertyCode": "AE",
+            "TypesOfApartments": [
+              {
+                "Key": "Luxury Room",
+                "Value": {
+                  "Initial": "LX",
+                  "MaxPeople": 7,
+                  "NumberOfApartments": 4,
+                  "Price": 105.4,
+                  "Information": "Information about luxury room"
+                }
+              },
+              {
+                "Key": "Basement",
+                "Value": {
+                  "Initial": "BS",
+                  "MaxPeople": 3,
+                  "NumberOfApartments": 21,
+                  "Price": 125,
+                  "Information": "Information about basement"
+                }
+              },
+              {
+                "Key": "Single Room",
+                "Value": {
+                  "Initial": "SR",
+                  "MaxPeople": 4,
+                  "NumberOfApartments": 13,
+                  "Price": 727.85,
+                  "Information": "Information about single room"
+                }
+              }
+            ]
+          },
+          {
+            "ImagePaths": [ "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge1.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge2.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge3.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge4.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge5.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge8.jpg", "../Images/SkiResorts/PinesLodgeARockResort/beavercreek_pineslodge9.jpg" ],
+            "Information": "The Pines Lodge A RockResort provides a unique blend of European Alpine charm and modern luxury Guests and their pooches are greeted by relaxation and rejuvenation from the moment they enter A diners delight the AAA Four Diamond Grouse Mountain Grill attracts guests and non-guests alike, and four-legged guests will enjoy noshing on the Pines’ homemade dog treats",
+            "Location": "MORZINE",
+            "Name": "PINES LODGE A ROCKRESORT",
+            "ResorseTypeCode": "SE",
+            "PropertyCode": "AF",
+            "TypesOfApartments": [
+              {
+                "Key": "Luxury Room",
+                "Value": {
+                  "Initial": "LX",
+                  "MaxPeople": 7,
+                  "NumberOfApartments": 4,
+                  "Price": 105.4,
+                  "Information": "Information about luxury room"
+                }
+              },
+              {
+                "Key": "Basement",
+                "Value": {
+                  "Initial": "BS",
+                  "MaxPeople": 3,
+                  "NumberOfApartments": 21,
+                  "Price": 125,
+                  "Information": "Information about basement room"
+                }
+              },
+              {
+                "Key": "Single Room",
+                "Value": {
+                  "Initial": "SR",
+                  "MaxPeople": 4,
+                  "NumberOfApartments": 13,
+                  "Price": 727.85,
+                  "Information": "Information about single room"
+                }
+              }
+            ]
+          }
+]

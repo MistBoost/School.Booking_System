@@ -15,7 +15,7 @@
         <TransitionCollection>
             <NavigationThemeTransition>
                 <NavigationThemeTransition.DefaultNavigationTransitionInfo>
-                    <ContinuumNavigationTransitionInfo />
+                    <EntranceNavigationTransitionInfo />
                 </NavigationThemeTransition.DefaultNavigationTransitionInfo>
             </NavigationThemeTransition>
         </TransitionCollection>
@@ -31,9 +31,6 @@
             <PasswordBox x:Name="passwordBox" PlaceholderText="Password"
                          Margin="10"
                          Password="{x:Bind LoginPageVm.RawPassword, Mode=TwoWay}">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="{Binding KeyDownEvent, ElementName=passwordBox, Mode=OneWay}"/>
-                </interactivity:Interaction.Behaviors>
             </PasswordBox>
             <Button Content="Sign In"
                     Margin="10"

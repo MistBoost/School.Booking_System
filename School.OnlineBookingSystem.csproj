@@ -100,13 +100,13 @@
     <Compile Include="Common\CatalogSingleton.cs" />
     <Compile Include="Common\SpecialStrings.cs" />
     <Compile Include="Common\StringValue.cs" />
-    <Compile Include="Handlers\FileManipulationHandler.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountCatalog.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\BookingCatalog.cs" />
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\PropertyCatalog.cs" />
+    <Compile Include="Models\TypeOfApartment.cs" />
     <Compile Include="Models\UserSingleton.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\CreateBookingVm.cs" />

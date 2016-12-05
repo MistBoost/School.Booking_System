@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,14 @@ using Windows.Foundation.Diagnostics;
 
 namespace School.OnlineBookingSystem.Models
 {
+
     [DataContract]
     public class Property
     {
+
         #region
 
-        [DataMember (EmitDefaultValue = false)]
+        [DataMember(EmitDefaultValue = false)]
         public string Name { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
@@ -25,34 +28,27 @@ namespace School.OnlineBookingSystem.Models
         public string Information { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public int PricePerNight { get; set; }
+        public List<string> ImagePaths { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public List<string> ImagePaths { get; set; }
-        
+        public Dictionary<string, TypeOfApartment> TypesOfApartments { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public Dictionary<string, string> ApartmentDic { get; set; }
+
+        public float MinPrice { get; set; }
+
         #endregion
-        public Property(string name, string information, int pricePerNight, List<string> imagePaths, string location)
+
+        public Property(string name, string information, List<string> imagePaths, string location, Dictionary<string, TypeOfApartment> typesOfApartmentsDictionary, Dictionary<string, string> apartmentDictionary  )
         {
             Name = name;
             Information = information;
-            PricePerNight =  pricePerNight;
             ImagePaths = imagePaths;
             Location = location;
-        }
-
-        public Property()
-        {
-            Name = "name";
-            Information = "information";
-            PricePerNight = 10;
-            ImagePaths = new List<string>()
-            {
-              
-
-
-
-            };
-            Location = "seasoninfo";
+            TypesOfApartments = typesOfApartmentsDictionary;
+            ApartmentDic = apartmentDictionary;
         }
     }
 }
+
