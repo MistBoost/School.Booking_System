@@ -24,6 +24,9 @@ namespace School.OnlineBookingSystem.Common
 
         public static string PropertyFile = "test.json";
 
+        public static string ritz   = "../Images/SKIResorts/RitzCarltonBeaverCreek/";
+
+
 
     }
 

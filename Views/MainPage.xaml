@@ -135,7 +135,7 @@
             </SplitView.Pane>
             <!--Content frame-->
             <Grid Padding="0"
-                  Margin="0">
+                  Margin="0,1,0,9">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -160,12 +160,7 @@
                         </Core:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </ListViewItem>
-                <TextBlock Grid.Row="0" 
-                           Text="Home Page"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center" Margin="658,14,657,14"></TextBlock>
-                <Frame SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=TwoWay}" Grid.Row="1">
-                </Frame>
+                <Frame SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=TwoWay}" Grid.Row="1"/>
             </Grid>
 
         </SplitView>
@@ -180,6 +175,11 @@
                       Tapped="MenuListBoxItem_OnTapped"
                       VerticalAlignment="Top"
                       Content="&#xE700;"/>
+        <TextBlock x:Name="textBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="588,13,0,0" TextWrapping="Wrap" Text="Harman" VerticalAlignment="Top"/>
+        <HyperlinkButton Grid.Column="1" HorizontalAlignment="Left" Margin="965,4,0,0" VerticalAlignment="Top">
+            <HyperlinkButton Content="MYACCOUNT"/>
+        </HyperlinkButton>
+        <HyperlinkButton Content="LOG OUT" Grid.Column="1" HorizontalAlignment="Left" Margin="1139,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
 

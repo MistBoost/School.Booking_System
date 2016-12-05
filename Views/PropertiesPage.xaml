@@ -62,7 +62,7 @@
                                 <NavigationThemeTransition.DefaultNavigationTransitionInfo>
 
                                     <ContinuumNavigationTransitionInfo />
-                                                                                      
+
                                 </NavigationThemeTransition.DefaultNavigationTransitionInfo>
 
                             </NavigationThemeTransition>
@@ -381,13 +381,13 @@
 
                     </Grid>
 
-                    <Grid Grid.Row="1" Grid.Column="1"
+                    <Grid Grid.Row="1"
 
-                  Padding="10">
+                  Padding="10" Grid.ColumnSpan="2" Margin="649,0,10,60" Grid.RowSpan="2">
 
                         <Image Stretch="UniformToFill"
 
-                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}">
+                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}" Margin="40,50,50,45">
 
                         </Image>
 

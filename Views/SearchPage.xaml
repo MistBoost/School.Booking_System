@@ -33,7 +33,7 @@
                         PlaceholderText="Search hotel" 
                         BorderBrush="Black" 
                         Background="White"
-                        x:Name="AutoSuggestBox">
+                        x:Name="AutoSuggestBox" Text="{Binding hotter}">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="TextChanged">
                     <Core:EventTriggerBehavior.Actions>
@@ -63,7 +63,7 @@
                             Margin="413,233,0,0" 
                             VerticalAlignment="Top" 
                             BorderBrush="Black" 
-                            Background="White"/>
+                            Background="Black"/>
         <TextBlock x:Name="textBlock_Copy" 
                    HorizontalAlignment="Left" 
                    Margin="417,197,0,0" 
@@ -89,7 +89,7 @@
                   VerticalAlignment="Top" 
                   Width="129" 
                   BorderBrush="Black" 
-                  Background="White" 
+                  Background="Black" 
                   Height="32">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
@@ -113,7 +113,7 @@
                   Margin="418,306,0,0" 
                   VerticalAlignment="Top" 
                   Width="127" 
-                  Background="White" 
+                  Background="Black" 
                   BorderBrush="Black" 
                   Height="32">
             <ComboBoxItem Content="1"/>
@@ -136,14 +136,14 @@
         <ListView x:Name="listView" 
                   HorizontalAlignment="Left" 
                   Height="252" 
-                  Margin="127,390,0,0" 
+                  Margin="127,393,0,0" 
                   VerticalAlignment="Top" 
                   Width="493" 
                   BorderBrush="Black"  />
         <Image x:Name="image" 
                HorizontalAlignment="Left" 
-               Height="240" 
-               Margin="905,98,0,0" 
+               Height="274" 
+               Margin="905,116,0,0" 
                VerticalAlignment="Top" 
                Width="412"/>
         <Button x:Name="button"
@@ -164,12 +164,13 @@
                    Foreground="White"/>
         <TextBlock x:Name="textBlock" 
                    HorizontalAlignment="Left" 
-                   Margin="905,390,0,0" 
+                   Margin="905,444,0,0" 
                    Foreground="White" 
                    TextWrapping="Wrap" 
                    Text="France Vancaces Protocol" 
                    VerticalAlignment="Top" 
                    Height="252" 
                    Width="412"/>
+        <Button x:Name="button1" Content="search"   HorizontalAlignment="Left" Margin="460,346,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

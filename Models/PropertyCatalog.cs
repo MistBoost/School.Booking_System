@@ -19,6 +19,8 @@ namespace School.OnlineBookingSystem.Models
         private readonly string harischprefix = "../Images/SkiResorts/HarischHotelWeissesRossl/";
         private readonly string hayattprefix = "../Images/SkiResorts/ElkhornLodge/";
         private readonly string Pinesprefix = "../Images/SkiResorts/PinesLodgeARockResort/";
+        private readonly string Ritzprefix = "../Images/SkiResorts/RitzCarltonBeaverCreek/";
+
 
         public PropertyCatalog()
         {
@@ -71,13 +73,13 @@ namespace School.OnlineBookingSystem.Models
                     harischprefix + "kit_hotelweisses6.jpg",
                     harischprefix + "kit_hotelweisses7.jpg",
                     harischprefix + "kit_hotelweisses8.jpg",
-                    harischprefix + "kit_hotelweisse9.jpg",
+                    harischprefix + "kit_hotelweisses9.jpg",
                     harischprefix + "kit_hotelweisses2.jpg",
                     harischprefix + "kit_hotelweisses5.jpg"
 
                 },"FLAINE" ),
 
-                new Property("Elkhorn Lodge", "At the Elkhorn Lodge simply walk out your door and catch the Elkhorn Lift Chair 14 for a true ski-in and ski-out experience from mid-December through March" , 3500 , new List<string>()
+                new Property("ELKHORN LODGE", "At the Elkhorn Lodge simply walk out your door and catch the Elkhorn Lift Chair 14 for a true ski-in and ski-out experience from mid-December through March" , 3500 , new List<string>()
                 {
                     hayattprefix + "beavercreek_elkhornlodge1.jpg",
                     hayattprefix + "beavercreek_elkhornlodge2.jpg",
@@ -85,6 +87,7 @@ namespace School.OnlineBookingSystem.Models
                     hayattprefix + "beavercreek_elkhornlodge4.jpg",
                     hayattprefix + "beavercreek_elkhornlodge5.jpg",
                     hayattprefix + "beavercreek_elkhornlodge6.jpg",
+                    hayattprefix + "jacksonhole_hotelterra8.jpg"
                 }, "LES ARCS"),
 
                 new Property("PINES LODGE A ROCKRESORT", "The Pines Lodge A RockResort provides a unique blend of European Alpine charm and modern luxury Guests and their pooches are greeted by relaxation and rejuvenation from the moment they enter A diners delight the AAA Four Diamond Grouse Mountain Grill attracts guests and non-guests alike, and four-legged guests will enjoy noshing on the Pines’ homemade dog treats", 4000,
@@ -97,7 +100,19 @@ namespace School.OnlineBookingSystem.Models
                     Pinesprefix + "beavercreek_pineslodge5.jpg",
                     Pinesprefix + "beavercreek_pineslodge8.jpg",
                     Pinesprefix + "beavercreek_pineslodge9.jpg",
-                }, "MORZINE")
+                }, "MORZINE"),
+
+                new Property("RITZ CARLTON BEAVER CREEK", "Inspired by the beautiful lodges of the National Park System The Ritz Carlton Beaver Creek exudes authentic Rocky Mountain luxury Nestled in the exclusive mountain village of Bachelor Gulch on Beaver Creek ski resort, the Ritz-Carlton Bachelor Gulch is an AAA Five Diamond property which offers a highly lauded ski in ski out experience", 3000, new List<string>()
+                {
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch1_ritzbach.jpg",
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch2_ritzbach.jpg",
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch3_ritzbach.jpg",
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch6_ritzbach.jpg",
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch10_ritzbach.jpg",
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch7_ritzbach.jpg",
+                    Ritzprefix + "bc_ritzcarltonbachelorgulch9_ritzbach.jpg",
+                }, "Samoens" )
+
             };
             SaveCollection();
         }

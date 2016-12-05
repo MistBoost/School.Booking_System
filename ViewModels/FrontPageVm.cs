@@ -25,6 +25,7 @@ namespace School.OnlineBookingSystem.ViewModels
                 OnPropertyChanged(nameof(Images));
             }
         }
+        public MainFrameSingleton NavigationControl { get; set; }
 
         public int SelectedIndex
         {
@@ -38,13 +39,14 @@ namespace School.OnlineBookingSystem.ViewModels
 
         public FrontPageVm()
         {
+        
             Images = new ObservableCollection<StringValue>
             {
-                new StringValue(SpecialStrings.ImagePrefix + "1.jpg"),
-                new StringValue(SpecialStrings.ImagePrefix + "2.jpg"),
-                new StringValue(SpecialStrings.ImagePrefix + "3.jpg"),
-                new StringValue(SpecialStrings.ImagePrefix + "4.jpg"),
-                new StringValue(SpecialStrings.ImagePrefix + "5.jpg")
+                new StringValue(SpecialStrings.ImagePrefix + "beavercreek_beavercreeklodge1.jpg"),
+                new StringValue(SpecialStrings.ImagePrefix + "bc_borderslodge1_wynbcvl.jpg"),
+                new StringValue(SpecialStrings.ImagePrefix + "beavercreek_pineslodge1.jpg"),
+                new StringValue(SpecialStrings.ImagePrefix + "parkcity_townpointe1.jpg"),
+                new StringValue(SpecialStrings.ImagePrefix + "bc_ritzcarltonbachelorgulch1_ritzbach.jpg")
             };
             SelectedIndex = 0;
         }
