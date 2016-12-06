@@ -6,10 +6,8 @@ namespace School.OnlineBookingSystem.Models
 {
     public sealed class BookingCatalog : Catalog<Booking>
     {
-        private BookingCatalog()
+        public BookingCatalog() : base("booking_data.json")
         {
-            FilePath = "booking_data.json";
-            LoadCollection();
         }
     }
 }

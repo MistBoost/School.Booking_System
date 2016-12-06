@@ -1,13 +1,12 @@
-﻿using School.OnlineBookingSystem.Common;
+﻿using System.Threading.Tasks;
+using School.OnlineBookingSystem.Common;
 
 namespace School.OnlineBookingSystem.Models
 {
     public class AccountCatalog : Catalog<Account>
     {
-        public AccountCatalog()
+        public AccountCatalog() : base("accounts_data.json")
         {
-            FilePath = "accounts_data.json";
-            LoadCollection();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace School.OnlineBookingSystem.Common
     public class Catalog<T>
     {
         protected string FilePath { get; set; }
-        public ObservableCollection<T> Collection { get; set; }
+        public ObservableCollection<T> Collection { get; set; } = new ObservableCollection<T>();
         private static Catalog<T> _instance;
 
         public static Catalog<T> Instance
@@ -30,18 +30,22 @@ namespace School.OnlineBookingSystem.Common
 
         internal Catalog()
         {
+        }
 
+        internal Catalog(string filepath)
+        {
+            Instance.FilePath = filepath;
         }
         public void SaveCollection()
         {
             var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
             var stream = new MemoryStream();
-            js.WriteObject(stream, Collection);
+            js.WriteObject(stream, Instance.Collection);
             var msg = StreamToString(stream);
             try
             {
                 var folder = ApplicationData.Current.LocalFolder;
-                File.WriteAllText(folder.Path + "\\" + FilePath, msg);
+                File.WriteAllText(folder.Path + "\\" + Instance.FilePath, msg);
             }
             catch (Exception e)
             {
@@ -60,7 +64,7 @@ namespace School.OnlineBookingSystem.Common
             try
             {
                 var folder = ApplicationData.Current.LocalFolder;
-                var file = File.OpenRead(folder.Path + "\\" + FilePath);
+                var file = File.OpenRead(folder.Path + "\\" + Instance.FilePath);
                 if (file != null)
                 {
                     var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
@@ -69,10 +73,11 @@ namespace School.OnlineBookingSystem.Common
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                SaveCollection();
+                Debug.WriteLine(e.Message);
             }
-            Debug.WriteLine("Loading done", FilePath);
-            Collection = result;
+            Debug.WriteLine("Loading done", Instance.FilePath);
+            Instance.Collection = result;
         }
 
         private static string StreamToString(Stream stream)
