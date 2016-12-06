@@ -106,7 +106,7 @@ namespace School.OnlineBookingSystem.Models
                     {
                         {
                             "Luxury Room",
-                            new TypeOfApartment("LX", 12, 50.7f, 7,
+                            new TypeOfApartment("LX", 15, 50.7f, 7,
                                 "This property is 11 minutes walk from the beach. These spacious modern villas each have a private outdoor pool and garden with a barbecue area. Located 100 m from Lanzarote’s Rubicon Marina, Villas Puerto Rubicon offer free on-site parking. Featuring tiled floors and a fan, each villa has a living room with satellite TV, sofa, CD and DVD player. The bathroom comes with a hairdryer, and the well-equipped kitchen includes a washing machine and dishwasher. Guests will receive a free welcome pack on arrival including tea, coffee, juice, milk, water, and biscuits. Luggage storage is available at Villas Puerto Rubicon and there is a tour desk. Playa Blanca Beach and Hesperia Playa Dorada Golf Club are a 10-minute walk away. This property is also rated for the best value in Playa Blanca! Guests are getting more for their money when compared to other properties in this city. We speak your language!")
                         },
                         {
