@@ -103,7 +103,7 @@ namespace School.OnlineBookingSystem.ViewModels
         public PropertiesPageVm()
         {
             IsPaneOpen = true;
-            PropertyCatalog = Catalog<Property>.Instance;
+            PropertyCatalog = new PropertyCatalog();
             SelectedIndex = 0;
             SelectedImageIndex = 0;
             SelectedStringValues = new ObservableCollection<StringValue>(PropertyCatalog.Collection[SelectedIndex].ImagePaths.Select(p => new StringValue(p)).ToList());
