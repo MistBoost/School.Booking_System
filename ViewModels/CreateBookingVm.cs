@@ -48,6 +48,8 @@ namespace School.OnlineBookingSystem.ViewModels
             {
                 var tempBook = new Booking(CustomersName, CustomersPhoneNumber, CustomersEmail, CheckInDate, CheckOutDate, AdultsCount, ChildrensCount, Id, ApartmentType);
                 BookingCat = new BookingCatalog();
+                BookingCat.Collection.Add(tempBook);
+                BookingCat.SaveCollection();
             }
         }
 

@@ -17,7 +17,6 @@ namespace School.OnlineBookingSystem.Models
         public BookingCatalog(Booking bookingInfo, Property property)
         {
             FilePath = property.Name + ".json";
-            LoadCollection();
             Collection = new ObservableCollection<Booking>();
             Collection.Add(bookingInfo);
             SaveCollection();

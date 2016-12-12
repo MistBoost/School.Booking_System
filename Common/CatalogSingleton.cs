@@ -46,7 +46,7 @@ namespace School.OnlineBookingSystem.Common
                 {
                     await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
                 }
-                catch (Exception e)
+                catch
                 {
                     Debug.WriteLine("Folder already exists");
                 }
