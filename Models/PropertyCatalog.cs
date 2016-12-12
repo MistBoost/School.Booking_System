@@ -66,7 +66,7 @@ namespace School.OnlineBookingSystem.Models
                         BeaverPrefix + "beavercreek_beavercreeklodge2.jpg",
                         BeaverPrefix + "beavercreek_beavercreeklodge3.jpg",
                         BeaverPrefix + "beavercreek_beavercreeklodge4.jpg"
-                    }, "chamonix",
+                    }, "chamonix", 
                     new Dictionary<string, TypeOfApartment>()
                     {
                         {

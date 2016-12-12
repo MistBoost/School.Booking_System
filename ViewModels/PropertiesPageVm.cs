@@ -18,12 +18,14 @@ namespace School.OnlineBookingSystem.ViewModels
         private bool _isPaneOpen;
         private Property _selectedProperty;
 
+        public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
         public Property SelectedProperty
         {
             get { return _selectedProperty; }
             set
             {
                 _selectedProperty = value;
+                TransportSingleton.Instance.SelectedProp = _selectedProperty;
                 OnPropertyChanged(nameof(SelectedProperty));
             }
         }
