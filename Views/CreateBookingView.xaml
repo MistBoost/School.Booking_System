@@ -2,6 +2,7 @@
     x:Class="School.OnlineBookingSystem.Views.CreateBookingView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
     xmlns:local="using:School.OnlineBookingSystem.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -36,20 +37,25 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel HorizontalAlignment="Center">
+            <StackPanel.DataContext>
+                <viewModels:CreateBookingVm x:Name="Vm"/>
+            </StackPanel.DataContext>
             <DatePicker Grid.Row="1"
                     Margin="10"
                     Header="Check-In Date"></DatePicker>
             <DatePicker Grid.Row="2" 
                     Grid.Column="0"
                     Margin="10"
-                    Header="Check-Out Date"></DatePicker>
+                    Header="Check-Out Date"
+                        SelectedDate="{Binding Vm.CheckInDate}"></DatePicker>
             <TextBox Grid.Row="3"
                  Grid.Column="0"
                  Margin="10"
                  Header="Payer's Name"
                  Width="250"
                  HorizontalAlignment="Left"
-                 PlaceholderText="Full Name"></TextBox>
+                 PlaceholderText="Full Name"
+                     Text="{x:Bind Vm.CustomersName, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="4"
                  Grid.Column="0"
                  Margin="10"
@@ -86,7 +92,10 @@
                  Grid.Column="0"
                  Margin="10"
                  HorizontalAlignment="Left"
-                 Content="Submit"></Button>
+                 Content="Submit"
+                    Command="{x:Bind Vm.Book, Mode=OneWay}">
+                
+            </Button>
         </StackPanel>
         
        

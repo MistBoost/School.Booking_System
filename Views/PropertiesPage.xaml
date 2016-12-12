@@ -23,10 +23,7 @@
         </TransitionCollection>
     </Page.Transitions>
     <Grid>
-        <Grid.DataContext>
-            <viewModels:MainPageVm/>
-        </Grid.DataContext>
-
+      
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*"></RowDefinition>
@@ -337,9 +334,11 @@
 
                        Width="150"
 
-                       FontSize="22"
+                       FontSize="22" Click="Button_Click"
                                 Command="{x:Bind Vm.NavigationControl.NavigateToCommand}"
-                                CommandParameter="CreateBookingView"></Button>
+                                CommandParameter="CreateBookingView" >
+
+                        </Button>
 
                     </Grid>
 
