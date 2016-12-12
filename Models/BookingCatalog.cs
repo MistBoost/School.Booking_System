@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using School.OnlineBookingSystem.Common;
 
 namespace School.OnlineBookingSystem.Models
@@ -9,7 +11,16 @@ namespace School.OnlineBookingSystem.Models
         public BookingCatalog()
         {
             FilePath = "booking_data.json";
-            Collection = LoadCollection().Result;
+            LoadCollection();
+        }
+
+        public BookingCatalog(Booking bookingInfo, Property property)
+        {
+            FilePath = property.Name + ".json";
+            LoadCollection();
+            Collection = new ObservableCollection<Booking>();
+            Collection.Add(bookingInfo);
+            SaveCollection();
         }
     }
 }
