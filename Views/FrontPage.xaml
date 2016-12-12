@@ -47,7 +47,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/WorldWide.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/WorldWide.jpg"/>
         </Grid.Background>
 
         <Button x:Name="button"  FontSize="22" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.615,-0.312" Width="337" Height="60">

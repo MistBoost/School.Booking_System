@@ -26,9 +26,5 @@ namespace School.OnlineBookingSystem.Views
         {
             this.InitializeComponent();
         }
-
-       
-
-        
     }
 }

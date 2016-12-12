@@ -165,8 +165,14 @@
     <Content Include="Images\france.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge6.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge7.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek1_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek9_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch1.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch2.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch3.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch4.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch5.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch6.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch7.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses2.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses5.jpg" />
     <Content Include="Images\SkiResorts\ElkhornLodge\beavercreek_elkhornlodge3.jpg" />
@@ -174,6 +180,13 @@
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge6_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\PinesLodgeARockResort\beavercreek_pineslodge4.jpg" />
     <Content Include="Images\SkiResorts\PinesLodgeARockResort\beavercreek_pineslodge5.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch10_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch1_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch2_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch3_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch6_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch7_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch9_ritzbach.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe1.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe2.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe3.jpg" />
@@ -188,11 +201,6 @@
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge2.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge3.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge4.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek10_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek3_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek5_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek6_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek8_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses1.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses6.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses7.jpg" />
@@ -213,21 +221,7 @@
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge2_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge3_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge5_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch10_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch1_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch2_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch3_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch6_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace1_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace2_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace3_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace4_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace7_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel1.jpg" />
-    <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel10.jpg" />
-    <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel4.jpg" />
-    <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel8.jpg" />
-    <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel9.jpg" />
+    <Content Include="Images\WorldWide.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -243,8 +237,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Views\AboutPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\CreateBookingView.xaml">
       <SubType>Designer</SubType>
