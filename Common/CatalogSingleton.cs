@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.Storage;
 
 namespace School.OnlineBookingSystem.Common
@@ -25,14 +26,15 @@ namespace School.OnlineBookingSystem.Common
                 _instance = new Catalog<T>();
                 return _instance;
             }
-            
+
         }
 
         internal Catalog()
         {
 
         }
-        public void SaveCollection()
+
+        public async Task SaveCollection()
         {
             var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
             var stream = new MemoryStream();
@@ -40,8 +42,19 @@ namespace School.OnlineBookingSystem.Common
             var msg = StreamToString(stream);
             try
             {
-                var folder = ApplicationData.Current.LocalFolder;
-                File.WriteAllText(folder.Path + "\\" + FilePath, msg);
+                try
+                {
+                    await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Folder already exists");
+                }
+                var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
+                if (folder != null)
+                {
+                    File.WriteAllText(folder.Path + "\\" + FilePath, msg);
+                }
             }
             catch (Exception e)
             {
@@ -54,25 +67,37 @@ namespace School.OnlineBookingSystem.Common
             Debug.WriteLine("Save done");
         }
 
-        public void LoadCollection()
+        public async Task<ObservableCollection<T>> LoadCollection()
         {
             var result = new ObservableCollection<T>();
             try
             {
-                var folder = ApplicationData.Current.LocalFolder;
-                var file = File.OpenRead(folder.Path + "\\" + FilePath);
-                if (file != null)
+                var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
+                if (folder == null)
                 {
-                    var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
-                    result = (ObservableCollection<T>)js.ReadObject(file);
+                    await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
+                }
+                else
+                {
+                    if (File.Exists(folder.Path + "\\" + FilePath))
+                    {
+                        var file = File.OpenRead(folder.Path + "\\" + FilePath);
+                        var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
+                        result = (ObservableCollection<T>)js.ReadObject(file);
+                    }
+                    else
+                    {
+                        File.WriteAllText(folder.Path + "\\" + FilePath, "[]");
+                    }
                 }
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+               Debug.WriteLine(e.Message);
             }
             Debug.WriteLine("Loading done", FilePath);
             Collection = result;
+            return result;
         }
 
         private static string StreamToString(Stream stream)

@@ -38,7 +38,7 @@ namespace School.OnlineBookingSystem.Models
 
         [DataMember(EmitDefaultValue = false)]
         public Dictionary<string, string> ApartmentDic { get; set; }
-
+        
         public float MinPrice { get; set; }
 
         #endregion

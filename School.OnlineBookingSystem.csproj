@@ -100,26 +100,24 @@
     <Compile Include="Common\CatalogSingleton.cs" />
     <Compile Include="Common\SpecialStrings.cs" />
     <Compile Include="Common\StringValue.cs" />
+    <Compile Include="Common\TransportSingleton.cs" />
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\AccountCatalog.cs" />
     <Compile Include="Models\Booking.cs" />
-    <Compile Include="Models\BookingCatalog.cs" />
     <Compile Include="Models\Property.cs" />
-    <Compile Include="Models\PropertyCatalog.cs" />
     <Compile Include="Models\TypeOfApartment.cs" />
     <Compile Include="Models\UserSingleton.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Models\AccountCatalog.cs" />
+    <Compile Include="Models\BookingCatalog.cs" />
     <Compile Include="ViewModels\CreateBookingVm.cs" />
     <Compile Include="ViewModels\FrontPageVm.cs" />
     <Compile Include="ViewModels\LoginPageVm.cs" />
     <Compile Include="ViewModels\MainFrameSingleton.cs" />
     <Compile Include="ViewModels\MainPageVM.cs" />
     <Compile Include="ViewModels\PropertiesPageVm.cs" />
+    <Compile Include="Models\PropertyCatalog.cs" />
     <Compile Include="ViewModels\RegisterPageVm.cs" />
     <Compile Include="ViewModels\SearchPageVm.cs" />
-    <Compile Include="Views\AboutPage.xaml.cs">
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\CreateBookingView.xaml.cs">
       <DependentUpon>CreateBookingView.xaml</DependentUpon>
     </Compile>
@@ -153,9 +151,6 @@
     <None Include="School.OnlineBookingSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\eiffel-tower-france-paris-buildings-lights-1680x1050-wallpaper.jpg" />
-    <Content Include="Assets\europeflyout.jpg" />
-    <Content Include="Assets\WorldWide.jpg" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
@@ -167,15 +162,8 @@
     <Content Include="Images\france.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge6.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge7.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch1.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch2.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch3.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch4.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch5.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch6.jpg" />
-    <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch7.jpg" />
-    <Content Include="Images\SkiResorts\ElkhornLodge\jacksonhole_hotelterra8.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek1_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek9_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses2.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses5.jpg" />
     <Content Include="Images\SkiResorts\ElkhornLodge\beavercreek_elkhornlodge3.jpg" />
@@ -183,10 +171,6 @@
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge6_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\PinesLodgeARockResort\beavercreek_pineslodge4.jpg" />
     <Content Include="Images\SkiResorts\PinesLodgeARockResort\beavercreek_pineslodge5.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch7_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch9_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace5_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace6_vrbc.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe1.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe2.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe3.jpg" />
@@ -201,6 +185,11 @@
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge2.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge3.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge4.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek10_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek3_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek5_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek6_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\CharetatBeaverCreek\bc_charteratbeavercreek8_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses1.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses6.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses7.jpg" />
@@ -221,16 +210,16 @@
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge2_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge3_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge5_wynbcvl.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch10_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch1_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch2_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch3_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\RitzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch6_ritzbach.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace1_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace2_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace3_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace4_vrbc.jpg" />
-    <Content Include="Images\SkiResorts\stjamesplace\beavercreek_stjamesplace7_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch10_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch1_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch2_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch3_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\Ritz Carlton Beaver Creek\bc_ritzcarltonbachelorgulch6_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace1_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace2_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace3_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace4_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\rusmus%27s Villa\beavercreek_stjamesplace7_vrbc.jpg" />
     <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel1.jpg" />
     <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel10.jpg" />
     <Content Include="Images\SkiResorts\Tansu%27s Villa\valthorens_kohlnorhotel4.jpg" />
@@ -250,10 +239,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\AboutPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\CreateBookingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
