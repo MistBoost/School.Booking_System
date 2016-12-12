@@ -15,6 +15,7 @@ namespace School.OnlineBookingSystem.ViewModels
         private ObservableCollection<StringValue> _selectedStringValues;
         private string _selectedImageString;
         private int _selectedImageIndex;
+      //  private int _selectedPropTyesCount;
         private bool _isPaneOpen;
         private Property _selectedProperty;
 
@@ -35,6 +36,16 @@ namespace School.OnlineBookingSystem.ViewModels
             {
                 _isPaneOpen = value;
                 OnPropertyChanged(nameof(IsPaneOpen));
+            }
+        }
+
+        public int SelectedPropTypes
+        {
+            get { return SelectedProperty.TypesOfApartments.Count; }
+            set
+            {
+                SelectedPropTypes = value;
+                OnPropertyChanged(nameof(SelectedPropTypes));
             }
         }
 

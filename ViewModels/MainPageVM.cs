@@ -11,10 +11,15 @@ namespace School.OnlineBookingSystem.ViewModels
     public class MainPageVm : INotifyPropertyChanged
     {
         public MainFrameSingleton NavigationControl { get; set; }
+        public LoginPageVm Login { get; set; }
+
+
 
         public MainPageVm()
         {
             NavigationControl = MainFrameSingleton.Instance;
+            NavigationControl.MainFrame.SourcePageType = typeof(FrontPage);
+            Login = new LoginPageVm();
         }
 
         

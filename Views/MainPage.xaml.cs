@@ -20,5 +20,7 @@ namespace School.OnlineBookingSystem.Views
         {
             SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
         }
+
+       
     }
 }

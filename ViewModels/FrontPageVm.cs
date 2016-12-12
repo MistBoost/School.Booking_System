@@ -15,6 +15,7 @@ namespace School.OnlineBookingSystem.ViewModels
     {
         private int _selectedIndex;
         private ObservableCollection<StringValue> _images;
+        public MainFrameSingleton NavigationControl { get; set; }
 
         public ObservableCollection<StringValue> Images
         {
@@ -38,6 +39,7 @@ namespace School.OnlineBookingSystem.ViewModels
 
         public FrontPageVm()
         {
+          NavigationControl = MainFrameSingleton.Instance;
             Images = new ObservableCollection<StringValue>
             {
                 new StringValue(SpecialStrings.ImagePrefix + "1.jpg"),

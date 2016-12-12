@@ -39,11 +39,11 @@ namespace School.OnlineBookingSystem.ViewModels
         }
         private MainFrameSingleton()
         {
-            MainFrame = new Frame { SourcePageType = typeof(FrontPage) };
+            MainFrame = new Frame();
             NavigateToCommand = new DelegateCommand(NavigateToCommandM);
             GoBackCommand = new DelegateCommand(GoBackCommandM);
         }
-        private void NavigateToCommandM(object sender)
+        public void NavigateToCommandM(object sender)
         {
             var input = sender as string;
             switch (input)
@@ -59,6 +59,9 @@ namespace School.OnlineBookingSystem.ViewModels
                     break;
                 case ("CreateBookingView"):
                     Instance.MainFrame.SourcePageType = typeof(CreateBookingView);
+                    break;
+                case ("AboutPage"):
+                    Instance.MainFrame.SourcePageType = typeof(AboutPage);
                     break;
             }
         }

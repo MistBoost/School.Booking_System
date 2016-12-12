@@ -30,6 +30,9 @@ namespace School.OnlineBookingSystem.Models
         [DataMember(EmitDefaultValue = false)]
         public List<string> ImagePaths { get; set; }
 
+        [DataMember(EmitDefaultValue = false )]
+        public string Country { get; set; }
+
         [DataMember(EmitDefaultValue = false)]
         public Dictionary<string, TypeOfApartment> TypesOfApartments { get; set; }
 
@@ -40,11 +43,12 @@ namespace School.OnlineBookingSystem.Models
 
         #endregion
 
-        public Property(string name, string information, List<string> imagePaths, string location, Dictionary<string, TypeOfApartment> typesOfApartmentsDictionary, Dictionary<string, string> apartmentDictionary  )
+        public Property(string name, string information, List<string> imagePaths, string country, string location, Dictionary<string, TypeOfApartment> typesOfApartmentsDictionary, Dictionary<string, string> apartmentDictionary  )
         {
             Name = name;
             Information = information;
             ImagePaths = imagePaths;
+            Country = country;
             Location = location;
             TypesOfApartments = typesOfApartmentsDictionary;
             ApartmentDic = apartmentDictionary;

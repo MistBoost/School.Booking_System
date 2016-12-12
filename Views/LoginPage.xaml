@@ -10,6 +10,7 @@
     mc:Ignorable="d">
     <Page.DataContext>
         <viewModels:LoginPageVm x:Name="LoginPageVm"></viewModels:LoginPageVm>
+
     </Page.DataContext>
     <Page.Transitions>
         <TransitionCollection>
@@ -24,28 +25,28 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Width="230">
+                    Width="230" Height="328" Margin="525,185,525,207">
+            <SymbolIcon Symbol="Admin" Height="56" Margin="70,0,65,0"/>
             <TextBox PlaceholderText="Username"
                      Margin="10"
-                     Text="{x:Bind LoginPageVm.RawUsername, Mode=TwoWay}"></TextBox>
+                     Text="{x:Bind LoginPageVm.RawUsername, Mode=TwoWay}"/>
             <PasswordBox x:Name="passwordBox" PlaceholderText="Password"
                          Margin="10"
-                         Password="{x:Bind LoginPageVm.RawPassword, Mode=TwoWay}">
-            </PasswordBox>
+                         Password="{x:Bind LoginPageVm.RawPassword, Mode=TwoWay}"/>
             <Button Content="Sign In"
                     Margin="10"
                     HorizontalAlignment="Stretch"
-                    Command="{x:Bind LoginPageVm.LoginCommand, Mode=OneWay}"></Button>
+                    Command="{x:Bind LoginPageVm.LoginCommand, Mode=OneWay}"/>
             <HyperlinkButton Content="Create new account"
                              HorizontalAlignment="Center"
-                             Command="{x:Bind LoginPageVm.RegisterAccount}"></HyperlinkButton>
+                             Command="{x:Bind LoginPageVm.RegisterAccount}"/>
             <HyperlinkButton Content="Continue without Logging In"
                              HorizontalAlignment="Center"
-                             Command="{x:Bind LoginPageVm.SkipToMainPage}"></HyperlinkButton>
+                             Command="{x:Bind LoginPageVm.SkipToMainPage}"/>
             <TextBlock Text="{x:Bind LoginPageVm.StatusMessages, Mode=TwoWay}"
                        Padding="5"
                        Foreground="Red"
-                       HorizontalAlignment="Center"></TextBlock>
+                       HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -9,6 +9,9 @@
     x:Class="School.OnlineBookingSystem.Views.MainPage"
     RequestedTheme="Dark"
     mc:Ignorable="d">
+    <Page.Resources>
+
+    </Page.Resources>
     <Page.DataContext>
         <viewModels:MainPageVm x:Name="ViewModel"/>
     </Page.DataContext>
@@ -111,8 +114,8 @@
                                       Padding="0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="48"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="16*"/>
+                                    <ColumnDefinition Width="29*"/>
                                 </Grid.ColumnDefinitions>
                                 <SymbolIcon Grid.Column="0"
                                             Symbol="Globe"
@@ -130,12 +133,38 @@
                                 </Core:EventTriggerBehavior>
                             </Interactivity:Interaction.Behaviors>
                         </ListViewItem>
+                        <ListViewItem Height="48"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Stretch"
+                                      Padding="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="48"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <SymbolIcon Grid.Column="0"
+                                            Symbol="Priority"
+                                            Width="48"
+                                            HorizontalAlignment="Left"/>
+                                <TextBlock Text="ABOUT"
+                                           Grid.Column="1"/>
+                            </Grid>
+                            <Interactivity:Interaction.Behaviors>
+                                <Core:EventTriggerBehavior EventName="Tapped">
+                                    <Core:EventTriggerBehavior.Actions>
+                                        <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
+                                                                  CommandParameter="AboutPage"/>
+                                    </Core:EventTriggerBehavior.Actions>
+                                </Core:EventTriggerBehavior>
+                            </Interactivity:Interaction.Behaviors>
+                        </ListViewItem>
                     </ListView>
                 </Grid>
             </SplitView.Pane>
             <!--Content frame-->
             <Grid Padding="0"
                   Margin="0">
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -151,7 +180,9 @@
                         </SymbolIcon>
                         <TextBlock Text="Back"
                                    VerticalAlignment="Center"></TextBlock>
+
                     </StackPanel>
+
                     <Interactivity:Interaction.Behaviors>
                         <Core:EventTriggerBehavior EventName="Tapped">
                             <Core:EventTriggerBehavior.Actions>
@@ -164,8 +195,40 @@
                            Text="Home Page"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center" Margin="658,14,657,14"></TextBlock>
-                <Frame SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=TwoWay}" Grid.Row="1">
-                </Frame>
+                <Frame SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=TwoWay}" Grid.Row="1" />
+                <Button  x:Name="button" Background="Black" Content="LOGIN" HorizontalAlignment="Left" Margin="1077,10,0,0" VerticalAlignment="Top">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="230">
+
+
+                                <SymbolIcon Symbol="People" Height="56" Margin="70,0,65,0"/>
+
+                                <TextBox  PlaceholderText="Username"
+                     Margin="10" Text="{x:Bind ViewModel.Login.RawUsername , Mode=TwoWay}" ></TextBox>
+                                <PasswordBox Name="PasswordBox" PlaceholderText="Password box " Margin="10" Password="{x:Bind ViewModel.Login.RawPassword , Mode=TwoWay}" ></PasswordBox>
+                                <Button Content="Sign In"
+                    Margin="10" Command="{x:Bind ViewModel.Login.LoginCommand , Mode=OneWay}"
+                    HorizontalAlignment="Stretch"
+                    ></Button>
+                                <HyperlinkButton Content="Create new account"
+                             HorizontalAlignment="Center" Command="{x:Bind ViewModel.Login.RegisterAccount }"
+                             ></HyperlinkButton>
+                                <!--<HyperlinkButton Content="Continue without Logging In"
+                             HorizontalAlignment="Center" Command="{x:Bind ViewModel.Login.SkipToMainPage}"
+                             ></HyperlinkButton>-->
+                                <TextBlock Padding="5" Text="{x:Bind ViewModel.Login.StatusMessages , Mode=TwoWay}"
+                           Foreground="Red"
+                           HorizontalAlignment="Center"></TextBlock>            
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+                <Button x:Name="button1" Background="Black" Content="LOGOUT" 
+                        HorizontalAlignment="Left" Margin="978,9,0,0" VerticalAlignment="Top"
+                        Command="{x:Bind ViewModel.Login.LogOut, Mode=OneWay}"/>
             </Grid>
 
         </SplitView>

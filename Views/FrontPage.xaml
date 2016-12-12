@@ -16,11 +16,14 @@
 
     mc:Ignorable="d">
 
-    <Page.DataContext>
 
-        <viewModels:FrontPageVm x:Name="FrontPageVm"></viewModels:FrontPageVm>
+
+
+    <Page.DataContext>
+        <viewModels:FrontPageVm  x:Name="FrontPageVm"></viewModels:FrontPageVm>
 
     </Page.DataContext>
+
 
     <Page.Transitions>
 
@@ -42,21 +45,127 @@
 
 
 
-    <Grid Background="Transparent">
-        <FlipView ItemsSource="{x:Bind FrontPageVm.Images, Mode=OneWay}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/WorldWide.jpg"/>
+        </Grid.Background>
 
-            <FlipView.ItemTemplate>
+        <Button x:Name="button"  FontSize="22" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.615,-0.312" Width="337" Height="60">
+            <StackPanel Height="60" Width="337" VerticalAlignment="Top" Margin="-202,-22,-168,-22">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FFDE2929" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
 
-                <DataTemplate x:DataType="common:StringValue">
+                <TextBlock Text="EUROPE" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="0,7" FontSize="36" Height="60" FontWeight="Bold" Margin="0,0,100,0"></TextBlock>
+            </StackPanel>
 
-                    <Image Source="{x:Bind Value, Mode=OneWay}"></Image>
+            <Button.Flyout   >
+                <Flyout  Placement="Bottom"  >
+                    <StackPanel  Height="251" Width="385">
+                        <StackPanel.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFEA1919" Offset="1"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
+                        <TextBlock TextWrapping="Wrap" Text="hvugvvvvguvvvvvvvvvgyvvvvvvvvvvvv jkjk hkkh hbjkl hkh hjgk gjhk hkk khhhhhhh hkk hk kh khb khhhh khkhkhkh hkkkkhh hkhk khhkk klkh khhk khk jhk hgk jkkk gkk jkjk kk " ></TextBlock>
+                        <TextBlock Text="FRANCE" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
+                        <TextBlock Text="DENMARK" Margin="2,10,18,10" FontWeight="Bold" />
+                        <TextBlock Text="SLOVKIA" Margin="2,10,18,10" FontWeight="Bold" />
+                        <TextBlock Text="LUTHANIA" Margin="2,10,18,10" FontWeight="Bold"></TextBlock>
 
-                </DataTemplate>
 
-            </FlipView.ItemTemplate>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
 
-        </FlipView>
+        </Button>
+        <Button x:Name="button1"  HorizontalAlignment="Left" Margin="480,244,0,0" VerticalAlignment="Top" Width="337" Height="60">
+            <StackPanel Height="60" Margin="-169,0,-158,-12"  >
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+
+                <TextBlock Text="ASIA" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0,7" FontSize="36" Height="60" FontWeight="Bold" Margin="123,0,122,0"></TextBlock>
+
+
+            </StackPanel>
+            <Button.Flyout  >
+                <Flyout     Placement="Bottom"  >
+                    <StackPanel  Height="207" Width="385">
+                        <StackPanel.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFEC1919" Offset="1"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
+                        <TextBlock TextWrapping="Wrap" Text="hvugvvvvguvvvvvvvvvgyvvvvvvvvvvvv jkjk hkkh hbjkl hkh hjgk gjhk hkk khhhhhhh hkk hk kh khb khhhh khkhkhkh hkkkkhh hkhk khhkk klkh khhk khk jhk hgk jkkk gkk jkjk kk " ></TextBlock>
+                        <TextBlock Text="INDIA" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
+                        <TextBlock Text="CHINA" Margin="2,10,18,10" FontWeight="Bold" />
+                        <TextBlock Text="JAPAN" Margin="2,10,18,10" FontWeight="Bold" />
+
+
+
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+
+        </Button>
+        <Button x:Name="button2"  HorizontalAlignment="Left" Margin="900,248,0,0" VerticalAlignment="Top" Height="60" Width="337" RenderTransformOrigin="0.248,0.5">
+            <StackPanel Height="60" Width="337" Margin="-60,-2,-56,-10">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock Text="NORTH AMERICA " VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0,7" FontSize="36" Height="60" FontWeight="Bold" Margin="12,0,8,0" Width="317"></TextBlock>
+
+
+
+            </StackPanel>
+            <Button.Flyout  >
+                <Flyout    Placement="Bottom"  >
+                    <StackPanel  Height="168" Width="385">
+                        <StackPanel.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFEE1616" Offset="1"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
+
+                        <TextBlock TextWrapping="Wrap" Text="hvugvvvvguvvvvvvvvvgyvvvvvvvvvvvv jkjk hkkh hbjkl hkh hjgk gjhk hkk khhhhhhh hkk hk kh khb khhhh khkhkhkh hkkkkhh hkhk khhkk klkh khhk khk jhk hgk jkkk gkk jkjk kk " ></TextBlock>
+                        <TextBlock Text="USA" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
+                        <TextBlock Text="CANADA" Margin="2,10,18,10" FontWeight="Bold" />
+
+
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+
+
+        </Button>
+        <StackPanel HorizontalAlignment="Left" Height="70" Margin="405,55,0,0" VerticalAlignment="Top" Width="490">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock FontSize="50" Foreground="White"  HorizontalAlignment="Left"   Text="FRANCE VACANCES" VerticalAlignment="Top" Height="75" Width="486"  FontWeight="Bold" FontFamily="Segoe UI Black" Padding="2,9,5,5" Margin="15,0,-11,0"/>
+
+        </StackPanel>
+
+
+
 
     </Grid>
+
 
 </Page>

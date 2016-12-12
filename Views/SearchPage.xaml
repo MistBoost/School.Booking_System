@@ -24,15 +24,15 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="../Images/france.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/WorldWide.jpg"/>
         </Grid.Background>
         <AutoSuggestBox HorizontalAlignment="Left" 
                         Margin="222,141,0,0" 
                         VerticalAlignment="Top"  
                         Width="293" 
-                        PlaceholderText="Search hotel" 
+                        PlaceholderText="Search hotel"
                         BorderBrush="Black" 
-                        Background="White"
+                        Background="Black"
                         x:Name="AutoSuggestBox">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="TextChanged">
@@ -63,7 +63,7 @@
                             Margin="413,233,0,0" 
                             VerticalAlignment="Top" 
                             BorderBrush="Black" 
-                            Background="White"/>
+                            Background="Black"/>
         <TextBlock x:Name="textBlock_Copy" 
                    HorizontalAlignment="Left" 
                    Margin="417,197,0,0" 
@@ -89,7 +89,7 @@
                   VerticalAlignment="Top" 
                   Width="129" 
                   BorderBrush="Black" 
-                  Background="White" 
+                  Background="Black" 
                   Height="32">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
@@ -113,7 +113,7 @@
                   Margin="418,306,0,0" 
                   VerticalAlignment="Top" 
                   Width="127" 
-                  Background="White" 
+                  Background="Black" 
                   BorderBrush="Black" 
                   Height="32">
             <ComboBoxItem Content="1"/>
