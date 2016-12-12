@@ -73,11 +73,22 @@ namespace School.OnlineBookingSystem.Common
             try
             {
                 var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
-                var file = File.OpenRead(folder.Path + "\\" + FilePath);
-                if (file != null)
+                if (folder == null)
                 {
-                    var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
-                    result = (ObservableCollection<T>)js.ReadObject(file);
+                    await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
+                }
+                else
+                {
+                    if (File.Exists(folder.Path + "\\" + FilePath))
+                    {
+                        var file = File.OpenRead(folder.Path + "\\" + FilePath);
+                        var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
+                        result = (ObservableCollection<T>)js.ReadObject(file);
+                    }
+                    else
+                    {
+                        File.WriteAllText(folder.Path + "\\" + FilePath, "[]");
+                    }
                 }
             }
             catch (Exception e)
