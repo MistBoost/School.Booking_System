@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.Storage;
 
 namespace School.OnlineBookingSystem.Common
@@ -32,7 +33,7 @@ namespace School.OnlineBookingSystem.Common
         {
 
         }
-        public void SaveCollection()
+        public async Task SaveCollection()
         {
             var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
             var stream = new MemoryStream();
@@ -40,7 +41,8 @@ namespace School.OnlineBookingSystem.Common
             var msg = StreamToString(stream);
             try
             {
-                var folder = ApplicationData.Current.LocalFolder;
+                await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
+                var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
                 File.WriteAllText(folder.Path + "\\" + FilePath, msg);
             }
             catch (Exception e)
@@ -54,12 +56,12 @@ namespace School.OnlineBookingSystem.Common
             Debug.WriteLine("Save done");
         }
 
-        public void LoadCollection()
+        public async Task<ObservableCollection<T>> LoadCollection()
         {
             var result = new ObservableCollection<T>();
             try
             {
-                var folder = ApplicationData.Current.LocalFolder;
+                var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
                 var file = File.OpenRead(folder.Path + "\\" + FilePath);
                 if (file != null)
                 {
@@ -69,10 +71,11 @@ namespace School.OnlineBookingSystem.Common
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+               Debug.WriteLine(e.Message);
             }
             Debug.WriteLine("Loading done", FilePath);
             Collection = result;
+            return result;
         }
 
         private static string StreamToString(Stream stream)
