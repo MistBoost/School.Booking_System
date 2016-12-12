@@ -47,7 +47,7 @@ namespace School.OnlineBookingSystem.ViewModels
             if (CanBook(ApartmentType))
             {
                 var tempBook = new Booking(CustomersName, CustomersPhoneNumber, CustomersEmail, CheckInDate, CheckOutDate, AdultsCount, ChildrensCount, Id, ApartmentType);
-                BookingCat = new BookingCatalog(tempBook, _selectedProperty);
+                BookingCat = new BookingCatalog();
             }
         }
 

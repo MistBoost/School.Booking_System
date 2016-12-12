@@ -26,13 +26,14 @@ namespace School.OnlineBookingSystem.Common
                 _instance = new Catalog<T>();
                 return _instance;
             }
-            
+
         }
 
         internal Catalog()
         {
 
         }
+
         public async Task SaveCollection()
         {
             var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
@@ -41,9 +42,19 @@ namespace School.OnlineBookingSystem.Common
             var msg = StreamToString(stream);
             try
             {
-                await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
+                try
+                {
+                    await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Folder already exists");
+                }
                 var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
-                File.WriteAllText(folder.Path + "\\" + FilePath, msg);
+                if (folder != null)
+                {
+                    File.WriteAllText(folder.Path + "\\" + FilePath, msg);
+                }
             }
             catch (Exception e)
             {
