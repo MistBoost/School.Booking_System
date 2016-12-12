@@ -143,10 +143,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <SymbolIcon Grid.Column="0"
-                                            Symbol="Priority"
+                                            Symbol="Help"
                                             Width="48"
                                             HorizontalAlignment="Left"/>
-                                <TextBlock Text="ABOUT"
+                                <TextBlock Text="About"
                                            Grid.Column="1"/>
                             </Grid>
                             <Interactivity:Interaction.Behaviors>
