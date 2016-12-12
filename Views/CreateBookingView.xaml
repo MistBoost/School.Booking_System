@@ -46,8 +46,7 @@
             <DatePicker Grid.Row="2" 
                     Grid.Column="0"
                     Margin="10"
-                    Header="Check-Out Date"
-                        SelectedDate="{Binding Vm.CheckInDate}"></DatePicker>
+                    Header="Check-Out Date"></DatePicker>
             <TextBox Grid.Row="3"
                  Grid.Column="0"
                  Margin="10"

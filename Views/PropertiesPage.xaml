@@ -334,7 +334,7 @@
 
                        Width="150"
 
-                       FontSize="22" Click="Button_Click"
+                       FontSize="22"
                                 Command="{x:Bind Vm.NavigationControl.NavigateToCommand}"
                                 CommandParameter="CreateBookingView" >
 
