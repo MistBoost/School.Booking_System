@@ -17,8 +17,14 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    <Grid
           Padding="20">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FFB40000" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -93,10 +99,10 @@
                  HorizontalAlignment="Left"
                  Content="Submit"
                     Command="{x:Bind Vm.Book, Mode=OneWay}">
-                
+
             </Button>
         </StackPanel>
-        
-       
+
+
     </Grid>
 </Page>

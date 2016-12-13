@@ -32,7 +32,7 @@
 
         </Grid.RowDefinitions>
 
-        <SplitView OpenPaneLength="450"
+        <SplitView  OpenPaneLength="550"
 
                    CompactPaneLength="142"
 
@@ -41,14 +41,26 @@
                    IsPaneOpen="True"
 
                    x:Name="SplitView">
+            <SplitView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFA00F0F" Offset="1"/>
+                </LinearGradientBrush>
+            </SplitView.Background>
 
             <SplitView.Pane>
 
-                <ListView ItemsSource="{x:Bind Vm.PropertyCatalog.Collection, Mode=OneWay}"
+                <ListView  ItemsSource="{x:Bind Vm.PropertyCatalog.Collection, Mode=OneWay}"
 
                       x:Name="ListView"
 
                       SelectedIndex="{x:Bind Vm.SelectedIndex, Mode=TwoWay}"   >
+                    <ListView.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF950F0F" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ListView.Background>
 
                     <ListView.Transitions>
 
@@ -176,9 +188,16 @@
 
                 <!--accommodation details-->
 
-                <Grid Grid.Row="0" 
+                <Grid  Grid.Row="0" 
 
                       Grid.Column="1">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF830A0A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+
 
                     <Grid.ColumnDefinitions>
 
@@ -215,7 +234,7 @@
 
 
 
-                    <Grid Grid.Row="1" Grid.Column="0"
+                    <Grid Background="Transparent" Grid.Row="1" Grid.Column="0"
 
                           Grid.RowSpan="2" 
 
@@ -337,12 +356,18 @@
                        FontSize="22"
                                 Command="{x:Bind Vm.NavigationControl.NavigateToCommand}"
                                 CommandParameter="CreateBookingView" >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <GradientStop Color="#FFDE1919" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
 
                         </Button>
 
                     </Grid>
 
-                    <Grid HorizontalAlignment="Stretch"
+                    <Grid  HorizontalAlignment="Stretch"
 
                   VerticalAlignment="Stretch"
 
@@ -351,6 +376,7 @@
                   Grid.ColumnSpan="2"
 
                   Height="160">
+                        
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="291*"/>
                             <ColumnDefinition Width="358*"/>
@@ -380,11 +406,11 @@
 
                     </Grid>
 
-                    <Grid Grid.Row="1" Grid.Column="1"
+                    <Grid Background="Transparent" Height="350" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
 
                   Padding="10">
 
-                        <Image Stretch="UniformToFill"
+                        <Image  Height="320"  Stretch="Uniform"
 
                        Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}">
 

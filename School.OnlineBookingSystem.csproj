@@ -163,6 +163,76 @@
     <Content Include="Images\7.jpg" />
     <Content Include="Images\england.jpg" />
     <Content Include="Images\france.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader2.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader3.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader4.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader5.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader6.jpg" />
+    <Content Include="Images\Grit\akhil%27svilla\imagereader7.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader2.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader3.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader4.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader5.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader6.jpg" />
+    <Content Include="Images\Grit\Emil%27svilla\imagereader7.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %281%29.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %282%29.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %283%29.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %284%29.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %285%29.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %286%29.jpg" />
+    <Content Include="Images\Grit\Harman%27sVilla\ %287%29.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader2.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader3.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader4.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader5.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader6.jpg" />
+    <Content Include="Images\Grit\Jakub%27svilla\imagereader7.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader2.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader3.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader4.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader5.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader6.jpg" />
+    <Content Include="Images\Grit\Julius%27sVilla\imagereader7.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\1.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\2.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\3.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\4.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\5.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\6.jpg" />
+    <Content Include="Images\Grit\Marcin%27svilla\7.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\1.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\2.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\3.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\4.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\5.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\6.jpg" />
+    <Content Include="Images\Grit\Peter%27sVilla\7.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\1.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\2.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\3.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\4.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\5.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\6.jpg" />
+    <Content Include="Images\Grit\Rushika%27svilla\7.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\1.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\2.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\3.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\4.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\5.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\6.jpg" />
+    <Content Include="Images\Grit\rusmus%27svilla\7.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\1.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\2.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\3.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\4.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\5.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\6.jpg" />
+    <Content Include="Images\Grit\tansu%27svilla\7.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge6.jpg" />
     <Content Include="Images\SkiResorts\BeaverCreekLodge\beavercreek_beavercreeklodge7.jpg" />
     <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch.jpg" />
@@ -173,11 +243,19 @@
     <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch5.jpg" />
     <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch6.jpg" />
     <Content Include="Images\SkiResorts\CharetatBeaverCreek\ch7.jpg" />
+    <Content Include="Images\SkiResorts\ElkhornLodge\jacksonhole_hotelterra8.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses2.jpg" />
     <Content Include="Images\SkiResorts\HarischHotelWeissesRossl\kit_hotelweisses5.jpg" />
     <Content Include="Images\SkiResorts\ElkhornLodge\beavercreek_elkhornlodge3.jpg" />
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge4_wynbcvl.jpg" />
     <Content Include="Images\SkiResorts\BordersLodge\bc_borderslodge6_wynbcvl.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel1.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel10.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel4.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel6.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel7.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel8.jpg" />
+    <Content Include="Images\SkiResorts\KohNorHotel\valthorens_kohlnorhotel9.jpg" />
     <Content Include="Images\SkiResorts\PinesLodgeARockResort\beavercreek_pineslodge4.jpg" />
     <Content Include="Images\SkiResorts\PinesLodgeARockResort\beavercreek_pineslodge5.jpg" />
     <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch10_ritzbach.jpg" />
@@ -187,6 +265,13 @@
     <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch6_ritzbach.jpg" />
     <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch7_ritzbach.jpg" />
     <Content Include="Images\SkiResorts\RittzCarltonBeaverCreek\bc_ritzcarltonbachelorgulch9_ritzbach.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace1_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace2_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace3_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace4_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace5_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace6_vrbc.jpg" />
+    <Content Include="Images\SkiResorts\stjames\beavercreek_stjamesplace7_vrbc.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe1.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe2.jpg" />
     <Content Include="Images\SkiResorts\TownPointe\parkcity_townpointe3.jpg" />
@@ -273,18 +358,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Grit\akhil%27s villa\" />
-    <Folder Include="Images\Grit\Emil%27s villa\" />
-    <Folder Include="Images\Grit\Harman%27s Villa\" />
-    <Folder Include="Images\Grit\Jakub%27s villa\" />
-    <Folder Include="Images\Grit\Julius%27s Villa\" />
-    <Folder Include="Images\Grit\Marcin%27s villa\" />
-    <Folder Include="Images\Grit\Peter%27s Villa\" />
-    <Folder Include="Images\Grit\Rushika%27s villa\" />
-    <Folder Include="Images\Grit\rusmus%27s villa\" />
-    <Folder Include="Images\Grit\tansu%27s villa\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
