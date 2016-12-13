@@ -23,7 +23,7 @@
         </TransitionCollection>
     </Page.Transitions>
     <Grid>
-      
+
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*"></RowDefinition>
@@ -376,7 +376,7 @@
                   Grid.ColumnSpan="2"
 
                   Height="160">
-                        
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="291*"/>
                             <ColumnDefinition Width="358*"/>
@@ -406,15 +406,13 @@
 
                     </Grid>
 
-                    <Grid Background="Transparent" Height="350" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
+                    <Grid Background="Transparent" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
 
-                  Padding="10">
+                  Padding="10" Margin="0,162,0,40">
 
-                        <Image  Height="320"  Stretch="Uniform"
+                        <Image  Stretch="Uniform"
 
-                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}">
-
-                        </Image>
+                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}" Margin="49,0,60,20" Height="240" VerticalAlignment="Bottom"/>
 
                     </Grid>
 
