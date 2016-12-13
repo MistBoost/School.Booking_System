@@ -272,7 +272,8 @@
 
                        FontSize="22" Margin="0,0,0,0.333" Width="117"></TextBlock>
 
-                        <TextBlock Text="{x:Bind Vm.SelectedProperty.Location, Mode=OneWay}"
+
+                        <TextBlock Text="{x:Bind Vm.SelectedProperty.DisplayLocation, Mode=OneWay}"
 
                        Grid.Row="1" Grid.Column="1"
 
@@ -280,7 +281,7 @@
 
                        Padding="15"
 
-                       FontSize="22" Margin="50,0,0,0.333" Width="347"></TextBlock>
+                       FontSize="22" Margin="47,0,0,0" Width="390"/>
 
 
 
@@ -405,16 +406,34 @@
                         </GridView>
 
                     </Grid>
-
                     <Grid Background="Transparent" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
 
-                  Padding="10" Margin="0,162,0,40">
+                  Padding="10" Margin="0,207,0,16">
 
                         <Image  Stretch="Uniform"
 
-                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}" Margin="49,0,60,20" Height="240" VerticalAlignment="Bottom"/>
+                       Source="{x:Bind Vm.SelectedImageString, Mode=OneWay}" Margin="59,0,70,10" Height="260" VerticalAlignment="Bottom"/>
 
                     </Grid>
+                    <ListView Grid.Row="1"   ItemsSource="{x:Bind Vm.SelectedProperty.TypesOfApartments.Values}" Margin="0,40,0,49" Grid.Column="1" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:TypeOfApartment">
+                                <Grid Width="547" Height="157">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="132*"/>
+                                        <RowDefinition Height="25*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{x:Bind  }" Height="25" FontSize="12" Padding="5" Margin="172,0,10,107" TextWrapping="Wrap" />
+                                    <TextBlock Text="{x:Bind  InformationAboutApartment}" Padding="5" TextWrapping="Wrap" FontSize="12" Margin="172,46,0,36" Height="50"   />
+                                    <TextBlock Text="{x:Bind MaxPeople }" Padding="5" Height="24" FontSize="12" Margin="172,101,0,0" VerticalAlignment="Top" />
+                                    <TextBlock Text="Information:" FontSize="18" HorizontalAlignment="Left" Width="147" Height="25"  Margin="0,47,0,60"/>
+                                    <TextBlock Text="Type of Room:" FontSize="18" Height="25" HorizontalAlignment="Left" Width="147" Margin="0,0,0,107"/>
+                                    <TextBlock Text="Max People:" Height="25" FontSize="18" HorizontalAlignment="Left" Width="147" Margin="0,100,0,7"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
 
                 </Grid>
 
