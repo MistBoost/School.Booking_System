@@ -42,11 +42,13 @@
             </StackPanel.DataContext>
             <DatePicker Grid.Row="1"
                     Margin="10"
-                    Header="Check-In Date"></DatePicker>
+                    Header="Check-In Date"
+                        Date="{Binding CheckInDate, Mode=TwoWay}"></DatePicker>
             <DatePicker Grid.Row="2" 
                     Grid.Column="0"
                     Margin="10"
-                    Header="Check-Out Date"></DatePicker>
+                    Header="Check-Out Date"
+                        DateChanged="{Binding CheckOutDate, Mode=TwoWay}"></DatePicker>
             <TextBox Grid.Row="3"
                  Grid.Column="0"
                  Margin="10"
@@ -61,26 +63,35 @@
                  Width="250"
                  HorizontalAlignment="Left"
                  Header="Payer's Email"
-                 PlaceholderText="Email"></TextBox>
+                 PlaceholderText="Email"
+                     Text="{x:Bind Vm.CustomersEmail, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="5"
                  Grid.Column="0"
                  Margin="10"
                  Width="250"
                  HorizontalAlignment="Left"
                  Header="Payer's Phone"
-                 PlaceholderText="Phone Number (DK)"></TextBox>
-            <TextBlock Grid.Row="6"
+                 PlaceholderText="Phone Number (DK)"
+                     Text="{x:Bind Vm.CustomersPhoneNumber, Mode=TwoWay}"></TextBox>
+            <ComboBox x:Name="selectTypeComboBox"
+                Grid.Row="6"
                  Grid.Column="0"
                  Margin="10"
                  Width="250"
                  HorizontalAlignment="Left"
-                 Text="Accommodation: "></TextBlock>
-            <ComboBox Grid.Row="7"
+                 Header="Accommodation Type:"
+                      ItemsSource="{Binding apartSelectList}"
+                      
+                      SelectedItem="{Binding TypeSelected, Mode=TwoWay}"></ComboBox>
+            <ComboBox Name="SelectPeopleComboBox"
+                Grid.Row="7"
                  Grid.Column="0"
                  Margin="10"
                  Width="250"
                  HorizontalAlignment="Left"
-                 Header="Number of People: "></ComboBox>
+                 Header="Number of People: "
+                      ItemsSource="{Binding peopleSelectList, Mode=OneWay}"
+                      SelectedItem="{Binding AdultsCount, Mode=TwoWay}"></ComboBox>
             <CheckBox Grid.Row="8"
                       Grid.Column="0"
                       Margin="10"
@@ -93,7 +104,6 @@
                  HorizontalAlignment="Left"
                  Content="Submit"
                     Command="{x:Bind Vm.Book, Mode=OneWay}">
-                
             </Button>
         </StackPanel>
         
