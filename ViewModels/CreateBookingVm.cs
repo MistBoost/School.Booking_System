@@ -18,70 +18,29 @@ namespace School.OnlineBookingSystem.ViewModels
     public class CreateBookingVm : Catalog<Booking>, INotifyPropertyChanged
     {
         bool _aviableApartment;
-        private string typeSelected { get; set; }
-        public string TypeSelected
-        {
-            get { return typeSelected; }
-            set
-            {
-                typeSelected = value;
-                OnPropertyChanged(nameof(TypeSelected));
-                peopleSelectList = new ObservableCollection<string>();
-                TypeSelectedM();
-            }
-        }
-        private DateTime checkInTime = DateTime.Now;
-        private DateTime checkOutTime = DateTime.Now.AddYears(1);
-
-        public DateTime CheckInDate
-        {
-            get { return checkInTime; }
-            set
-            {
-                checkInTime = value;
-                OnPropertyChanged(nameof(CheckInDate));
-            }
-        }
-
-        public DateTime CheckOutDate
-        {
-            get { return checkOutTime; }
-            set
-            {
-                checkOutTime = value;
-                OnPropertyChanged(nameof(CheckOutDate));
-            }
-        }
+        public DelegateCommand CheckInDateChanged { get; set; }
+        public DelegateCommand CheckOutDateChanged { get; set; }
         public DelegateCommand Book { get; set; }
         public Property _selectedProperty { get; set; }
         public string CustomersName { get; set; }
         public string CustomersPhoneNumber { get; set; }
         public string CustomersEmail { get; set; }
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
         public int AdultsCount { get; set; }
         public int ChildrensCount { get; set; }
         public string Id { get; set; }
         private string ApartmentType { get; set; }
         public BookingCatalog BookingCat { get; set; }
         public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
-        public ObservableCollection<string> apartSelectList { get; set; }
-        public ObservableCollection<string> peopleSelectList { get; set; }
 
         public CreateBookingVm()
         {
             _selectedProperty = TransportSingleton.SelectedProp;
-            apartSelectList = new ObservableCollection<string>();
             Book = new DelegateCommand(BookM);
         }
 
-        private void TypeSelectedM()
-        {
 
-            for (int i = 1; i <= _selectedProperty.TypesOfApartments[TypeSelected].MaxPeople; i++)
-            {
-                peopleSelectList.Add(i.ToString());
-            }
-
-        }
 
         private void BookM(object obj)
         {
