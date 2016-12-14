@@ -41,6 +41,12 @@ namespace School.OnlineBookingSystem.Models
         
         public decimal MinPrice { get; set; }
 
+        public string DisplayLocation
+        {
+            get { return Location + " (" + Country + ")"; }
+            set { }
+        }
+
         #endregion
 
         public Property(string name, string information, List<string> imagePaths, string country, string location, Dictionary<string, TypeOfApartment> typesOfApartmentsDictionary, Dictionary<string, string> apartmentDictionary  )
