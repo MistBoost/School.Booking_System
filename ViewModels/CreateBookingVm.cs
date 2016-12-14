@@ -32,7 +32,7 @@ namespace School.OnlineBookingSystem.ViewModels
             }
         }
         private DateTimeOffset checkInTime = DateTimeOffset.Now;
-        private DateTimeOffset checkOutTime = DateTimeOffset.Now.AddYears(1);
+        private DateTimeOffset checkOutTime = DateTimeOffset.Now.AddDays(14);
         private DateTimeOffset maxDate = DateTimeOffset.Now.AddDays(365);
         public DateTimeOffset MaxDate
         {
@@ -61,7 +61,14 @@ namespace School.OnlineBookingSystem.ViewModels
                 checkInTime = value;
                 OnPropertyChanged(nameof(CheckInDate));
                 MaxDate = CheckInDate.AddDays(365);
-                MinDate = CheckInDate;
+                if (CheckOutDate < CheckInDate) CheckOutDate = CheckInDate.AddDays(1);
+                if (TypeSelected!=null)
+                {
+                    int bookedDays = (CheckOutDate - CheckInDate).Days;
+                    Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
+                    displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString();
+                    DisplayPrice = displayPrice;
+                }
             }
         }
 
@@ -72,6 +79,14 @@ namespace School.OnlineBookingSystem.ViewModels
             {
                 checkOutTime = value;
                 OnPropertyChanged(nameof(CheckOutDate));
+                if (CheckOutDate < CheckInDate) CheckInDate = CheckOutDate.AddDays(-1);
+                if (TypeSelected != null)
+                {
+                    int bookedDays = (CheckOutDate - CheckInDate).Days;
+                    Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
+                    displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString();
+                    DisplayPrice = displayPrice;
+                }
             }
         }
         public DelegateCommand Book { get; set; }
@@ -88,14 +103,15 @@ namespace School.OnlineBookingSystem.ViewModels
         public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
         public ObservableCollection<string> apartSelectList { get; set; }
         public ObservableCollection<string> peopleSelectList { get; set; }
-        private decimal price;
-        public decimal Price
+        private decimal Price;
+        private string displayPrice;
+        public string DisplayPrice
         {
-            get { return price; }
+            get { return displayPrice; }
             set
             {
-                price = value;
-                OnPropertyChanged(nameof(Price));
+                displayPrice = value;
+                OnPropertyChanged(nameof(DisplayPrice));
 
             }
         }
@@ -129,7 +145,10 @@ namespace School.OnlineBookingSystem.ViewModels
             {
                 peopleSelectList.Add(i.ToString());
             }
-            Price = (CheckOutDate - CheckInDate).Days * _selectedProperty.TypesOfApartments[TypeSelected].Price;
+            int bookedDays = (CheckOutDate - CheckInDate).Days;
+            Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
+            displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString();
+            DisplayPrice = displayPrice;
 
         }
      

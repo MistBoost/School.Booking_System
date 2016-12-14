@@ -27,11 +27,12 @@ namespace School.OnlineBookingSystem.ViewModels
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public AccountCatalog accCat = AccountCatalog.Instance;
+        public AccountCatalog accCat;
 
         public DelegateCommand Register { get; set; }
         public RegisterPageVm()
         {
+            accCat = new AccountCatalog();
             Register = new DelegateCommand(RegisterM);
         }
 

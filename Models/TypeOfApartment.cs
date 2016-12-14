@@ -26,6 +26,12 @@ namespace School.OnlineBookingSystem.Models
         [DataMember(EmitDefaultValue = false)]
         public string InformationAboutApartment { get; set; }
 
+        public string DisplayApartInfo
+        {
+            get { return InformationAboutApartment + "\n The price is " + Price.ToString("C0") + " per night and there can book " + MaxPeople.ToString() + " people."; }
+            set { }
+        }
+
         public TypeOfApartment(string initial, int numberOfApartments, decimal price, int maxPeople, string informationAboutApartmentAboutApartment)
         {
             Initial = initial;
