@@ -47,11 +47,18 @@
                 <viewModels:CreateBookingVm x:Name="Vm"/>
             </StackPanel.DataContext>
             <DatePicker Grid.Row="1"
+                        
+                        MinYear="{Binding MinDate, Mode=TwoWay}"
+                        MaxYear="{Binding MaxDate, Mode=TwoWay}"
                     Margin="10"
+                        Date="{Binding CheckInDate, Mode=TwoWay}"
                     Header="Check-In Date"></DatePicker>
             <DatePicker Grid.Row="2" 
                     Grid.Column="0"
+                        MinYear="{Binding MinDate, Mode=TwoWay}"
+                        MaxYear="{Binding MaxDate, Mode=TwoWay}"
                     Margin="10"
+                        Date="{Binding CheckOutDate, Mode=TwoWay}"
                     Header="Check-Out Date"></DatePicker>
             <TextBox Grid.Row="3"
                  Grid.Column="0"
@@ -67,6 +74,7 @@
                  Width="250"
                  HorizontalAlignment="Left"
                  Header="Payer's Email"
+                     Text="{Binding CustomersEmail, Mode=TwoWay}"
                  PlaceholderText="Email"></TextBox>
             <TextBox Grid.Row="5"
                  Grid.Column="0"
@@ -74,33 +82,39 @@
                  Width="250"
                  HorizontalAlignment="Left"
                  Header="Payer's Phone"
+                     Text="{Binding CustomersPhoneNumber, Mode=TwoWay}"
                  PlaceholderText="Phone Number (DK)"></TextBox>
-            <TextBlock Grid.Row="6"
+            <ComboBox Grid.Row="6"
                  Grid.Column="0"
                  Margin="10"
                  Width="250"
                  HorizontalAlignment="Left"
-                 Text="Accommodation: "></TextBlock>
+                 Header="Accomodation Type: "
+                ItemsSource="{Binding apartSelectList}"
+                SelectedItem="{Binding TypeSelected, Mode=TwoWay}">
+            </ComboBox>
             <ComboBox Grid.Row="7"
                  Grid.Column="0"
                  Margin="10"
                  Width="250"
                  HorizontalAlignment="Left"
-                 Header="Number of People: "></ComboBox>
+                 Header="Number of People: "
+                 ItemsSource="{Binding peopleSelectList}"
+                 SelectedItem="{Binding AdultsCount, Mode=TwoWay}"></ComboBox>
             <CheckBox Grid.Row="8"
                       Grid.Column="0"
                       Margin="10"
                       Width="250"
                       Content="Terms and Conditions"
                       x:Name="CheckBox"></CheckBox>
-            <Button Grid.Row="9"
-                 Grid.Column="0"
+            <StackPanel Orientation="Horizontal">
+                <Button
                  Margin="10"
                  HorizontalAlignment="Left"
                  Content="Submit"
-                    Command="{x:Bind Vm.Book, Mode=OneWay}">
-
-            </Button>
+                    Command="{x:Bind Vm.Book, Mode=OneWay}"/>
+                <TextBlock x:Name="textBlock" VerticalAlignment="Center" TextWrapping="Wrap" Text="Price: ${Binding Price}" Width="188"/>
+            </StackPanel>
         </StackPanel>
 
 

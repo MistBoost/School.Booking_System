@@ -26,10 +26,10 @@ namespace School.OnlineBookingSystem.Models
         public string CustomersEmail { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public DateTime CheckInDate { get; set; }
+        public DateTimeOffset CheckInDate { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public DateTime CheckOutDate { get; set; }
+        public DateTimeOffset CheckOutDate { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
         public int AdultsCount { get; set; }
@@ -44,7 +44,7 @@ namespace School.OnlineBookingSystem.Models
         public string ApartmentType { get; set; }
         #endregion
 
-        public Booking(string customersName, string customersPhoneNumber, string customersEmail, DateTime checkInDate, DateTime checkOutDate, int adultsCount, int childrensCount, string apartmentId, string apartmentType)
+        public Booking(string customersName, string customersPhoneNumber, string customersEmail, DateTimeOffset checkInDate, DateTimeOffset checkOutDate, int adultsCount, int childrensCount, string apartmentId, string apartmentType)
         {
             CustomersName = customersName;
             CustomersPhoneNumber = customersPhoneNumber;

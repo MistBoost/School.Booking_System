@@ -4,6 +4,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using School.OnlineBookingSystem.Models;
 
 namespace School.OnlineBookingSystem
 {
@@ -12,6 +13,8 @@ namespace School.OnlineBookingSystem
     /// </summary>
     sealed partial class App
     {
+
+        public LoggedUserSingleton UserSIngleton { get; set; }
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -20,6 +23,9 @@ namespace School.OnlineBookingSystem
         {
             InitializeComponent();
             Suspending += OnSuspending;
+
+            UserSIngleton = LoggedUserSingleton.Instance;
+            UserSIngleton.LoggedAccount = new Account("", "", "", "", "", AccountTypes.User);
         }
 
         /// <summary>

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using School.OnlineBookingSystem.Models;
 using School.OnlineBookingSystem.ViewModels;
+using Windows.Globalization.DateTimeFormatting;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace School.OnlineBookingSystem.Views
@@ -27,10 +28,7 @@ namespace School.OnlineBookingSystem.Views
         {
             this.InitializeComponent();
         }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            DataContext = e.Parameter;
-        }
     }
+
 }
+

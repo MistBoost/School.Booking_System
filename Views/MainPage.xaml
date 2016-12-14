@@ -236,9 +236,6 @@
                                 <HyperlinkButton Content="Create new account"
                              HorizontalAlignment="Center" Command="{x:Bind ViewModel.Login.RegisterAccount }"
                              ></HyperlinkButton>
-                                <!--<HyperlinkButton Content="Continue without Logging In"
-                             HorizontalAlignment="Center" Command="{x:Bind ViewModel.Login.SkipToMainPage}"
-                             ></HyperlinkButton>-->
                                 <TextBlock Padding="5" Text="{x:Bind ViewModel.Login.StatusMessages , Mode=TwoWay}"
                            Foreground="Red"
                            HorizontalAlignment="Center"></TextBlock>

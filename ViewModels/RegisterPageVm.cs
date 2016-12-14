@@ -9,7 +9,7 @@ using School.OnlineBookingSystem.Views;
 
 namespace School.OnlineBookingSystem.ViewModels
 {
-    public class RegisterPageVm : INotifyPropertyChanged
+    public class RegisterPageVm : Catalog<AccountCatalog>, INotifyPropertyChanged
     {
         private string _fullName;
 
@@ -27,6 +27,7 @@ namespace School.OnlineBookingSystem.ViewModels
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public AccountCatalog accCat = AccountCatalog.Instance;
 
         public DelegateCommand Register { get; set; }
         public RegisterPageVm()
@@ -37,7 +38,6 @@ namespace School.OnlineBookingSystem.ViewModels
         private void RegisterM(object obj)
         {
             var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);
-            var accCat = new AccountCatalog();
             accCat.Collection.Add(tempAcc);
 
             var frame = Window.Current.Content as Frame;

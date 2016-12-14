@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using School.OnlineBookingSystem.Annotations;
 using School.OnlineBookingSystem.Common;
+using School.OnlineBookingSystem.Models;
 
 namespace School.OnlineBookingSystem.ViewModels
 {

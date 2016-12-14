@@ -8,18 +8,10 @@ namespace School.OnlineBookingSystem.Models
 {
     public sealed class BookingCatalog : Catalog<Booking>
     {
-        public BookingCatalog()
+       public BookingCatalog(string name)
         {
-            FilePath = "booking_data.json";
+            FilePath = name + ".json";
             LoadCollection();
-        }
-
-        public BookingCatalog(Booking bookingInfo, Property property)
-        {
-            FilePath = property.Name + ".json";
-            Collection = new ObservableCollection<Booking>();
-            Collection.Add(bookingInfo);
-            SaveCollection();
         }
     }
 }

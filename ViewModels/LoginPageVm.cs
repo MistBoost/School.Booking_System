@@ -47,11 +47,11 @@ namespace School.OnlineBookingSystem.ViewModels
 
         public LoginPageVm()
         {
+            UserSingleton = LoggedUserSingleton.Instance;
             NavigationControl = MainFrameSingleton.Instance;
             AccountCatalog = new AccountCatalog();
             RawPassword = string.Empty;
             RawUsername = string.Empty;
-            UserSingleton = LoggedUserSingleton.Instance;
             StatusMessages = string.Empty;
             LoginCommand = new DelegateCommand(LoginCommandM);
             SkipToMainPage = new DelegateCommand(SkipToMainPageM);
@@ -71,12 +71,15 @@ namespace School.OnlineBookingSystem.ViewModels
                 if (account.Username == RawUsername && account.Password == RawPassword)
                 {
                     UserSingleton.LoggedAccount = account;
+
                 }
             }
             if (UserSingleton.LoggedAccount != null)
             {
-                var frame = Window.Current.Content as Frame;
-                frame?.Navigate(typeof(MainPage));
+                var page = (Window.Current.Content as Frame).Content as MainPage;
+                if (page != null)
+                {
+                }
             }
             else
             {

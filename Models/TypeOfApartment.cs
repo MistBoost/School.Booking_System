@@ -18,7 +18,7 @@ namespace School.OnlineBookingSystem.Models
         public int NumberOfApartments { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public float Price { get; set; }
+        public decimal Price { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
         public int MaxPeople { get; set; }
@@ -26,7 +26,7 @@ namespace School.OnlineBookingSystem.Models
         [DataMember(EmitDefaultValue = false)]
         public string InformationAboutApartment { get; set; }
 
-        public TypeOfApartment(string initial, int numberOfApartments, float price, int maxPeople, string informationAboutApartmentAboutApartment)
+        public TypeOfApartment(string initial, int numberOfApartments, decimal price, int maxPeople, string informationAboutApartmentAboutApartment)
         {
             Initial = initial;
             NumberOfApartments = numberOfApartments;
