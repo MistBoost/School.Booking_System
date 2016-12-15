@@ -22,7 +22,7 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid>
+    <Grid Margin="10">
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/WorldWide.jpg"/>
         </Grid.Background>
@@ -116,26 +116,12 @@
                    FontSize="18" 
                    FontWeight="Bold" 
                    Foreground="White"/>
-        <ListView x:Name="listView" 
-                  HorizontalAlignment="Left" 
-                  Height="252" 
-                  Margin="127,390,0,0" 
-                  VerticalAlignment="Top" 
-                  Width="493" 
-                  BorderBrush="Black"  />
         <Image x:Name="image" 
                HorizontalAlignment="Left" 
                Height="240" 
                Margin="905,98,0,0" 
                VerticalAlignment="Top" 
                Width="412"/>
-        <Button x:Name="button"
-                Content="Book" 
-                HorizontalAlignment="Left" 
-                Margin="1151,670,0,0" 
-                VerticalAlignment="Top" 
-                Foreground="White" 
-                Background="Black"/>
         <TextBlock x:Name="textBlock_Copy2" 
                    HorizontalAlignment="Left" 
                    Margin="205,197,0,0" 
@@ -145,14 +131,5 @@
                    FontSize="18" 
                    FontWeight="Bold" 
                    Foreground="White"/>
-        <TextBlock x:Name="textBlock" 
-                   HorizontalAlignment="Left" 
-                   Margin="905,390,0,0" 
-                   Foreground="White" 
-                   TextWrapping="Wrap" 
-                   Text="France Vancaces Protocol" 
-                   VerticalAlignment="Top" 
-                   Height="252" 
-                   Width="412"/>
     </Grid>
 </Page>
