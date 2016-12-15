@@ -7,8 +7,6 @@
     xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
     xmlns:models="using:School.OnlineBookingSystem.Models"
     xmlns:common="using:School.OnlineBookingSystem.Common"
-    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
     <Page.DataContext>
         <viewModels:PropertiesPageVm x:Name="Vm"></viewModels:PropertiesPageVm>

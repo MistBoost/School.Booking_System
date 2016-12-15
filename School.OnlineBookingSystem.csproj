@@ -114,6 +114,7 @@
     <Compile Include="ViewModels\LoginPageVm.cs" />
     <Compile Include="ViewModels\MainFrameSingleton.cs" />
     <Compile Include="ViewModels\MainPageVM.cs" />
+    <Compile Include="ViewModels\MyAccount.cs" />
     <Compile Include="ViewModels\PropertiesPageVm.cs" />
     <Compile Include="Models\PropertyCatalog.cs" />
     <Compile Include="ViewModels\RegisterPageVm.cs" />
@@ -126,9 +127,6 @@
     </Compile>
     <Compile Include="Views\FrontPage.xaml.cs">
       <DependentUpon>FrontPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -330,10 +328,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FrontPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -210,42 +210,78 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center" Margin="578,14,577,14"></TextBlock>
                 <Frame SourcePageType="{x:Bind ViewModel.NavigationControl.MainFrame.SourcePageType, Mode=TwoWay}" Grid.Row="1" Grid.RowSpan="3" />
-                <Button  x:Name="button" Background="Black" Content="LOGIN" HorizontalAlignment="Left" Margin="1077,10,0,0" VerticalAlignment="Top">
+                <Button Content="{x:Bind ViewModel.Login.AccountButtonContent, Mode=OneWay}" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Stretch"
+                        Padding="20,0,20,0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF910C0C" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
                     <Button.Flyout>
                         <Flyout>
-                            <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Width="230">
-                                <StackPanel.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="Black" Offset="0"/>
-                                        <GradientStop Color="#FF910C0C" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </StackPanel.Background>
+                            <StackPanel>
+                                <StackPanel Visibility="{x:Bind ViewModel.Login.AccountFlyout, Mode=OneWay}">
+                                    <StackPanel.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black" Offset="0"/>
+                                            <GradientStop Color="#FF910C0C" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </StackPanel.Background>
+                                    <ListViewItem Content="My Account">
+                                        <Interactivity:Interaction.Behaviors>
+                                            <Core:EventTriggerBehavior EventName="Tapped">
+                                                <Core:EventTriggerBehavior.Actions>
+                                                    <Core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
+                                                                              CommandParameter="MyAccount"/>
+                                                </Core:EventTriggerBehavior.Actions>
+                                            </Core:EventTriggerBehavior>
+                                        </Interactivity:Interaction.Behaviors>
+                                    </ListViewItem>
+                                    <ListViewItem Content="Log Out">
+                                        <Interactivity:Interaction.Behaviors>
+                                            <Core:EventTriggerBehavior EventName="Tapped">
+                                                <Core:EventTriggerBehavior.Actions>
+                                                    <Core:InvokeCommandAction Command="{x:Bind ViewModel.Login.LogOut, Mode=OneWay}"/>
+                                                </Core:EventTriggerBehavior.Actions>
+                                            </Core:EventTriggerBehavior>
+                                        </Interactivity:Interaction.Behaviors>
+                                    </ListViewItem>
+                                </StackPanel>
+                                <StackPanel VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"
+                                            Width="230"
+                                            Visibility="{x:Bind ViewModel.Login.LoginMenuFlyout, Mode=OneWay}">
+                                    <StackPanel.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black" Offset="0"/>
+                                            <GradientStop Color="#FF910C0C" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </StackPanel.Background>
 
 
-                                <SymbolIcon Symbol="People" Height="56" Margin="70,0,65,0"/>
+                                    <SymbolIcon Symbol="People" Height="56" Margin="70,0,65,0"/>
 
-                                <TextBox  PlaceholderText="Username"
-                     Margin="10" Text="{x:Bind ViewModel.Login.RawUsername , Mode=TwoWay}" ></TextBox>
-                                <PasswordBox Name="PasswordBox" PlaceholderText="Password box " Margin="10" Password="{x:Bind ViewModel.Login.RawPassword , Mode=TwoWay}" ></PasswordBox>
-                                <Button Content="Sign In"
-                    Margin="10" Command="{x:Bind ViewModel.Login.LoginCommand , Mode=OneWay}"
-                    HorizontalAlignment="Stretch"
-                    ></Button>
-                                <HyperlinkButton Content="Create new account"
-                             HorizontalAlignment="Center" Command="{x:Bind ViewModel.Login.RegisterAccount }"
-                             ></HyperlinkButton>
-                                <TextBlock Padding="5" Text="{x:Bind ViewModel.Login.StatusMessages , Mode=TwoWay}"
-                           Foreground="Red"
-                           HorizontalAlignment="Center"></TextBlock>
+                                    <TextBox PlaceholderText="Username"
+                                         Margin="10" Text="{x:Bind ViewModel.Login.RawUsername , Mode=TwoWay}" ></TextBox>
+                                    <PasswordBox PlaceholderText="Password Box" Margin="10" Password="{x:Bind ViewModel.Login.RawPassword , Mode=TwoWay}" ></PasswordBox>
+                                    <Button Content="Sign In"
+                                        Margin="10" Command="{x:Bind ViewModel.Login.LoginCommand , Mode=OneWay}"
+                                        HorizontalAlignment="Stretch"></Button>
+                                    <HyperlinkButton Content="Create new account"
+                                                 HorizontalAlignment="Center" 
+                                                 Command="{x:Bind ViewModel.NavigationControl.NavigateToCommand, Mode=OneWay}"
+                                                 CommandParameter="RegisterPage"></HyperlinkButton>
+                                    <TextBlock Padding="5" Text="{x:Bind ViewModel.Login.StatusMessages , Mode=TwoWay}"
+                                            Foreground="Red"
+                                            HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
                             </StackPanel>
                         </Flyout>
                     </Button.Flyout>
                 </Button>
-                <Button x:Name="button1" Background="Black" Content="LOGOUT" 
-                        HorizontalAlignment="Left" Margin="978,9,0,0" VerticalAlignment="Top"
-                        Command="{x:Bind ViewModel.Login.LogOut, Mode=OneWay}"/>
             </Grid>
 
         </SplitView>

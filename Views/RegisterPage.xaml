@@ -55,6 +55,10 @@
                         HorizontalAlignment="Left"
                         Margin="0,20,0,0"
                         Command="{x:Bind Vm.Register, Mode=OneWay}"></Button>
+                <TextBlock Margin="0,10,0,0"
+                           Foreground="Blue"
+                           HorizontalAlignment="Center"
+                           Text="{x:Bind Vm.StatusBlock, Mode=TwoWay}"></TextBlock>
             </StackPanel>
             
         </Grid>

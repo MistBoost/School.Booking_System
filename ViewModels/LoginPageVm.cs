@@ -14,15 +14,59 @@ namespace School.OnlineBookingSystem.ViewModels
         public MainFrameSingleton NavigationControl { get; set; }
         private string _statusMessages;
         private DelegateCommand _logOut;
-        public string RawUsername { get; set; }
-        public string RawPassword { get; set; }
+        private string _loginMenuFlyout;
+        private string _accountFlyout;
+        private string _accountButtonContent;
+        private string _rawUsername;
+        private string _rawPassword;
+        public string RawUsername
+        {
+            get { return _rawUsername; }
+            set
+            {
+                _rawUsername = value;
+                OnPropertyChanged(nameof(RawUsername));
+            }
+        }
+        public string RawPassword
+        {
+            get { return _rawPassword; }
+            set
+            {
+                _rawPassword = value;
+                OnPropertyChanged(nameof(RawPassword));
+            }
+        }
         public DelegateCommand LoginCommand { get; set; }
         public Catalog<Account> AccountCatalog { get; set; }
         public LoggedUserSingleton UserSingleton { get; set; }
-        public DelegateCommand SkipToMainPage { get; set; }
-        public DelegateCommand RegisterAccount { get; set; }
-        public DelegateCommand KeyDown { get; set; }
-
+        public string LoginMenuFlyout
+        {
+            get { return _loginMenuFlyout; }
+            set
+            {
+                _loginMenuFlyout = value;
+                OnPropertyChanged(nameof(LoginMenuFlyout));
+            }
+        }
+        public string AccountFlyout
+        {
+            get { return _accountFlyout; }
+            set
+            {
+                _accountFlyout = value; 
+                OnPropertyChanged(nameof(AccountFlyout));
+            }
+        }
+        public string AccountButtonContent
+        {
+            get { return _accountButtonContent; }
+            set
+            {
+                _accountButtonContent = value;
+                OnPropertyChanged(nameof(AccountButtonContent));
+            }
+        }
         public DelegateCommand LogOut
         {
             get { return _logOut; }
@@ -32,7 +76,6 @@ namespace School.OnlineBookingSystem.ViewModels
                 OnPropertyChanged();
             }
         }
-
         public string StatusMessages
         {
             get { return _statusMessages; }
@@ -42,7 +85,6 @@ namespace School.OnlineBookingSystem.ViewModels
                 OnPropertyChanged(nameof(StatusMessages));
             }
         }
-
         public LoginPageVm()
         {
             UserSingleton = LoggedUserSingleton.Instance;
@@ -52,48 +94,39 @@ namespace School.OnlineBookingSystem.ViewModels
             RawUsername = string.Empty;
             StatusMessages = string.Empty;
             LoginCommand = new DelegateCommand(LoginCommandM);
-            SkipToMainPage = new DelegateCommand(SkipToMainPageM);
-           RegisterAccount = new DelegateCommand(RegisterAccountM);
             LogOut = new DelegateCommand(LogOutM);
+            LoginMenuFlyout = "Visible";
+            AccountFlyout = "Collapsed";
+            AccountButtonContent = "Login";
         }
 
         private void LogOutM(object sender)
         {
             UserSingleton.LoggedAccount = null;
+            LoginMenuFlyout = "Visible";
+            AccountFlyout = "Collapsed";
+            AccountButtonContent = "Login";
         }
-
         private void LoginCommandM(object sender)
         {
+            UserSingleton.LoggedAccount = null;
             foreach (var account in AccountCatalog.Collection)
             {
                 if (account.Username == RawUsername && account.Password == RawPassword)
                 {
                     UserSingleton.LoggedAccount = account;
-
                 }
             }
             if (UserSingleton.LoggedAccount != null)
             {
-                var page = (Window.Current.Content as Frame).Content as MainPage;
-                if (page != null)
-                {
-                }
+                LoginMenuFlyout = "Collapsed";
+                AccountFlyout = "Visible";
+                AccountButtonContent = UserSingleton.LoggedAccount.Username;
             }
             else
             {
                 StatusMessages = "Invalid Username or Password";
             }
-        }
-        private void SkipToMainPageM(object sender)
-        {
-            var frame = Window.Current.Content as Frame;
-            frame?.Navigate(typeof(MainPage));
-        }
-
-        private void RegisterAccountM(object sender)
-        {
-            var frame = Window.Current.Content as Frame;
-            frame?.Navigate(typeof(RegisterPage));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

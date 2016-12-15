@@ -11,6 +11,11 @@ namespace School.OnlineBookingSystem.Models
         {
             FilePath = "accounts_data.json";
             LoadCollection();
+            Collection.Add(new Account("Julius Cizmar", "juli", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
+            Collection.Add(new Account("Harman Sidhu", "harm", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
+            Collection.Add(new Account("Emilis Gu", "emil", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
+            Collection.Add(new Account("Peter Lacko", "pete", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
+            Collection.Add(new Account("Rushika Gurung", "pete", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
         }
     }
 }

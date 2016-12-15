@@ -1,17 +1,18 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using School.OnlineBookingSystem.Annotations;
 using School.OnlineBookingSystem.Common;
 using School.OnlineBookingSystem.Models;
-using School.OnlineBookingSystem.Views;
+using static System.String;
 
 namespace School.OnlineBookingSystem.ViewModels
 {
-    public class RegisterPageVm : Catalog<AccountCatalog>, INotifyPropertyChanged
+    public class RegisterPageVm : INotifyPropertyChanged
     {
         private string _fullName;
+        private string _statusBlock;
 
         public string FullName
         {
@@ -22,27 +23,48 @@ namespace School.OnlineBookingSystem.ViewModels
                 OnPropertyChanged(nameof(FullName));
             }
         }
-
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public AccountCatalog accCat;
-
+        public Catalog<Account> AccCat { get; set; }
+        public string StatusBlock
+        {
+            get { return _statusBlock; }
+            set
+            {
+                _statusBlock = value; 
+                OnPropertyChanged(nameof(StatusBlock));
+            }
+        }
         public DelegateCommand Register { get; set; }
         public RegisterPageVm()
         {
-            accCat = new AccountCatalog();
+            FullName = Empty;
+            Username = Empty;
+            Password = Empty;
+            Email = Empty;
+            Phone = Empty;
+            AccCat = AccountCatalog.Instance;
             Register = new DelegateCommand(RegisterM);
+            StatusBlock = "";
         }
 
         private void RegisterM(object obj)
         {
-            var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);
-            accCat.Collection.Add(tempAcc);
-
-            var frame = Window.Current.Content as Frame;
-            frame?.Navigate(typeof(MainPage));
+            AccCat.Collection = AccCat.LoadCollection().Result;
+            var a = AccCat.Collection.FirstOrDefault(p => p.Username == Username);
+            if (a == null)
+            {
+                var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);
+                AccCat.Collection.Add(tempAcc);
+                StatusBlock = "Account created!";
+                AccCat.SaveCollection();
+            }
+            else
+            {
+                StatusBlock = "Username is already in use";
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
