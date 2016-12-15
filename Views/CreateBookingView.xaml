@@ -1,128 +1,255 @@
 ﻿<Page
+
     x:Class="School.OnlineBookingSystem.Views.CreateBookingView"
+
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
     xmlns:viewModels="using:School.OnlineBookingSystem.ViewModels"
+
     xmlns:local="using:School.OnlineBookingSystem.Views"
+
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
     mc:Ignorable="d">
+
     <Page.DataContext>
+
         <viewModels:CreateBookingVm x:Name="Vm"/>
+
     </Page.DataContext>
+
     <Page.Transitions>
+
         <TransitionCollection>
+
             <NavigationThemeTransition>
+
                 <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+
                     <EntranceNavigationTransitionInfo />
+
                 </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+
             </NavigationThemeTransition>
+
         </TransitionCollection>
+
     </Page.Transitions>
 
+
+
     <Grid
+
           Padding="20">
+
         <Grid.Background>
+
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+
                 <GradientStop Color="Black" Offset="0"/>
+
                 <GradientStop Color="#FFB40000" Offset="1"/>
+
             </LinearGradientBrush>
+
         </Grid.Background>
+
         <Grid.RowDefinitions>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
             <RowDefinition Height="Auto"></RowDefinition>
+
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
+
             <ColumnDefinition></ColumnDefinition>
+
             <ColumnDefinition></ColumnDefinition>
+
         </Grid.ColumnDefinitions>
+
         <StackPanel HorizontalAlignment="Center">
+
             <DatePicker Grid.Row="1"
+
                         
+
                         MinYear="{Binding MinDate, Mode=TwoWay}"
+
                         MaxYear="{Binding MaxDate, Mode=TwoWay}"
-                    Margin="10"
+
+                    Margin="5"
+
                         Date="{Binding CheckInDate, Mode=TwoWay}"
+
                     Header="Check-In Date"></DatePicker>
+
             <DatePicker Grid.Row="2" 
+
                     Grid.Column="0"
+
                         MinYear="{Binding MinDate, Mode=TwoWay}"
+
                         MaxYear="{Binding MaxDate, Mode=TwoWay}"
-                    Margin="10"
+
+                    Margin="5"
+
                         Date="{Binding CheckOutDate, Mode=TwoWay}"
+
                     Header="Check-Out Date"></DatePicker>
+
             <TextBox Grid.Row="3"
+
                  Grid.Column="0"
-                 Margin="10"
+
+                 Margin="5"
+
                  Header="Payer's Name"
+
                  Width="250"
+
                  PlaceholderText="Full Name"
+
                      Text="{x:Bind Vm.CustomersName, Mode=TwoWay}" HorizontalAlignment="Left"/>
+
             <TextBox Grid.Row="4"
+
                  Grid.Column="0"
-                 Margin="10"
+
+                 Margin="5"
+
                  Width="250"
+
                  HorizontalAlignment="Left"
+
                  Header="Payer's Email"
+
                      Text="{Binding CustomersEmail, Mode=TwoWay}"
+
                  PlaceholderText="Email"></TextBox>
+
             <TextBox Grid.Row="5"
+
                  Grid.Column="0"
-                 Margin="10"
+
+                 Margin="5"
+
                  Width="250"
+
                  HorizontalAlignment="Left"
+
                  Header="Payer's Phone"
+
                      Text="{Binding CustomersPhoneNumber, Mode=TwoWay}"
+
                  PlaceholderText="Phone Number (DK)"></TextBox>
+
             <ComboBox Grid.Row="6"
+
                  Grid.Column="0"
-                 Margin="10"
+
+                 Margin="5"
+
                       PlaceholderText="Select Type"
+
                  Width="250"
+
                  HorizontalAlignment="Left"
+
                  Header="Accomodation Type: "
+
                 ItemsSource="{Binding apartSelectList}"
+
                 SelectedItem="{Binding TypeSelected, Mode=TwoWay}">
+
             </ComboBox>
+
             <ComboBox Grid.Row="7"
+
                  Grid.Column="0"
-                 Margin="10"
+
+                 Margin="5"
+
                  Width="250"
+
                  HorizontalAlignment="Left"
+
                  Header="Number of People: "
+
                  ItemsSource="{Binding peopleSelectList}"
+
                  SelectedItem="{Binding AdultsCount, Mode=TwoWay}"></ComboBox>
+
             <CheckBox Grid.Row="8"
+
                       Grid.Column="0"
-                      Margin="10"
+
+                      Margin="5"
+
                       Width="250"
+
                       Content="Terms and Conditions"
+
                       x:Name="CheckBox"></CheckBox>
+
             <StackPanel Orientation="Horizontal" Width="348">
+
                 <Button
-                 Margin="10"
+
+                 Margin="5"
+
                  HorizontalAlignment="Left"
+
                  Content="Submit"
+
                     Command="{x:Bind Vm.Book, Mode=OneWay}"/>
+
                 <TextBlock Margin="10, 0, 0,0"  x:Name="textBlock" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding DisplayPrice}"/>
+
             </StackPanel>
+
         </StackPanel>
+
         <StackPanel Grid.Column="1">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="{Binding _selectedProperty.Name}" FontSize="23"/>
+
+            <StackPanel Orientation="Vertical">
+
+                <TextBlock Text="{Binding _selectedProperty.Name}" FontSize="23"/>
+
                 <Image Source="{Binding _selectedProperty.ImagePaths[0]}" Margin="20"/>
-     
+
+
+
             </StackPanel>
-</StackPanel>
+
+        </StackPanel>
+
+
 
     </Grid>
+
 </Page>

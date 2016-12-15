@@ -22,7 +22,7 @@
         </TransitionCollection>
     </Page.Transitions>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Opacity="0.7" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Width="230" Height="328" Margin="525,185,525,207">
