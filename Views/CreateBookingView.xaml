@@ -7,6 +7,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:CreateBookingVm x:Name="Vm"/>
+    </Page.DataContext>
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition>
@@ -43,9 +46,6 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel HorizontalAlignment="Center">
-            <StackPanel.DataContext>
-                <viewModels:CreateBookingVm x:Name="Vm"/>
-            </StackPanel.DataContext>
             <DatePicker Grid.Row="1"
                         
                         MinYear="{Binding MinDate, Mode=TwoWay}"
@@ -65,9 +65,8 @@
                  Margin="10"
                  Header="Payer's Name"
                  Width="250"
-                 HorizontalAlignment="Left"
                  PlaceholderText="Full Name"
-                     Text="{x:Bind Vm.CustomersName, Mode=TwoWay}"></TextBox>
+                     Text="{x:Bind Vm.CustomersName, Mode=TwoWay}" HorizontalAlignment="Left"/>
             <TextBox Grid.Row="4"
                  Grid.Column="0"
                  Margin="10"
@@ -87,6 +86,7 @@
             <ComboBox Grid.Row="6"
                  Grid.Column="0"
                  Margin="10"
+                      PlaceholderText="Select Type"
                  Width="250"
                  HorizontalAlignment="Left"
                  Header="Accomodation Type: "
@@ -107,16 +107,22 @@
                       Width="250"
                       Content="Terms and Conditions"
                       x:Name="CheckBox"></CheckBox>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Width="348">
                 <Button
                  Margin="10"
                  HorizontalAlignment="Left"
                  Content="Submit"
                     Command="{x:Bind Vm.Book, Mode=OneWay}"/>
-                <TextBlock x:Name="textBlock" VerticalAlignment="Center" TextWrapping="Wrap" Text="Price: ${Binding Price}" Width="188"/>
+                <TextBlock Margin="10, 0, 0,0"  x:Name="textBlock" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding DisplayPrice}"/>
             </StackPanel>
         </StackPanel>
-
+        <StackPanel Grid.Column="1">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding _selectedProperty.Name}" FontSize="23"/>
+                <Image Source="{Binding _selectedProperty.ImagePaths[0]}" Margin="20"/>
+     
+            </StackPanel>
+</StackPanel>
 
     </Grid>
 </Page>

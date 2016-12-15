@@ -28,6 +28,7 @@ namespace School.OnlineBookingSystem.ViewModels
                 _selectedProperty = value;
                 TransportSingleton.Instance.SelectedProp = _selectedProperty;
                 OnPropertyChanged(nameof(SelectedProperty));
+                IsPaneOpen = true;
             }
         }
         public MainFrameSingleton NavigationControl { get; set; }
@@ -124,6 +125,7 @@ namespace School.OnlineBookingSystem.ViewModels
             NavigationControl = MainFrameSingleton.Instance;
             SelectedProperty = PropertyCatalog.Collection[0];
         }
+
 
         private void OpenPaneM(object sender)
         {

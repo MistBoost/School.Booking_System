@@ -54,7 +54,11 @@ namespace School.OnlineBookingSystem.Models
                     }, "France", "Alpe d\'Huez",
                     new Dictionary<string, TypeOfApartment>()
                     {
-                       
+                         {
+                            "Luxury Room",
+                            new TypeOfApartment("LX", 12, 500.7M, 7,
+                                "This property is 11 minutes walk from the beach. These spacious modern villas each have a private outdoor pool and garden with a barbecue area. Located 100 m from Lanzarote’s Rubicon Marina, Villas Puerto Rubicon offer free on-site parking. Featuring tiled floors and a fan, each villa has a living room with satellite TV, sofa, CD and DVD player. The bathroom comes with a hairdryer, and the well-equipped kitchen includes a washing machine and dishwasher. Guests will receive a free welcome pack on arrival including tea, coffee, juice, milk, water, and biscuits. Luggage storage is available at Villas Puerto Rubicon and there is a tour desk. Playa Blanca Beach and Hesperia Playa Dorada Golf Club are a 10-minute walk away. This property is also rated for the best value in Playa Blanca! Guests are getting more for their money when compared to other properties in this city. We speak your language!")
+                        },
                         {
                             "Single Room",
                             new TypeOfApartment("SR", 52, 25.45M, 2,
@@ -81,11 +85,20 @@ namespace School.OnlineBookingSystem.Models
                         BeaverPrefix + "beavercreek_beavercreeklodge2.jpg",
                         BeaverPrefix + "beavercreek_beavercreeklodge3.jpg",
                         BeaverPrefix + "beavercreek_beavercreeklodge4.jpg"
-                    }, "", "chamonix",
+                    }, "France", "Chamonix",
                     new Dictionary<string, TypeOfApartment>()
                     {
-                       
-                        
+                         {
+                            "Luxury Room",
+                            new TypeOfApartment("Lk", 20, 400.7M, 7,
+                                "This property is 11 minutes walk from the Chamonix Airport. These spacious modern villas each have a private outdoor pool and garden with a barbecue area. Located 100 m from Lanzarote’s Rubicon Marina, Villas Puerto Rubicon offer free on-site parking. Featuring tiled floors and a fan, each villa has a living room with satellite TV, sofa, CD and DVD player. The bathroom comes with a hairdryer, and the well-equipped kitchen includes a washing machine and dishwasher. Guests will receive a free welcome pack on arrival including tea, coffee, juice, milk, water, and biscuits. Luggage storage is available at Villas Puerto Rubicon and there is a tour desk. Playa Blanca Beach and Hesperia Playa Dorada Golf Club are a 10-minute walk away. This property is also rated for the best value in Playa Blanca! Guests are getting more for their money when compared to other properties in this city. We speak your language!")
+                        },
+                          {
+                            "Single Room",
+                            new TypeOfApartment("kR", 32, 170.45M, 3,
+                                "You will live in a amazing boxroom where are double bed. IT IS GOOD BECAUSE IT IS CHEAP!!!")
+                        },
+
                         {
                             "Double Room",
                             new TypeOfApartment("DR", 5, 37.99M, 2,
@@ -109,7 +122,7 @@ namespace School.OnlineBookingSystem.Models
                         harischprefix + "kit_hotelweisses2.jpg",
                         harischprefix + "kit_hotelweisses5.jpg"
 
-                    }, " ", "FLAINE",
+                    }, "Denmark", "Bornholm",
                     new Dictionary<string, TypeOfApartment>()
                     {
                         {
@@ -144,7 +157,7 @@ namespace School.OnlineBookingSystem.Models
                         hayattprefix + "beavercreek_elkhornlodge5.jpg",
                         hayattprefix + "beavercreek_elkhornlodge6.jpg",
                         hayattprefix + "jacksonhole_hotelterra8.jpg",
-                    },"", "LES ARCS",
+                    },"Denmark", "Kolding",
                     new Dictionary<string, TypeOfApartment>()
                     {
                         {
@@ -179,7 +192,7 @@ namespace School.OnlineBookingSystem.Models
                         Pinesprefix + "beavercreek_pineslodge5.jpg",
                         Pinesprefix + "beavercreek_pineslodge8.jpg",
                         Pinesprefix + "beavercreek_pineslodge9.jpg",
-                    },"", "MORZINE",
+                    },"Slovakia", "Chopok",
                     new Dictionary<string, TypeOfApartment>()
                     {
                         {
@@ -213,7 +226,7 @@ namespace School.OnlineBookingSystem.Models
                         charterPrefix + "ch4.jpg",
                         charterPrefix + "ch5.jpg",
                         charterPrefix + "ch6.jpg",
-                    }, "" , "" ,
+                    }, "Slovakia" , "Tatranská Lomnica " ,
                 new Dictionary<string, TypeOfApartment>()
                 {
                      {
@@ -248,7 +261,7 @@ namespace School.OnlineBookingSystem.Models
                     Bordersprefix + "bc_borderslodge4_wynbcvl.jpg",
                     Bordersprefix + "bc_borderslodge5_wynbcvl.jpg",
                     Bordersprefix + "bc_borderslodge6_wynbcvl.jpg",
-                } , "" , "" , new Dictionary<string, TypeOfApartment>()
+                } , "Lithuania" , "Vilnius" , new Dictionary<string, TypeOfApartment>()
                 {
                    {
                             "Luxury Room",
@@ -280,7 +293,7 @@ namespace School.OnlineBookingSystem.Models
                 Ritzprefix + "bc_ritzcarltonbachelorgulch6_ritzbach.jpg",
                 Ritzprefix + "bc_ritzcarltonbachelorgulch7_ritzbach.jpg",
                 Ritzprefix + "bc_ritzcarltonbachelorgulch9_ritzbach.jpg",
-            } ,"","", new Dictionary<string, TypeOfApartment>()
+            } ,"Lithuania","Utena", new Dictionary<string, TypeOfApartment>()
             {
                  {
                             "Luxury Room",
@@ -314,7 +327,7 @@ namespace School.OnlineBookingSystem.Models
                 Stprefix + "beavercreek_stjamesplace6_vrbc.jpg",
                 Stprefix + "beavercreek_stjamesplace7_vrbc.jpg",
 
-            }, "", "" , new Dictionary<string, TypeOfApartment>()
+            }, "India", "Himachal Pradesh" , new Dictionary<string, TypeOfApartment>()
             {
                  {
                             "Luxury Room",
@@ -347,7 +360,7 @@ namespace School.OnlineBookingSystem.Models
                 Kohprefix + "valthorens_kohlnorhotel7.jpg",
                 Kohprefix + "valthorens_kohlnorhotel8.jpg",
                 Kohprefix + "valthorens_kohlnorhotel9.jpg",
-            } , "" ,"" , new Dictionary<string, TypeOfApartment>()
+            } , "India" ,"Kausauli" , new Dictionary<string, TypeOfApartment>()
             {
                  {
                             "Luxury Room",
@@ -378,7 +391,7 @@ namespace School.OnlineBookingSystem.Models
                 akiprefix + "imagereader5.jpg",
                 akiprefix + "imagereader6.jpg",
                 akiprefix + "imagereader7.jpg",
-            }, "" ,"" , new Dictionary<string, TypeOfApartment>()
+            }, "Japan" ,"Hakuba" , new Dictionary<string, TypeOfApartment>()
             {
                 {
                             "Luxury Room",
@@ -408,7 +421,7 @@ namespace School.OnlineBookingSystem.Models
                   emiprefix + "imagereader5.jpg",
                   emiprefix + "imagereader6.jpg",
                   emiprefix + "imagereader7.jpg",
-            } , "" , "" , new Dictionary<string, TypeOfApartment>()
+            } , "Japan" , "Niseko" , new Dictionary<string, TypeOfApartment>()
             {
                  {
                             "Luxury Room",
@@ -438,7 +451,7 @@ namespace School.OnlineBookingSystem.Models
                 harprefix + " (5).jpg",
                 harprefix + " (6).jpg",
                 harprefix + " (7).jpg",
-            } , "" , "" , new Dictionary<string, TypeOfApartment>()
+            } , "China" , "Jilin" , new Dictionary<string, TypeOfApartment>()
             {
                   {
                             "Luxury Room",
@@ -468,7 +481,7 @@ namespace School.OnlineBookingSystem.Models
                 jakprefix + "imagereader5.jpg",
                 jakprefix + "imagereader6.jpg",
                 jakprefix + "imagereader7.jpg",
-            }, "" , "" , new Dictionary<string, TypeOfApartment>()
+            }, "China" , "Hebei" , new Dictionary<string, TypeOfApartment>()
             {
                 {
                             "Luxury Room",
@@ -500,7 +513,7 @@ namespace School.OnlineBookingSystem.Models
                 julprefix + "imagereader6.jpg",
                 julprefix + "imagereader7.jpg",
 
-            } , "" , "" , new Dictionary<string, TypeOfApartment>()
+            } , "USA" , "Colorado " , new Dictionary<string, TypeOfApartment>()
             {
                  {
                             "Luxury Room",
@@ -530,7 +543,7 @@ namespace School.OnlineBookingSystem.Models
                 Marprefix + "5.jpg",
                 Marprefix + "6.jpg",
                 Marprefix + "7.jpg",
-            } , "" , "" , new Dictionary<string, TypeOfApartment>()
+            } , "USA" , "Chicago" , new Dictionary<string, TypeOfApartment>()
             {
                         {   
                             "Luxury Room",
@@ -560,7 +573,7 @@ namespace School.OnlineBookingSystem.Models
                 petprefix + "5.jpg",
                 petprefix + "6.jpg",
                 petprefix + "7.jpg",
-            } , "" , "" , new Dictionary<string, TypeOfApartment>()
+            } , "Canada" , "Banff" , new Dictionary<string, TypeOfApartment>()
             {
                                  {
                             "Luxury Room",
@@ -590,7 +603,7 @@ namespace School.OnlineBookingSystem.Models
                rusprefix + "5.jpg",
                rusprefix + "6.jpg",
                rusprefix + "7.jpg",
-           } , "", "" , new Dictionary<string, TypeOfApartment>()
+           } , "Canada", "Toronto" , new Dictionary<string, TypeOfApartment>()
            {
               {
                             "Luxury Room",
@@ -702,6 +715,13 @@ namespace School.OnlineBookingSystem.Models
                 }
             }
             SaveCollection();
+        }
+
+        public PropertyCatalog (string searchInput)
+        {
+            Collection = new ObservableCollection<Property>();
+
+
         }
 
         private string CreateID (string _apartmentTypeInitial, int _nr)

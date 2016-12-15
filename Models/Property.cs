@@ -41,9 +41,9 @@ namespace School.OnlineBookingSystem.Models
         
         public decimal MinPrice { get; set; }
 
-        public string DisplayLocation
+        public string DisplayName
         {
-            get { return Location + " (" + Country + ")"; }
+            get { return Name + ", " + Location + " (" + Country + ")"; }
             set { }
         }
 
