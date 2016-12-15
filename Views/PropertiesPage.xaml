@@ -175,7 +175,7 @@ VerticalAlignment="Center" TextAlignment="Center"
 
                                    Text="{x:Bind Location, Mode=OneWay}"
 VerticalAlignment="Center" HorizontalAlignment="Left"
-                                   Margin="5, 0 ,0 ,0"></TextBlock>
+                                   Margin="5, 0 ,0 ,5"></TextBlock>
                                 </StackPanel>
 
                             </Grid>

@@ -21,6 +21,25 @@ namespace School.OnlineBookingSystem.ViewModels
     {
         bool _aviableApartment = false;
         private string typeSelected { get; set; }
+        private DateTimeOffset checkInTime = DateTimeOffset.Now;
+        private DateTimeOffset checkOutTime = DateTimeOffset.Now.AddDays(14);
+        private DateTimeOffset maxDate = DateTimeOffset.Now.AddDays(365);
+        public DelegateCommand Book { get; set; }
+        public Property _selectedProperty { get; set;}
+        public LoggedUserSingleton UserSingleton { get; set; } = LoggedUserSingleton.Instance;
+        public string CustomersName { get; set; }
+        public string CustomersPhoneNumber { get; set; }
+        public string CustomersEmail { get; set; }
+        public int AdultsCount { get; set; }
+        public int ChildrensCount { get; set; }
+        public string Id { get; set; }
+        private string ApartmentType { get; set; }
+        public BookingCatalog BookingCat { get; set; }
+        public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
+        public ObservableCollection<string> apartSelectList { get; set; }
+        public ObservableCollection<string> peopleSelectList { get; set; }
+        private decimal Price;
+        private string displayPrice;
         public string TypeSelected
         {
             get { return typeSelected; }
@@ -31,9 +50,6 @@ namespace School.OnlineBookingSystem.ViewModels
                 TypeSelectedM();
             }
         }
-        private DateTimeOffset checkInTime = DateTimeOffset.Now;
-        private DateTimeOffset checkOutTime = DateTimeOffset.Now.AddDays(14);
-        private DateTimeOffset maxDate = DateTimeOffset.Now.AddDays(365);
         public DateTimeOffset MaxDate
         {
             get { return maxDate; }
@@ -62,13 +78,7 @@ namespace School.OnlineBookingSystem.ViewModels
                 OnPropertyChanged(nameof(CheckInDate));
                 MaxDate = CheckInDate.AddDays(365);
                 if (CheckOutDate < CheckInDate) CheckOutDate = CheckInDate.AddDays(1);
-                if (TypeSelected!=null)
-                {
-                    int bookedDays = (CheckOutDate - CheckInDate).Days;
-                    Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
-                    displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString();
-                    DisplayPrice = displayPrice;
-                }
+                if (TypeSelected != null) CountPrice();
             }
         }
 
@@ -80,31 +90,9 @@ namespace School.OnlineBookingSystem.ViewModels
                 checkOutTime = value;
                 OnPropertyChanged(nameof(CheckOutDate));
                 if (CheckOutDate < CheckInDate) CheckInDate = CheckOutDate.AddDays(-1);
-                if (TypeSelected != null)
-                {
-                    int bookedDays = (CheckOutDate - CheckInDate).Days;
-                    Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
-                    displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString();
-                    DisplayPrice = displayPrice;
-                }
+                if (TypeSelected != null) CountPrice();
             }
         }
-        public DelegateCommand Book { get; set; }
-        public Property _selectedProperty { get; set;}
-        public LoggedUserSingleton UserSingleton { get; set; } = LoggedUserSingleton.Instance;
-        public string CustomersName { get; set; }
-        public string CustomersPhoneNumber { get; set; }
-        public string CustomersEmail { get; set; }
-        public int AdultsCount { get; set; }
-        public int ChildrensCount { get; set; }
-        public string Id { get; set; }
-        private string ApartmentType { get; set; }
-        public BookingCatalog BookingCat { get; set; }
-        public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
-        public ObservableCollection<string> apartSelectList { get; set; }
-        public ObservableCollection<string> peopleSelectList { get; set; }
-        private decimal Price;
-        private string displayPrice;
         public string DisplayPrice
         {
             get { return displayPrice; }
@@ -114,7 +102,7 @@ namespace School.OnlineBookingSystem.ViewModels
                 OnPropertyChanged(nameof(DisplayPrice));
 
             }
-        }
+        } 
 
 
         public CreateBookingVm()
@@ -145,29 +133,33 @@ namespace School.OnlineBookingSystem.ViewModels
             {
                 peopleSelectList.Add(i.ToString());
             }
-            int bookedDays = (CheckOutDate - CheckInDate).Days;
-            Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
-            displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString();
-            DisplayPrice = displayPrice;
+            CountPrice();
 
         }
      
+        private void CountPrice()
+        {
+            int bookedDays = (CheckOutDate - CheckInDate).Days;
+            Price = bookedDays * _selectedProperty.TypesOfApartments[TypeSelected].Price;
+            displayPrice = "For " + bookedDays.ToString() + " nights it will cost $" + Price.ToString() + "\nPrice per night is $" + _selectedProperty.TypesOfApartments[TypeSelected].Price.ToString();
+            DisplayPrice = displayPrice;
+        }
 
         private void BookM(object obj)
         {
+            MessageDialog Show = new MessageDialog("You Successfully booked vacation in " + _selectedProperty.Name + ". For " + Price.ToString("C0"), "Thank You!");
             if (CanBook(typeSelected))
             {
                 var tempBook = new Booking(CustomersName, CustomersPhoneNumber, CustomersEmail, CheckInDate, CheckOutDate, AdultsCount, ChildrensCount, Id, typeSelected);
                 BookingCat.Collection.Add(tempBook);
                 BookingCat.SaveCollection();
-                MessageDialog Show = new MessageDialog("You Successfully booked vacation in " + _selectedProperty.Name + ". For " + Price.ToString("C0"), "Thank You!");
                 Show.ShowAsync();
                 var frame = Window.Current.Content as Frame;
                 frame?.Navigate(typeof(MainPage));
             }
             else
             {
-                MessageDialog Show = new MessageDialog("Sorry! There is no aviable apartments for this booking. ");
+                Show = new MessageDialog("Sorry! There is no aviable apartments for this booking. ");
                 Show.ShowAsync();
             }
         }

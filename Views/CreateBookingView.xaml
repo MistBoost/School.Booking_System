@@ -120,6 +120,7 @@
         <StackPanel Orientation="Vertical">
             <TextBlock Text="{Binding _selectedProperty.Name}" FontSize="23"/>
                 <Image Source="{Binding _selectedProperty.ImagePaths[0]}" Margin="20"/>
+     
             </StackPanel>
 </StackPanel>
 
