@@ -60,6 +60,12 @@ namespace School.OnlineBookingSystem.ViewModels
                 case ("CreateBookingView"):
                     Instance.MainFrame.SourcePageType = typeof(CreateBookingView);
                     break;
+                case ("RegisterPage"):
+                    MainFrame.SourcePageType = typeof(RegisterPage);
+                    break;
+                case ("MyAccount"):
+                    Instance.MainFrame.SourcePageType = typeof(MyBookings);
+                    break;
                 case ("AboutPage"):
                     Instance.MainFrame.SourcePageType = typeof(AboutPage);
                     break;
