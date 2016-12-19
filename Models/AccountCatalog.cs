@@ -16,6 +16,7 @@ namespace School.OnlineBookingSystem.Models
             Collection.Add(new Account("Emilis Gu", "emil", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
             Collection.Add(new Account("Peter Lacko", "pete", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
             Collection.Add(new Account("Rushika Gurung", "pete", "pass", "email@email.com", "27246461", AccountTypes.Administrator));
+            SaveCollection();
         }
     }
 }

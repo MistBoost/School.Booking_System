@@ -15,7 +15,6 @@ namespace School.OnlineBookingSystem.ViewModels
         private ObservableCollection<StringValue> _selectedStringValues;
         private string _selectedImageString;
         private int _selectedImageIndex;
-      //  private int _selectedPropTyesCount;
         private bool _isPaneOpen;
         private Property _selectedProperty;
 

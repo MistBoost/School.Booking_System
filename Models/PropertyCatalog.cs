@@ -720,6 +720,8 @@ namespace School.OnlineBookingSystem.Models
         public PropertyCatalog (string searchInput)
         {
             Collection = new ObservableCollection<Property>();
+            FilePath = "properties_data.json";
+            LoadCollection();
 
 
         }

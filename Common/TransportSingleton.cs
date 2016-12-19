@@ -12,6 +12,7 @@ namespace School.OnlineBookingSystem.Common
         private static TransportSingleton _instance;
 
         public Property SelectedProp { get; set; }
+        public string SearchInput { get; set; }
         public static TransportSingleton Instance
         {
             get

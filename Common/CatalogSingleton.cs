@@ -97,6 +97,7 @@ namespace School.OnlineBookingSystem.Common
             }
             Debug.WriteLine("Loading done", FilePath);
             Collection = result;
+          
             return result;
         }
 
