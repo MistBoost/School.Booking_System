@@ -23,7 +23,7 @@ namespace School.OnlineBookingSystem.ViewModels
         bool _aviableApartment = false;
         private string typeSelected { get; set; }
         private DateTimeOffset checkInTime = DateTimeOffset.Now;
-        private DateTimeOffset checkOutTime = DateTimeOffset.Now.AddDays(14);
+        private DateTimeOffset checkOutTime = DateTimeOffset.Now.AddDays(7);
         private DateTimeOffset maxDate = DateTimeOffset.Now.AddDays(365);
         public DelegateCommand Book { get; set; }
         public Property _selectedProperty { get; set;}
