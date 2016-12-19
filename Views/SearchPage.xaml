@@ -24,84 +24,52 @@
 
     <Grid >
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/WorldWide.jpg"/>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FFD80D0D" Offset="1"/>
+            </LinearGradientBrush>
         </Grid.Background>
-
-
-        <Grid Background="Blue" Opacity="0.8" HorizontalAlignment="Left" Height="556" Margin="125,60,0,0" VerticalAlignment="Top" Width="545">
-            <CalendarDatePicker 
-                           
-                           
-                            Background="Black" 
-                            Foreground="White" 
-                            BorderBrush="Black"
-                            x:Name="CalendarDatePicker" Margin="84,161,0,344" Height="51" Width="133"/>
-            <CalendarDatePicker 
-                            BorderBrush="Black" 
-                            Background="Black" Margin="321,160,0,364"/>
-            <TextBlock x:Name="textBlock_Copy" 
-                   TextWrapping="Wrap" 
-                   Text="Check out" 
-                   VerticalAlignment="Top" 
-                   FontSize="18" 
-                   FontWeight="Bold" 
-                   Foreground="White" Margin="330,117,99,0" Height="45"/>
-            <TextBlock x:Name="textBlock_Copy1" 
-                TextWrapping="Wrap" 
-                Text="Check in" 
-                VerticalAlignment="Top" 
-                FontSize="18" 
-                FontWeight="Bold" 
-                Foreground="White" Margin="93,117,336,0" Height="45"/>
-            <ComboBox x:Name="comboBox"  
-                  Width="129" 
-                  BorderBrush="Black" 
-                  Background="Black" 
-                  Height="32" Margin="84,279,0,0">
-                <ComboBoxItem Content="1"/>
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="3"/>
-                <ComboBoxItem Content="4"/>
-                <ComboBoxItem Content="5"/>
-                <ComboBoxItem Content="6"/>
-                <ComboBoxItem Content="7"/>
-            </ComboBox>
-            <ComboBox x:Name="comboBox_Copy"  
-                Width="129" 
-                BorderBrush="Black" 
-                Background="Black" 
-                Height="32" Margin="315,279,0,0">
-                <ComboBoxItem Content="1"/>
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="3"/>
-                <ComboBoxItem Content="4"/>
-                <ComboBoxItem Content="5"/>
-                <ComboBoxItem Content="6"/>
-                <ComboBoxItem Content="7"/>
-            </ComboBox>
-            <TextBlock x:Name="textBlock_Copy2" 
-                TextWrapping="Wrap" 
-                Text="Adult(18+)" 
-                VerticalAlignment="Top" 
-                FontSize="18" 
-                FontWeight="Bold" 
-                Foreground="White" Margin="93,231,336,0" Height="45"/>
-            <TextBlock x:Name="textBlock_Copy3" 
-                TextWrapping="Wrap" 
-                Text="Children(0-17)" 
-                VerticalAlignment="Top" 
-                FontSize="18" 
-                FontWeight="Bold" 
-                Foreground="White" Margin="324,231,68,0" Height="45"/>
-
-        </Grid>
-        <FlipView x:Name="flipView" HorizontalAlignment="Left" Margin="760,165,0,0" VerticalAlignment="Top" Width="470" Height="310">
-            <Image Stretch="UniformToFill" Source="ms-appx:///Images/SkiResorts/KohNorHotel/valthorens_kohlnorhotel1.jpg" ></Image>
-          <Image Stretch="UniformToFill" Source="ms-appx:///Images/SkiResorts/BordersLodge/bc_borderslodge1_wynbcvl.jpg"></Image>
-            <Image Stretch="UniformToFill" Source="ms-appx:///Images/Grit/Marcin'svilla/1.jpg"  />
-            <Image Stretch="UniformToFill" Source="ms-appx:///Images/Grit/Peter'sVilla/1.jpg"  ></Image>
-            <Image Stretch="UniformToFill" Source="ms-appx:///Images/1.jpg"  ></Image>
-        </FlipView>
-
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="15,30,0,0">
+                <TextBlock x:Name="textBlock_Copy1"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,0" 
+                   TextWrapping="Wrap"
+                   Text="Going to: (Name/City/Country)" 
+                   VerticalAlignment="Bottom" 
+                   FontSize="15" 
+                   Foreground="White" 
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI Black"/>
+                <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" HorizontalAlignment="Center" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen" Margin="20,0,0,20" Width="220"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <CalendarDatePicker  DateChanged="CalendarDatePicker_DateChanged" Margin="10" Background="Black" PlaceholderText="Check In" Header="Check In" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
+                <CalendarDatePicker Margin="10" DateChanged="CalendarDatePicker_DateChanged_1" PlaceholderText="Check Out" Header="Check Out" BorderBrush="Black" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            </StackPanel>
+                <Button Content="Search" Command="{x:Bind Vm.SearchCommand}" HorizontalAlignment="Center" Margin="20" Background="#33000000"/>
+            </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10, 30">
+            <ListView ItemsSource="{x:Bind Vm.SearchCatalog.Collection, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Property">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}" 
+                                        Height="100" Width="100" Stretch="Fill" Margin="10, 5, 10, 5"/>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{x:Bind DisplayName, Mode=OneWay}"/>
+                                    <TextBlock Text="{x:Bind DisplayPrices, Mode=OneWay}"/>
+                                </StackPanel>
+                            </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <Image x:Name="image" 
+               HorizontalAlignment="Left" 
+               Height="240" 
+               Margin="905,98,0,0" 
+               VerticalAlignment="Top" 
+               Width="412"/>
+        </StackPanel>
     </Grid>
 </Page>

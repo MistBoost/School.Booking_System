@@ -28,11 +28,6 @@ namespace School.OnlineBookingSystem.Models
         private readonly string tanprefix = "../Images/Grit/tansu'svilla/";
 
 
-
-
-
-
-
         public PropertyCatalog()
         {
             FilePath = "properties_data.json";
@@ -629,6 +624,8 @@ namespace School.OnlineBookingSystem.Models
         public PropertyCatalog (string searchInput)
         {
             Collection = new ObservableCollection<Property>();
+            FilePath = "properties_data.json";
+            LoadCollection();
 
 
         }

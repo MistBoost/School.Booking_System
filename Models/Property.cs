@@ -46,6 +46,16 @@ namespace School.OnlineBookingSystem.Models
             get { return Name + ", " + Location + " (" + Country + ")"; }
             set { }
         }
+        public string DisplayPrices
+        {
+            get { string _displayPrices = "";
+                foreach (var type in TypesOfApartments)
+                {
+                    _displayPrices = _displayPrices + "For " + type.Key + " - $" + type.Value.Price + " per night \n";
+                }
+                return _displayPrices; }
+
+        }
 
         #endregion
 

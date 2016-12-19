@@ -46,10 +46,36 @@ namespace School.OnlineBookingSystem.Common
                 {
                     await ApplicationData.Current.LocalFolder.CreateFolderAsync("data");
                 }
-                catch
+                catch (Exception ex)
                 {
                     Debug.WriteLine("Folder already exists");
                 }
+                var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
+                if (folder != null)
+                {
+                    File.WriteAllText(folder.Path + "\\" + FilePath, msg);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                stream.Dispose();
+            }
+            Debug.WriteLine("Save done");
+        }
+
+        public async Task SaveCollectionAccount()
+        {
+            var js = new DataContractJsonSerializer(typeof(ObservableCollection<T>));
+            var stream = new MemoryStream();
+            js.WriteObject(stream, Collection);
+            var msg = StreamToString(stream);
+            try
+            {
+               
                 var folder = await ApplicationData.Current.LocalFolder.GetFolderAsync("data");
                 if (folder != null)
                 {
@@ -97,6 +123,7 @@ namespace School.OnlineBookingSystem.Common
             }
             Debug.WriteLine("Loading done", FilePath);
             Collection = result;
+          
             return result;
         }
 
