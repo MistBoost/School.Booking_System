@@ -61,7 +61,9 @@ namespace School.OnlineBookingSystem.Views
         private void CalendarDatePicker_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
         {
             if (args.NewDate != null)
+            {
                 Vm.CheckIn = args.NewDate.Value;
+            }
         }
 
         private void CalendarDatePicker_DateChanged_1(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)

@@ -19,7 +19,8 @@ namespace School.OnlineBookingSystem.ViewModels
         public DelegateCommand SearchCommand { get; set; }
         public string SearchInput { get; set; }
         private DateTimeOffset checkIn = DateTimeOffset.Now;
-        private DateTimeOffset checkOut = DateTimeOffset.Now;
+        private DateTimeOffset checkOut = DateTimeOffset.Now.AddDays(14);
+        private DateTimeOffset maxDate = DateTimeOffset.Now.AddDays(365);
         public PropertyCatalog propCat;
         private Catalog<Property> _searchCatalog = new Catalog<Property>();
         public List<string> searchSource = new List<string>();
@@ -60,17 +61,47 @@ namespace School.OnlineBookingSystem.ViewModels
             get { return checkIn; }
             set
             {
-                checkIn = value;
-                OnPropertyChanged(nameof(CheckIn));
-            }
+                if (value >= DateTimeOffset.Now && CheckIn < maxDate)
+                {
+                    checkIn = value;
+                    OnPropertyChanged(nameof(CheckIn));
+                    TransportSingleton.Instance.CheckIn = CheckIn;
+                    if (CheckOut < CheckIn)
+                    {
+                        TransportSingleton.Instance.CheckOut = DateTimeOffset.Now.AddDays(7);
+                    }
+                }
+                else
+                {
+                    checkIn = DateTimeOffset.Now;
+                    OnPropertyChanged(nameof(CheckIn));
+                    TransportSingleton.Instance.CheckIn = CheckIn;
+                    if (CheckOut < CheckIn)
+                    {
+                        TransportSingleton.Instance.CheckOut = DateTimeOffset.Now.AddDays(7);
+                    }
+                }
+                }
         }
         public DateTimeOffset CheckOut
         {
-            get { return CheckOut; }
+            get { return checkOut; }
             set
             {
-                checkOut = value;
-                OnPropertyChanged(nameof(CheckOut));
+                if (value > DateTimeOffset.Now.AddDays(1))
+                {
+                    checkOut = value;
+                    OnPropertyChanged(nameof(CheckOut));
+                    TransportSingleton.Instance.CheckOut = CheckOut;
+                    if (CheckOut < CheckIn) CheckIn = CheckOut.AddDays(-1);
+                }
+                else
+                {
+                    checkOut = CheckIn;
+                    OnPropertyChanged(nameof(CheckOut));
+                    TransportSingleton.Instance.CheckOut = CheckOut;
+                    if (CheckOut < CheckIn) CheckIn = CheckOut.AddDays(-1);
+                }
             }
         }
         public SearchPageVm()
@@ -81,8 +112,8 @@ namespace School.OnlineBookingSystem.ViewModels
             SearchCatalog = new Catalog<Property>();
             SearchCatalog.Collection = new ObservableCollection<Property>();
             SearchCommand = new DelegateCommand(SearchM);
-            CheckIn = DateTime.Today;
-            CheckOut = DateTime.Today;
+            CheckIn = DateTimeOffset.Now;
+            CheckOut = DateTimeOffset.Now.AddDays(7);
     }
 
         private void SearchM(object obj)

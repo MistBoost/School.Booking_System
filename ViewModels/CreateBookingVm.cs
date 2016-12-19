@@ -108,6 +108,11 @@ namespace School.OnlineBookingSystem.ViewModels
 
         public CreateBookingVm()
         {
+            if (TransportSingleton.Instance.CheckIn > DateTimeOffset.Now.AddDays(-1) || TransportSingleton.Instance.CheckOut > DateTimeOffset.Now) 
+            {
+                CheckInDate = TransportSingleton.Instance.CheckIn;
+                CheckOutDate = TransportSingleton.Instance.CheckOut;
+            }
             UserSingleton = LoggedUserSingleton.Instance;
             _selectedProperty = TransportSingleton.SelectedProp;
             BookingCat = new BookingCatalog(_selectedProperty.Name);

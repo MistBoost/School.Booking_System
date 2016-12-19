@@ -12,6 +12,8 @@ namespace School.OnlineBookingSystem.Common
         private static TransportSingleton _instance;
 
         public Property SelectedProp { get; set; }
+        public DateTimeOffset CheckIn { get; set;}
+        public DateTimeOffset CheckOut {get; set;}
         public Catalog<Property> PropertyCatalog { get; set; }
         public static TransportSingleton Instance
         {

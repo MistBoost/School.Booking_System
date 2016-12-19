@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System;
 using System.Runtime.CompilerServices;
 using School.OnlineBookingSystem.Annotations;
 using School.OnlineBookingSystem.Common;
@@ -17,7 +18,6 @@ namespace School.OnlineBookingSystem.ViewModels
         private int _selectedImageIndex;
         private bool _isPaneOpen;
         private Property _selectedProperty;
-
         public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
         public Property SelectedProperty
         {
@@ -94,6 +94,7 @@ namespace School.OnlineBookingSystem.ViewModels
             get { return _selectedIndex; }
             set
             {
+                IsPaneOpen = true;
                 _selectedIndex = value;
                 OnPropertyChanged(nameof(SelectedIndex));
                 SelectedProperty = PropertyCatalog.Collection[_selectedIndex];
@@ -115,6 +116,8 @@ namespace School.OnlineBookingSystem.ViewModels
         public DelegateCommand OpenPane { get; set; }
         public PropertiesPageVm()
         {
+            TransportSingleton.Instance.CheckOut = new DateTimeOffset(DateTime.Now.AddDays(-20));
+            TransportSingleton.Instance.CheckIn = TransportSingleton.Instance.CheckOut;
             IsPaneOpen = true;
             PropertyCatalog = new PropertyCatalog();
             SelectedIndex = 0;
