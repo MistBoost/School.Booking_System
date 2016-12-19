@@ -24,7 +24,28 @@ namespace School.OnlineBookingSystem.ViewModels
         private Catalog<Property> _searchCatalog = new Catalog<Property>();
         public List<string> searchSource = new List<string>();
         private List<string> nameList, cityList, countryList;
+        private Property _selectedProperty;
+        private int _selectedIndex = -1;
+        public TransportSingleton TransportSingleton { get; set; } = TransportSingleton.Instance;
+        public MainFrameSingleton NavigationControl { get; set; }
 
+        public int SelectedIndex
+        {
+            get { return _selectedIndex; }
+            set { _selectedIndex = value;
+                OnPropertyChanged(nameof(SelectedIndex));
+                if (_selectedIndex != -1)
+                SelectedProperty = SearchCatalog.Collection[SelectedIndex];
+            }
+        }
+
+        public Property SelectedProperty {
+            get { return _selectedProperty; }
+            set { _selectedProperty = value;
+                OnPropertyChanged(nameof(SelectedProperty));
+                TransportSingleton.Instance.SelectedProp = SelectedProperty;
+            }
+        }
 
         public Catalog<Property> SearchCatalog
         {
@@ -54,20 +75,19 @@ namespace School.OnlineBookingSystem.ViewModels
         }
         public SearchPageVm()
         {
+            NavigationControl = MainFrameSingleton.Instance;
             _searchCatalog = new Catalog<Property>();
             propCat = new PropertyCatalog();
             SearchCatalog = new Catalog<Property>();
             SearchCatalog.Collection = new ObservableCollection<Property>();
-            //collection.Collection = SearchTransform.SearchCatalog.Collection;
-
             SearchCommand = new DelegateCommand(SearchM);
             CheckIn = DateTime.Today;
             CheckOut = DateTime.Today;
-
-        }
+    }
 
         private void SearchM(object obj)
         {
+            _selectedIndex = -1;
             SearchCatalog.Collection = new ObservableCollection<Property>();
             foreach (var property in propCat.Collection)
             {

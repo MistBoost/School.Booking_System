@@ -30,10 +30,13 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel Orientation="Horizontal">
+
             <StackPanel Orientation="Vertical" Margin="15,30,0,0">
-                <TextBlock x:Name="textBlock_Copy1"
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="textBlock_Copy1"
                    HorizontalAlignment="Center"
-                   Margin="0,0,0,0" 
+                   Margin="0,10,0,0" 
                    TextWrapping="Wrap"
                    Text="Going to: (Name/City/Country)" 
                    VerticalAlignment="Bottom" 
@@ -41,30 +44,43 @@
                    Foreground="White" 
                    FontWeight="Bold"
                    FontFamily="Segoe UI Black"/>
-                <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" HorizontalAlignment="Center" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen" Margin="20,0,0,20" Width="220"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                <CalendarDatePicker  DateChanged="CalendarDatePicker_DateChanged" Margin="10" Background="Black" PlaceholderText="Check In" Header="Check In" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
-                <CalendarDatePicker Margin="10" DateChanged="CalendarDatePicker_DateChanged_1" PlaceholderText="Check Out" Header="Check Out" BorderBrush="Black" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-            </StackPanel>
-                <Button Content="Search" Command="{x:Bind Vm.SearchCommand}" HorizontalAlignment="Center" Margin="20" Background="#33000000"/>
-            </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="10, 30">
-            <ListView ItemsSource="{x:Bind Vm.SearchCatalog.Collection, Mode=OneWay}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Property">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}" 
+                        <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" HorizontalAlignment="Center" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen" Margin="0,10,0,0" Width="220"/>
+                    </StackPanel>
+                    <CalendarDatePicker  DateChanged="CalendarDatePicker_DateChanged" Margin="10" Background="Black" PlaceholderText="Check In" Header="Check In" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
+                    <CalendarDatePicker Margin="10" DateChanged="CalendarDatePicker_DateChanged_1" PlaceholderText="Check Out" Header="Check Out" BorderBrush="Black" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <Button Content="Search" Command="{x:Bind Vm.SearchCommand}" HorizontalAlignment="Center" Margin="10, 20, 0, 0" Background="#33000000"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10, 30">
+                    <ListView ItemsSource="{x:Bind Vm.SearchCatalog.Collection, Mode=OneWay}" SelectedIndex="{x:Bind Vm.SelectedIndex, Mode=TwoWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Property">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}" 
                                         Height="100" Width="100" Stretch="Fill" Margin="10, 5, 10, 5"/>
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="{x:Bind DisplayName, Mode=OneWay}"/>
-                                    <TextBlock Text="{x:Bind DisplayPrices, Mode=OneWay}"/>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="{x:Bind DisplayName, Mode=OneWay}"/>
+                                        <TextBlock Text="{x:Bind DisplayPrices, Mode=OneWay}"/>
+                                    </StackPanel>
                                 </StackPanel>
-                            </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-        <Image x:Name="image" 
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+           
+            <StackPanel Orientation="Vertical" Margin="0,183,0,38" HorizontalAlignment="Center" VerticalAlignment="Center" Height="499" Width="620">
+                <Image Source="{x:Bind Vm.SelectedProperty.ImagePaths[0], Mode=OneWay}"  Height="200"
+                               Width="400"
+                               Stretch="Fill"
+                               Margin="10, 0, 10, 5"/>
+                <TextBlock Text="{x:Bind Vm.SelectedProperty.DisplayName, Mode=OneWay}" Margin="0, 10, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="{x:Bind Vm.SelectedProperty.DisplayPrices, Mode=OneWay}" HorizontalAlignment="Center"/>
+                <TextBlock Text="{x:Bind Vm.SelectedProperty.Information, Mode=OneWay}" HorizontalAlignment="Center" TextWrapping="Wrap" Height="130" Margin="0,5,0,0" Width="382"/>
+                <Button Content="Book" Command="{x:Bind Vm.NavigationControl.NavigateToCommand}" CommandParameter="CreateBookingView" Height="42" Margin="0" HorizontalAlignment="Center"/>
+
+            </StackPanel>
+            <Image x:Name="image" 
                HorizontalAlignment="Left" 
                Height="240" 
                Margin="905,98,0,0" 

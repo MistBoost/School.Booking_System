@@ -51,7 +51,7 @@ namespace School.OnlineBookingSystem.Models
             get { string _displayPrices = "";
                 foreach (var type in TypesOfApartments)
                 {
-                    _displayPrices = _displayPrices + "For " + type.Key + " - $" + type.Value.Price + " per night \n";
+                    _displayPrices = _displayPrices + "For " + type.Key + " - $" + type.Value.Price + " per night. There are space for " + type.Value.MaxPeople + " people" + "\n";
                 }
                 return _displayPrices; }
 
