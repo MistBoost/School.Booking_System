@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 
 namespace School.OnlineBookingSystem.ViewModels
 {
-    public class SearchPageVm
+    public class SearchPageVm : INotifyPropertyChanged
     {
 
         public DelegateCommand SearchCommand { get; set; }
@@ -21,10 +21,18 @@ namespace School.OnlineBookingSystem.ViewModels
         private DateTimeOffset checkIn = DateTimeOffset.Now;
         private DateTimeOffset checkOut = DateTimeOffset.Now;
         public PropertyCatalog propCat;
-        public Catalog<Property> SearchCatalog = new Catalog<Property>();
+        private Catalog<Property> _searchCatalog = new Catalog<Property>();
         public List<string> searchSource = new List<string>();
         private List<string> nameList, cityList, countryList;
 
+
+        public Catalog<Property> SearchCatalog
+        {
+            get { return _searchCatalog; }
+            set { _searchCatalog = value;
+                OnPropertyChanged(nameof(SearchCatalog)); }
+        }
+        
 
         public DateTimeOffset CheckIn
         {
@@ -46,9 +54,10 @@ namespace School.OnlineBookingSystem.ViewModels
         }
         public SearchPageVm()
         {
+            _searchCatalog = new Catalog<Property>();
             propCat = new PropertyCatalog();
             SearchCatalog = new Catalog<Property>();
-            SearchCatalog.Collection = new System.Collections.ObjectModel.ObservableCollection<Property>();
+            SearchCatalog.Collection = new ObservableCollection<Property>();
             //collection.Collection = SearchTransform.SearchCatalog.Collection;
 
             SearchCommand = new DelegateCommand(SearchM);
@@ -62,10 +71,11 @@ namespace School.OnlineBookingSystem.ViewModels
             SearchCatalog.Collection = new ObservableCollection<Property>();
             foreach (var property in propCat.Collection)
             {
-                if (property.Name == SearchInput) SearchCatalog.Collection.Add(property);
-                if (property.Location + " (" + property.Country + ")" == SearchInput) SearchCatalog.Collection.Add(property);
-                if (property.Country == SearchInput) SearchCatalog.Collection.Add(property);
+                if (property.Name == SearchInput) _searchCatalog.Collection.Add(property);
+                if (property.Location + " (" + property.Country + ")" == SearchInput) _searchCatalog.Collection.Add(property);
+                if (property.Country == SearchInput) _searchCatalog.Collection.Add(property);
             }
+            if (_searchCatalog != null) SearchCatalog = _searchCatalog;
         }
 
         public void SearchSource(string searchInput)

@@ -29,66 +29,40 @@
                 <GradientStop Color="#FFD80D0D" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-
-        <StackPanel Orientation="Vertical" Margin="0,0,867,0">
-            <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" HorizontalAlignment="Center" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen" Margin="20,100,0,20" Width="220"/>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="15,30,0,0">
+                <TextBlock x:Name="textBlock_Copy1"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,0" 
+                   TextWrapping="Wrap"
+                   Text="Going to: (Name/City/Country)" 
+                   VerticalAlignment="Bottom" 
+                   FontSize="15" 
+                   Foreground="White" 
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI Black"/>
+                <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" HorizontalAlignment="Center" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen" Margin="20,0,0,20" Width="220"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                 <CalendarDatePicker  DateChanged="CalendarDatePicker_DateChanged" Margin="10" Background="Black" PlaceholderText="Check In" Header="Check In" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
                 <CalendarDatePicker Margin="10" DateChanged="CalendarDatePicker_DateChanged_1" PlaceholderText="Check Out" Header="Check Out" BorderBrush="Black" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </StackPanel>
-            <Button Content="Search" Command="{x:Bind Vm.SearchCommand}" HorizontalAlignment="Center" Margin="20" Background="#33000000"/>
-            <TextBlock x:Name="textBlock_Copy1"
-                   HorizontalAlignment="Left" 
-                   Margin="234,98,0,0" 
-                   TextWrapping="Wrap"
-                   Text="Going to" 
-                   VerticalAlignment="Top" 
-                   FontSize="22" 
-                   Foreground="White" 
-                   FontWeight="Bold"
-                   FontFamily="Segoe UI Black"/>
-
-            <ComboBox x:Name="comboBox"  
-                  HorizontalAlignment="Left" 
-                  Margin="195,309,0,0" 
-                  VerticalAlignment="Top" 
-                  Width="129" 
-                  BorderBrush="Black" 
-                  Background="Black" 
-                  Height="32">
-                <ComboBoxItem Content="1"/>
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="3"/>
-                <ComboBoxItem Content="4"/>
-                <ComboBoxItem Content="5"/>
-                <ComboBoxItem Content="6"/>
-                <ComboBoxItem Content="7"/>
-            </ComboBox>
-            <TextBlock x:Name="textBlock1" 
-                   HorizontalAlignment="Left" 
-                   Margin="207,279,0,0" 
-                   TextWrapping="Wrap" 
-                   Text="Adult(18+)"
-                   VerticalAlignment="Top" 
-                   FontSize="18" 
-                   FontWeight="Bold" 
-                   Foreground="White"/>
-            <ComboBox x:Name="comboBox1" 
-                  HorizontalAlignment="Left" 
-                  Margin="418,306,0,0" 
-                  VerticalAlignment="Top" 
-                  Width="127" 
-                  Background="Black" 
-                  BorderBrush="Black" 
-                  Height="32">
-                <ComboBoxItem Content="1"/>
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="3"/>
-                <ComboBoxItem Content="4"/>
-                <ComboBoxItem Content="5"/>
-                <ComboBoxItem Content="6"/>
-                <ComboBoxItem Content="7"/>
-            </ComboBox>
+                <Button Content="Search" Command="{x:Bind Vm.SearchCommand}" HorizontalAlignment="Center" Margin="20" Background="#33000000"/>
+            </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10, 30">
+            <ListView ItemsSource="{x:Bind Vm.SearchCatalog.Collection, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Property">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{x:Bind ImagePaths[0], Mode=OneWay}" 
+                                        Height="100" Width="100" Stretch="Fill" Margin="10, 5, 10, 5"/>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{x:Bind DisplayName, Mode=OneWay}"/>
+                                    <TextBlock Text="{x:Bind DisplayPrices, Mode=OneWay}"/>
+                                </StackPanel>
+                            </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
         <Image x:Name="image" 
                HorizontalAlignment="Left" 
@@ -96,5 +70,6 @@
                Margin="905,98,0,0" 
                VerticalAlignment="Top" 
                Width="412"/>
+        </StackPanel>
     </Grid>
 </Page>

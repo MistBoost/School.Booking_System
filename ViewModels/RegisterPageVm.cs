@@ -56,7 +56,7 @@ namespace School.OnlineBookingSystem.ViewModels
             var a = AccCat.Collection.FirstOrDefault(p => p.Username == Username);
             if (a == null)
             {
-                var tempAcc = new Account(FullName, Username, Password, Email, Phone, AccountTypes.User);
+                var tempAcc = new Account(FullName, Username, Password, Email, Phone);
                 AccCat.Collection.Add(tempAcc);
                 StatusBlock = "Account created!";
                 AccCat.SaveCollection();
