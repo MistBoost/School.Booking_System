@@ -30,30 +30,14 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <CalendarDatePicker HorizontalAlignment="Left" 
-                            Margin="195,232,0,0" 
-                            VerticalAlignment="Top" 
-                            Background="Black" 
-                            Foreground="White" 
-                            BorderBrush="Black"
-                            x:Name="CalendarDatePicker">
-            
-        </CalendarDatePicker>
-        <CalendarDatePicker HorizontalAlignment="Left" 
-                            Margin="413,233,0,0" 
-                            VerticalAlignment="Top" 
-                            BorderBrush="Black" 
-                            Background="Black"/>
-        <TextBlock x:Name="textBlock_Copy" 
-                   HorizontalAlignment="Left" 
-                   Margin="417,197,0,0" 
-                   TextWrapping="Wrap" 
-                   Text="Check out" 
-                   VerticalAlignment="Top" 
-                   FontSize="18" 
-                   FontWeight="Bold" 
-                   Foreground="White"/>
-        <TextBlock x:Name="textBlock_Copy1"
+        <StackPanel Orientation="Vertical" Margin="0,0,867,0">
+            <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" HorizontalAlignment="Center" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen" Margin="20,100,0,20" Width="220"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <CalendarDatePicker  DateChanged="CalendarDatePicker_DateChanged" Margin="10" Background="Black" PlaceholderText="Check In" Header="Check In" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Left" FirstDayOfWeek="Monday"/>
+                <CalendarDatePicker Margin="10" DateChanged="CalendarDatePicker_DateChanged_1" PlaceholderText="Check Out" Header="Check Out" BorderBrush="Black" Background="Black" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <Button Content="Search" Command="{x:Bind Vm.SearchCommand}" HorizontalAlignment="Center" Margin="20" Background="#33000000"/>
+            <TextBlock x:Name="textBlock_Copy1"
                    HorizontalAlignment="Left" 
                    Margin="234,98,0,0" 
                    TextWrapping="Wrap"
@@ -63,7 +47,8 @@
                    Foreground="White" 
                    FontWeight="Bold"
                    FontFamily="Segoe UI Black"/>
-        <ComboBox x:Name="comboBox"  
+
+            <ComboBox x:Name="comboBox"  
                   HorizontalAlignment="Left" 
                   Margin="195,309,0,0" 
                   VerticalAlignment="Top" 
@@ -71,15 +56,15 @@
                   BorderBrush="Black" 
                   Background="Black" 
                   Height="32">
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="2"/>
-            <ComboBoxItem Content="3"/>
-            <ComboBoxItem Content="4"/>
-            <ComboBoxItem Content="5"/>
-            <ComboBoxItem Content="6"/>
-            <ComboBoxItem Content="7"/>
-        </ComboBox>
-        <TextBlock x:Name="textBlock1" 
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
+                <ComboBoxItem Content="7"/>
+            </ComboBox>
+            <TextBlock x:Name="textBlock1" 
                    HorizontalAlignment="Left" 
                    Margin="207,279,0,0" 
                    TextWrapping="Wrap" 
@@ -88,7 +73,7 @@
                    FontSize="18" 
                    FontWeight="Bold" 
                    Foreground="White"/>
-        <ComboBox x:Name="comboBox1" 
+            <ComboBox x:Name="comboBox1" 
                   HorizontalAlignment="Left" 
                   Margin="418,306,0,0" 
                   VerticalAlignment="Top" 
@@ -96,37 +81,20 @@
                   Background="Black" 
                   BorderBrush="Black" 
                   Height="32">
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="2"/>
-            <ComboBoxItem Content="3"/>
-            <ComboBoxItem Content="4"/>
-            <ComboBoxItem Content="5"/>
-            <ComboBoxItem Content="6"/>
-            <ComboBoxItem Content="7"/>
-        </ComboBox>
-        <TextBlock x:Name="textBlock1_Copy" 
-                   HorizontalAlignment="Left" 
-                   Margin="422,279,0,0" 
-                   TextWrapping="Wrap" 
-                   Text="Children(0-17)" 
-                   VerticalAlignment="Top" 
-                   FontSize="18" 
-                   FontWeight="Bold" 
-                   Foreground="White"/>
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
+                <ComboBoxItem Content="7"/>
+            </ComboBox>
+        </StackPanel>
         <Image x:Name="image" 
                HorizontalAlignment="Left" 
                Height="240" 
                Margin="905,98,0,0" 
                VerticalAlignment="Top" 
                Width="412"/>
-        <TextBlock x:Name="textBlock_Copy2" 
-                   HorizontalAlignment="Left" 
-                   Margin="205,197,0,0" 
-                   TextWrapping="Wrap" 
-                   Text="Check in" 
-                   VerticalAlignment="Top" 
-                   FontSize="18" 
-                   FontWeight="Bold" 
-                   Foreground="White"/>
     </Grid>
 </Page>
