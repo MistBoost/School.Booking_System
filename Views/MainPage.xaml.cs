@@ -13,7 +13,7 @@ namespace School.OnlineBookingSystem.Views
     {
         public MainPage()
         {
-            this.InitializeComponent();
+         this.InitializeComponent();
         }
 
         private void MenuListBoxItem_OnTapped(object sender, RoutedEventArgs routedEventArgs)

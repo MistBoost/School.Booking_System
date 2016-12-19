@@ -45,114 +45,90 @@
 
 
 
-    <Grid  Opacity="1.1" >
+    <Grid   >
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/WorldWide.jpg"/>
         </Grid.Background>
 
-        <Button x:Name="button"  ClickMode="Hover" FontSize="22" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.615,-0.312" Width="337" Height="60" BorderThickness="0">
-            <StackPanel  Width="337" Margin="-185,-22,-152,-22">
-                <StackPanel.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FFDE2929" Offset="1"/>
-                    </LinearGradientBrush>
-                </StackPanel.Background>
 
-                <TextBlock Text="NORTH AMERICA" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="0,7" FontSize="36" Height="60" FontWeight="Bold" Margin="0,0,13,0"></TextBlock>
-            </StackPanel>
-
-            <Button.Flyout   >
-                <Flyout   Placement="Bottom"  >
-                    <StackPanel  Height="166" Width="385" 
-         >
-                       
-                        <StackPanel.Background>
-                            <LinearGradientBrush  EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#19AC0B0B" Offset="1"/>
-                            </LinearGradientBrush>
-                        </StackPanel.Background>
-
-                        <TextBlock TextWrapping="Wrap" Text="hvugvvvvguvvvvvvvvvgyvvvvvvvvvvvv jkjk hkkh hbjkl hkh hjgk gjhk hkk khhhhhhh hkk hk kh khb khhhh khkhkhkh hkkkkhh hkhk khhkk klkh khhk khk jhk hgk jkkk gkk jkjk kk " ></TextBlock>
-                        <TextBlock Text="USA" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
-                        <TextBlock Text="CANADA" Margin="2,10,18,10" FontWeight="Bold" />
+        <Grid Margin="60,50,45,40" Background="Blue" Opacity="0.8"  >
+            <Image Source="ms-appx:///Assets/SplashScreen.png" Margin="0,0,0,388"></Image>
+            <Button x:Name="button1"  Background="Black" HorizontalAlignment="Left" Margin="433,247,0,0" VerticalAlignment="Top" Width="300" Height="64">
+                <StackPanel Height="60"  Background="Black"  HorizontalAlignment="Right" Width="291"   >
 
 
-                    </StackPanel>
-                </Flyout>
-            </Button.Flyout>
-
-        </Button>
-        <Button x:Name="button1" ClickMode="Hover"  HorizontalAlignment="Left" Margin="480,244,0,0" VerticalAlignment="Top" Width="337" Height="60">
-            <StackPanel Height="60" Margin="-169,0,-158,-12"  >
-                <StackPanel.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="Red" Offset="1"/>
-                    </LinearGradientBrush>
-                </StackPanel.Background>
-
-                <TextBlock Text="EUROPE" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0,7" FontSize="36" Height="60" FontWeight="Bold" Margin="123,0,122,0"></TextBlock>
+                    <TextBlock  Foreground="White" Text="EUROPE" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="36,7" FontSize="30" Height="60" FontWeight="Bold" Margin="51,0,71,0" Width="169"></TextBlock>
 
 
-            </StackPanel>
-            <Button.Flyout  >
-                <Flyout     Placement="Bottom"  >
-                    <StackPanel  Height="242" Width="385">
-                        <StackPanel.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FFEC1919" Offset="1"/>
-                            </LinearGradientBrush>
-                        </StackPanel.Background>
-                        <TextBlock TextWrapping="Wrap" Text="hvugvvvvguvvvvvvvvvgyvvvvvvvvvvvv jkjk hkkh hbjkl hkh hjgk gjhk hkk khhhhhhh hkk hk kh khb khhhh khkhkhkh hkkkkhh hkhk khhkk klkh khhk khk jhk hgk jkkk gkk jkjk kk " ></TextBlock>
-                        <TextBlock Text="FRANCE" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
-                        <TextBlock Text="DENMARK" Margin="2,10,18,10" FontWeight="Bold" />
-                        <TextBlock Text="SLOVKIA" Margin="2,10,18,10" FontWeight="Bold" />
-                        <TextBlock Text="LUTHANIA" Margin="2,10,18,10" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <Button.Flyout  >
+                    <Flyout     Placement="Bottom"  >
+                        <StackPanel  Height="242" Width="385">
 
-                    </StackPanel>
-                </Flyout>
-            </Button.Flyout>
+                            <TextBlock Foreground="White" TextWrapping="Wrap" Text="Europe is a continent which has the best destination in the world for ski lovers where you will find the best ski resorts with good snow coverage ,excellent facilities, charming hotels equipped with wellness centers " ></TextBlock>
+                            <TextBlock Foreground="White" Text="FRANCE" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
+                            <TextBlock Foreground="White" Text="DENMARK" Margin="2,10,18,10" FontWeight="Bold" />
+                            <TextBlock Foreground="White" Text="SLOVKIA" Margin="2,10,18,10" FontWeight="Bold" />
+                            <TextBlock Foreground="White" Text="LUTHANIA" Margin="2,10,18,10" FontWeight="Bold"></TextBlock>
 
-        </Button>
-        <Button x:Name="button2" ClickMode="Hover"  HorizontalAlignment="Left" Margin="900,248,0,0" VerticalAlignment="Top" Height="60" Width="337" RenderTransformOrigin="0.248,0.5">
-            <StackPanel Height="60" Width="337" Margin="-60,-2,-56,-10">
-                <StackPanel.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="Red" Offset="1"/>
-                    </LinearGradientBrush>
-                </StackPanel.Background>
-                <TextBlock Text="ASIA " VerticalAlignment="Center" HorizontalAlignment="Center" Padding="110,7" FontSize="36" Height="60" FontWeight="Bold" Margin="12,0,8,0" Width="317"></TextBlock>
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+
+            </Button>
+            <Button x:Name="button2" Background="Black" HorizontalAlignment="Left" Margin="821,248,0,0" VerticalAlignment="Top" Height="64" Width="300" RenderTransformOrigin="0.248,0.5">
+                <StackPanel  Background="Black" Height="60" Width="291" >
+
+                    <TextBlock Text="ASIA " Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="73,8" FontSize="30" Height="60" FontWeight="Bold" Margin="30,0,64,0" Width="197"></TextBlock>
 
 
 
-            </StackPanel>
-            <Button.Flyout  >
-                <Flyout    Placement="Bottom"  >
-                    <StackPanel  Height="203" Width="385">
-                        <StackPanel.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FFEE1616" Offset="1"/>
-                            </LinearGradientBrush>
-                        </StackPanel.Background>
-
-                        <TextBlock TextWrapping="Wrap" Text="hvugvvvvguvvvvvvvvvgyvvvvvvvvvvvv jkjk hkkh hbjkl hkh hjgk gjhk hkk khhhhhhh hkk hk kh khb khhhh khkhkhkh hkkkkhh hkhk khhkk klkh khhk khk jhk hgk jkkk gkk jkjk kk " ></TextBlock>
-                        <TextBlock Text="INDIA" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
-                        <TextBlock Text="CHINA" Margin="2,10,18,10" FontWeight="Bold" />
-                        <TextBlock Text="JAPAN" Margin="2,10,18,10" FontWeight="Bold" />
+                </StackPanel>
+                <Button.Flyout  >
+                    <Flyout    Placement="Bottom"  >
+                        <StackPanel  Height="203" Width="385">
 
 
-                    </StackPanel>
-                </Flyout>
-            </Button.Flyout>
+                            <TextBlock Foreground="White" TextWrapping="Wrap" Text="Asia is the largest continent which has also become the best destination is the history due to the world-class powder snow and also due to the number of outraged ski resorts available here in 2016. " ></TextBlock>
+                            <TextBlock Foreground="White" Text="INDIA" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
+                            <TextBlock Foreground="White" Text="CHINA" Margin="2,10,18,10" FontWeight="Bold" />
+                            <TextBlock Foreground="White" Text="JAPAN" Margin="2,10,18,10" FontWeight="Bold" />
 
 
-        </Button>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="192" Margin="452,12,0,0" VerticalAlignment="Top" Width="320" Stretch="UniformToFill" Source="ms-appx:///Assets/SplashScreen.png"/>
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+
+
+            </Button>
+            <Button x:Name="button"  Background="Black"  FontSize="22" HorizontalAlignment="Left" Margin="60,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.615,-0.312" Width="300" Height="64" BorderThickness="0">
+                <StackPanel  Background="Black"    Width="300" Height="64" >
+
+
+
+                    <TextBlock  Foreground="White"  Text="NORTH AMERICA" VerticalAlignment="Center" Padding="0,7"  FontSize="30" Height="60" FontWeight="Bold" Margin="20,0,22,0"/>
+                </StackPanel>
+
+                <Button.Flyout    >
+                    <Flyout   Placement="Bottom"  >
+                        <StackPanel Height="165" Width="350"  >
+
+
+
+                            <TextBlock Foreground="White" TextWrapping="Wrap" Text=" North America is the continent which is the seconds best destination for the snow lovers n skiing. The country has also become renowned for the historical snowfall. " ></TextBlock>
+                            <TextBlock Foreground="White" Text="USA" Margin="2,10,18,10" FontWeight="Bold" FontFamily="Segoe UI Black" />
+                            <TextBlock Foreground="White" Text="CANADA" Margin="2,10,18,10" FontWeight="Bold" />
+
+
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+
+            </Button>
+
+        </Grid>
+
+
 
 
 
